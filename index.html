@@ -13,19 +13,25 @@
       background-color: #f9f9f9;
     }
     header {
-      background-color: #015BAB;
+      background: linear-gradient(90deg, #015BAB 0%, #01BAC6 100%);
       color: white;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 20px;
       padding: 20px 40px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     header img {
       height: 60px;
+      filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.25));
     }
     header h1 {
       margin: 0;
       font-size: 1.8rem;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      color: white;
     }
     nav {
       background-color: #01BAC6;
@@ -124,13 +130,33 @@
       height: 32px;
       vertical-align: middle;
     }
+    /* Aquí agrego los estilos para el botón WhatsApp */
+    .whatsapp-agendar {
+      text-align: center;
+      padding: 20px;
+      background-color: #e6f7f8;
+      margin-top: 40px;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #01BAC6;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #019ea7;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <!-- Instrucción para insertar el logo -->
-    <!-- Asegúrate de que 'logo.png' esté en la misma carpeta que este HTML -->
     <img src="logo.png" alt="Logo de Aegis">
     <h1>Aegis Clínica Dental</h1>
   </header>
@@ -167,13 +193,13 @@
     </div>
   </section>
 
-<section class="whatsapp-agendar">
-  <h2>Agenda tu hora por WhatsApp</h2>
-  <a href="https://wa.me/56984615838" target="_blank" class="whatsapp-btn">
-    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" style="width: 32px; height: 32px; vertical-align: middle; margin-right: 10px;">
-    Escríbenos aquí
-  </a>
-</section>
+  <section class="whatsapp-agendar">
+    <h2>Agenda tu hora por WhatsApp</h2>
+    <a href="https://wa.me/56984615838" target="_blank" class="whatsapp-btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" style="width: 32px; height: 32px; vertical-align: middle; margin-right: 10px;">
+      Escríbenos aquí
+    </a>
+  </section>
 
   <section id="horarios" class="schedule">
     <h2>Horarios de Atención</h2>
@@ -191,13 +217,12 @@
   <section id="galeria" class="gallery">
     <h2>Galería</h2>
     <div class="gallery-images">
-      <!-- Cambia las imágenes por las reales que subas -->
       <img src="foto1.jpg" alt="Recepción">
       <img src="foto2.jpg" alt="Box de atención">
       <img src="foto3.jpg" alt="Sala de espera">
     </div>
   </section>
-  
+
   <section id="ubicacion">
     <h2>Ubicación</h2>
     <iframe 

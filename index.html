@@ -4,58 +4,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aegis Clínica Dental</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       color: #333;
+      background-color: #f9f9f9;
     }
     header {
       background-color: #015BAB;
       color: white;
-      padding: 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+    }
+    header img {
+      height: 60px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
     }
     nav {
       background-color: #01BAC6;
+      padding: 10px 0;
       text-align: center;
-      padding: 10px;
     }
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 20px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
-    .section {
-      padding: 40px 20px;
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #015BAB;
+      margin-bottom: 30px;
+      text-align: center;
     }
     .dentists {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
     }
     .dentist-card {
-      background: #f0f0f0;
-      border-radius: 8px;
+      background: white;
+      border-radius: 12px;
       padding: 20px;
-      max-width: 300px;
       text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .dentist-card img {
       width: 100px;
       border-radius: 50%;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
-    .map {
+    .whatsapp-section, .schedule, .gallery {
       text-align: center;
-      margin-top: 20px;
-    }
-    .whatsapp-section {
-      text-align: center;
-      margin-top: 40px;
     }
     .whatsapp-button {
       background-color: #25D366;
@@ -67,11 +78,39 @@
       cursor: pointer;
       text-decoration: none;
     }
+    iframe {
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+    .schedule-table {
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+    .schedule-table th, .schedule-table td {
+      border: 1px solid #ddd;
+      padding: 10px 15px;
+    }
+    .schedule-table th {
+      background-color: #015BAB;
+      color: white;
+    }
+    .gallery-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery-images img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
     footer {
       background-color: #015BAB;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
     }
     .social-icons {
       margin-top: 15px;
@@ -90,55 +129,80 @@
 <body>
 
   <header>
+    <!-- Instrucción para insertar el logo -->
+    <!-- Asegúrate de que 'logo.png' esté en la misma carpeta que este HTML -->
+    <img src="logo.png" alt="Logo de Aegis">
     <h1>Clínica Dental Aegis</h1>
-    <p>Sonríe con confianza</p>
   </header>
 
   <nav>
-    <a href="#dentistas">Nuestro equipo</a>
+    <a href="#dentistas">Equipo</a>
     <a href="#ubicacion">Ubicación</a>
+    <a href="#horarios">Horarios</a>
+    <a href="#galeria">Galería</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <section id="dentistas" class="section">
-    <h2 style="color: #015BAB;">Nuestro equipo</h2>
+  <section id="dentistas">
+    <h2>Conoce a Nuestro Equipo</h2>
     <div class="dentists">
       <div class="dentist-card">
         <img src="https://via.placeholder.com/100" alt="Dra. Ana Torres">
         <h3>Dra. Ana Torres</h3>
-        <p>Especialista en Ortodoncia</p>
+        <p>Ortodoncia</p>
+        <small>Universidad de Chile</small>
       </div>
       <div class="dentist-card">
         <img src="https://via.placeholder.com/100" alt="Dr. Felipe Ríos">
         <h3>Dr. Felipe Ríos</h3>
         <p>Implantología y Rehabilitación</p>
+        <small>Universidad de Concepción</small>
       </div>
       <div class="dentist-card">
         <img src="https://via.placeholder.com/100" alt="Dra. Camila Soto">
         <h3>Dra. Camila Soto</h3>
-        <p>Odontopediatra</p>
+        <p>Odontopediatría</p>
+        <small>Universidad Mayor</small>
       </div>
     </div>
   </section>
 
   <section class="whatsapp-section">
-    <h2 style="color: #015BAB;">Agenda tu hora por WhatsApp</h2>
+    <h2>Agenda tu hora por WhatsApp</h2>
     <p>Haz clic en el botón para agendar directamente con nuestro equipo.</p>
     <a class="whatsapp-button" href="https://wa.me/56984615838" target="_blank">Agendar por WhatsApp</a>
   </section>
 
-  <section id="ubicacion" class="section">
-    <h2 style="color: #015BAB;">Dónde estamos</h2>
-    <div class="map">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.991222357425!2d-70.64826948480007!3d-33.456939180771705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x82fd931608201ab5!2sAegis%20Cl%C3%ADnica%20Dental%20%F0%9F%A6%B7!5e0!3m2!1ses-419!2scl!4v1717775400000" 
-        width="90%" 
-        height="300" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+  <section id="ubicacion">
+    <h2>Ubicación</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.991222357425!2d-70.64826948480007!3d-33.456939180771705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x82fd931608201ab5!2sAegis%20Cl%C3%ADnica%20Dental%20%F0%9F%A6%B7!5e0!3m2!1ses-419!2scl!4v1717775400000"
+      height="300" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <section id="horarios" class="schedule">
+    <h2>Horarios de Atención</h2>
+    <table class="schedule-table">
+      <tr>
+        <th>Día</th>
+        <th>Horario</th>
+      </tr>
+      <tr><td>Lunes a Viernes</td><td>09:00 - 18:00</td></tr>
+      <tr><td>Sábados</td><td>10:00 - 14:00</td></tr>
+      <tr><td>Domingos y Festivos</td><td>Cerrado</td></tr>
+    </table>
+  </section>
+
+  <section id="galeria" class="gallery">
+    <h2>Galería</h2>
+    <div class="gallery-images">
+      <!-- Cambia las imágenes por las reales que subas -->
+      <img src="foto1.jpg" alt="Recepción">
+      <img src="foto2.jpg" alt="Box de atención">
+      <img src="foto3.jpg" alt="Sala de espera">
     </div>
   </section>
 
@@ -152,7 +216,7 @@
         <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook">
       </a>
       <a href="mailto:aegisclinicadental@gmail.com">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Correo">
       </a>
     </div>
     <p style="margin-top: 15px;">&copy; 2025 Clínica Dental Aegis. Todos los derechos reservados.</p>

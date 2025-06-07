@@ -53,17 +53,37 @@
       text-align: center;
       margin-top: 20px;
     }
+    .whatsapp-section {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .whatsapp-button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
     footer {
       background-color: #015BAB;
       color: white;
       text-align: center;
       padding: 20px;
     }
+    .social-icons {
+      margin-top: 15px;
+    }
     .social-icons a {
       margin: 0 10px;
-      color: white;
-      text-decoration: none;
-      font-size: 24px;
+      display: inline-block;
+    }
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+      vertical-align: middle;
     }
   </style>
 </head>
@@ -101,11 +121,17 @@
     </div>
   </section>
 
+  <section class="whatsapp-section">
+    <h2 style="color: #015BAB;">Agenda tu hora por WhatsApp</h2>
+    <p>Haz clic en el botón para agendar directamente con nuestro equipo.</p>
+    <a class="whatsapp-button" href="https://wa.me/56984615838" target="_blank">Agendar por WhatsApp</a>
+  </section>
+
   <section id="ubicacion" class="section">
     <h2 style="color: #015BAB;">Dónde estamos</h2>
     <div class="map">
       <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.991222357425!2d-70.64826948480007!3d-33.456939180771705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a6e7f7a3ab%3A0x23a748ac6248dc6a!2sSantiago%2C%20Chile!5e0!3m2!1ses-419!2scl!4v1717775400000" 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.991222357425!2d-70.64826948480007!3d-33.456939180771705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x82fd931608201ab5!2sAegis%20Cl%C3%ADnica%20Dental%20%F0%9F%A6%B7!5e0!3m2!1ses-419!2scl!4v1717775400000" 
         width="90%" 
         height="300" 
         style="border:0;" 
@@ -117,13 +143,19 @@
   </section>
 
   <footer id="contacto">
-    <p>Contáctanos en nuestras redes sociales</p>
+    <p>Contáctanos en nuestras redes sociales o por correo</p>
     <div class="social-icons">
-      <a href="https://facebook.com/aegisclinicadental" target="_blank">📘</a>
-      <a href="https://instagram.com/aegisclinicadental" target="_blank">📸</a>
-      <a href="https://wa.me/56912345678" target="_blank">💬</a>
+      <a href="https://www.instagram.com/aegisclinicadental?igsh=aGl1Z254aGNjMmFu" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61574232590531&mibextid=ZbWKwL" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook">
+      </a>
+      <a href="mailto:aegisclinicadental@gmail.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
+      </a>
     </div>
-    <p>&copy; 2025 Clínica Dental Aegis. Todos los derechos reservados.</p>
+    <p style="margin-top: 15px;">&copy; 2025 Clínica Dental Aegis. Todos los derechos reservados.</p>
   </footer>
 
 </body>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aegis Clínica Dental</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    header {
+      background-color: #015BAB;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #01BAC6;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .section {
+      padding: 40px 20px;
+    }
+    .dentists {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .dentist-card {
+      background: #f0f0f0;
+      border-radius: 8px;
+      padding: 20px;
+      max-width: 300px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .dentist-card img {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .map {
+      text-align: center;
+      margin-top: 20px;
+    }
+    footer {
+      background-color: #015BAB;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Clínica Dental Aegis</h1>
+    <p>Sonríe con confianza</p>
+  </header>
+
+  <nav>
+    <a href="#dentistas">Nuestro equipo</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="dentistas" class="section">
+    <h2 style="color: #015BAB;">Nuestro equipo</h2>
+    <div class="dentists">
+      <div class="dentist-card">
+        <img src="https://via.placeholder.com/100" alt="Dra. Ana Torres">
+        <h3>Dra. Ana Torres</h3>
+        <p>Especialista en Ortodoncia</p>
+      </div>
+      <div class="dentist-card">
+        <img src="https://via.placeholder.com/100" alt="Dr. Felipe Ríos">
+        <h3>Dr. Felipe Ríos</h3>
+        <p>Implantología y Rehabilitación</p>
+      </div>
+      <div class="dentist-card">
+        <img src="https://via.placeholder.com/100" alt="Dra. Camila Soto">
+        <h3>Dra. Camila Soto</h3>
+        <p>Odontopediatra</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ubicacion" class="section">
+    <h2 style="color: #015BAB;">Dónde estamos</h2>
+    <div class="map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.991222357425!2d-70.64826948480007!3d-33.456939180771705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a6e7f7a3ab%3A0x23a748ac6248dc6a!2sSantiago%2C%20Chile!5e0!3m2!1ses-419!2scl!4v1717775400000" 
+        width="90%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <footer id="contacto">
+    <p>Contáctanos en nuestras redes sociales</p>
+    <div class="social-icons">
+      <a href="https://facebook.com/aegisclinicadental" target="_blank">📘</a>
+      <a href="https://instagram.com/aegisclinicadental" target="_blank">📸</a>
+      <a href="https://wa.me/56912345678" target="_blank">💬</a>
+    </div>
+    <p>&copy; 2025 Clínica Dental Aegis. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

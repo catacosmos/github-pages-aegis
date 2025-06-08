@@ -11,49 +11,62 @@
       font-family: 'Inter', sans-serif;
       color: #333;
       background-color: #f9f9f9;
+      padding-top: 70px; /* espacio para header fijo */
     }
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       background: linear-gradient(90deg, #a0e6ea 0%, #01BAC6 100%);
-
-      color: white;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      gap: 20px;
-      padding: 20px 40px;
+      justify-content: space-between;
+      padding: 10px 40px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      height: 70px;
     }
 
     header img {
-      height: 70px;
+      height: 50px;
       filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.25));
     }
 
-    header h1 {
-      margin-left: auto; /* Empuja el texto al extremo derecho */
-      font-size: 1.8rem;
-      font-weight: 700;
-
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    }
-
     nav {
-      background-color: #01BAC6;
-      padding: 10px 0;
-      text-align: center;
+      display: flex;
+      gap: 20px;
+      flex-grow: 1;
+      justify-content: center;
     }
+
     nav a {
       color: white;
-      margin: 0 20px;
       text-decoration: none;
       font-weight: 600;
       padding: 8px 15px;
       border-radius: 8px;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
+
     nav a:hover {
       background-color: #019ea7;
       color: #ffffff;
+    }
+
+    .header-btn {
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: background-color 0.3s ease;
+    }
+
+    .header-btn:hover {
+      background-color: #1ebe57;
     }
 
     section {
@@ -79,7 +92,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .dentist-card img {
-
       width: 150px;
       border-radius: 50%;
       margin-bottom: 15px;
@@ -168,17 +180,18 @@
 <body>
 
   <header>
-    <img src="logo.png" alt="Logo de Aegis">
-    <h1>Aegis Clínica Dental</h1>
+    <img src="logo.png" alt="Logo de Aegis" />
+    <nav>
+      <a href="#dentistas">Equipo</a>
+      <a href="#horarios">Horarios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="https://wa.me/56984615838" target="_blank" class="header-btn">
+      Agenda tu hora
+    </a>
   </header>
-
-  <nav>
-    <a href="#dentistas">Equipo</a>
-    <a href="#horarios">Horarios</a>
-    <a href="#galeria">Galería</a>
-    <a href="#ubicacion">Ubicación</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
 
   <section id="dentistas">
     <h2>Conoce a Nuestro Equipo</h2>
@@ -257,7 +270,6 @@
         <img src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" alt="Correo">
       </a>
     </div>
-    <p style="margin-top: 15px;">&copy; 2025 Clínica Dental Aegis. Todos los derechos reservados.</p>
   </footer>
 
 </body>

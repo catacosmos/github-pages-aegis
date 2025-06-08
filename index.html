@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aegis Clínica Dental</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+
   <style>
     body {
       margin: 0;
@@ -22,19 +26,16 @@
       padding: 20px 40px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    
     header img {
       height: 70px;
       filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.25));
     }
-    
     header h1 {
-      margin-left: auto; /* Empuja el texto al extremo derecho */
+      margin-left: auto;
       font-size: 1.8rem;
       font-weight: 700;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
-
     nav {
       background-color: #01BAC6;
       padding: 10px 0;
@@ -53,7 +54,6 @@
       background-color: #019ea7;
       color: #ffffff;
     }
-
     section {
       padding: 50px 20px;
       max-width: 1000px;
@@ -117,10 +117,14 @@
       gap: 15px;
       margin-top: 20px;
     }
-    .gallery-images img {
+    .gallery-images a img {
       width: 100%;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .gallery-images a:hover img {
+      transform: scale(1.03);
     }
     footer {
       background-color: #015BAB;
@@ -145,7 +149,6 @@
       padding: 20px;
       margin-top: 40px;
     }
-
     .whatsapp-btn {
       display: inline-block;
       padding: 10px 20px;
@@ -156,7 +159,6 @@
       font-weight: bold;
       transition: background-color 0.3s;
     }
-
     .whatsapp-btn:hover {
       background-color: #019ea7;
     }
@@ -212,10 +214,7 @@
   <section id="horarios" class="schedule">
     <h2>Horarios de Atención</h2>
     <table class="schedule-table">
-      <tr>
-        <th>Día</th>
-        <th>Horario</th>
-      </tr>
+      <tr><th>Día</th><th>Horario</th></tr>
       <tr><td>Lunes a Viernes</td><td>09:00 - 20:00</td></tr>
       <tr><td>Sábados</td><td>10:00 - 19:00</td></tr>
       <tr><td>Domingos y Festivos</td><td>Cerrado</td></tr>
@@ -225,9 +224,15 @@
   <section id="galeria" class="gallery">
     <h2>Galería</h2>
     <div class="gallery-images">
-      <img src="foto1.jpg" alt="Recepción">
-      <img src="foto2.jpg" alt="Box de atención">
-      <img src="foto3.jpg" alt="Sala de espera">
+      <a href="foto1.jpg" data-lightbox="galeria" data-title="Recepción">
+        <img src="foto1.jpg" alt="Recepción">
+      </a>
+      <a href="foto2.jpg" data-lightbox="galeria" data-title="Box de atención">
+        <img src="foto2.jpg" alt="Box de atención">
+      </a>
+      <a href="foto3.jpg" data-lightbox="galeria" data-title="Sala de espera">
+        <img src="foto3.jpg" alt="Sala de espera">
+      </a>
     </div>
   </section>
 
@@ -257,5 +262,7 @@
     <p style="margin-top: 15px;">&copy; 2025 Clínica Dental Aegis. Todos los derechos reservados.</p>
   </footer>
 
+  <!-- Lightbox2 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </body>
 </html>

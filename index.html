@@ -210,14 +210,50 @@
     </table>
   </section>
 
-  <section id="galeria" class="gallery">
-    <h2>Galería</h2>
-    <div class="gallery-images">
-      <img src="galeria1.jpg" alt="Recepción Aegis">
-      <img src="galeria2.jpg" alt="Box Dental">
-      <img src="galeria3.jpg" alt="Sala de Espera">
+<section id="galeria" class="gallery" style="text-align: center; font-family: 'Inter', sans-serif;">
+  <h2 style="margin-bottom: 20px;">Galería</h2>
+  <div class="carousel-container" style="position: relative; max-width: 700px; margin: auto; overflow: hidden;">
+    <div class="carousel-slide" style="display: flex; transition: transform 0.5s ease;">
+      <img src="galeria1.jpg" alt="Recepción Aegis" style="width: 100%; flex-shrink: 0;">
+      <img src="galeria2.jpg" alt="Box Dental" style="width: 100%; flex-shrink: 0;">
+      <img src="galeria3.jpg" alt="Sala de Espera" style="width: 100%; flex-shrink: 0;">
     </div>
-  </section>
+
+    <!-- Botones -->
+    <button id="prev" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5); border: none; color: white; font-size: 24px; padding: 8px; cursor: pointer;">‹</button>
+    <button id="next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5); border: none; color: white; font-size: 24px; padding: 8px; cursor: pointer;">›</button>
+  </div>
+</section>
+
+<script>
+  const slide = document.querySelector('.carousel-slide');
+  const images = slide.querySelectorAll('img');
+  const total = images.length;
+  let index = 0;
+
+  const updateSlide = () => {
+    slide.style.transform = `translateX(-${index * 100}%)`;
+  };
+
+  document.getElementById('next').addEventListener('click', () => {
+    index = (index + 1) % total;
+    updateSlide();
+  });
+
+  document.getElementById('prev').addEventListener('click', () => {
+    index = (index - 1 + total) % total;
+    updateSlide();
+  });
+
+  // Auto avanzar cada 5 segundos
+  setInterval(() => {
+    index = (index + 1) % total;
+    updateSlide();
+  }, 5000);
+</script>
+
 
   <section id="ubicacion">
     <h2>Ubicación</h2>
@@ -261,7 +297,7 @@
       <h4 style="margin-bottom: 20px; font-weight: 500;">Datos de Contacto</h4>
 
       <p style="margin: 15px 0;">
-        <a href="https://goo.gl/maps/s7T1kCEsnYzbxJfE8" target="_blank" style="color: #333; text-decoration: none;">
+        <a href="https://www.google.com/maps/place/Aegis+Clínica+Dental+🦷/@-33.4549101,-70.7420724,17z/data=!3m1!4b1!4m6!3m5!1s0x9662c379345f2b41:0x82fd931608201ab5!8m2!3d-33.4549101!4d-70.7394975!16s%2Fg%2F11glwckvkj?entry=ttu&g_ep=EgoyMDI1MDYxMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: #333; text-decoration: none;">
           <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Ubicación" style="width: 18px; vertical-align: middle; margin-right: 10px;">
           Av. Teniente Cruz 570, Local 2, Santiago, Chile
         </a>

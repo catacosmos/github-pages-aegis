@@ -16,7 +16,15 @@
       background-color: #f9f9f9;
       padding-top: 75px;
     }
-
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     header {
       position: fixed; top: 0; left: 0; right: 0;
       background: linear-gradient(90deg, #a0e6ea 0%, #01BAC6 100%);
@@ -234,5 +242,18 @@
   <p style="text-align: center; font-size: 0.9em; color: #777;">© 2025 Aegis Clínica Dental. Todos los derechos reservados.</p>
 </footer>
 
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>

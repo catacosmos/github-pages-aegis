@@ -6,64 +6,15 @@
   <title>Aegis Clínica Dental</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       color: #333;
       background-color: #f9f9f9;
       padding-top: 75px;
-    }
-
-    .hero {
-      height: 90vh;
-      background: url('fondo-hero.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      color: white;
-      text-align: center;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.4);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      padding: 0 20px;
-    }
-    .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .hero-content p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-    }
-    .hero-btn {
-      background: #01BAC6;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .hero-btn:hover {
-      background: #019ea7;
-    }
-
-    @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2rem;
-      }
-      .hero-content p {
-        font-size: 1rem;
-      }
     }
 
     header {
@@ -76,7 +27,9 @@
       z-index: 1000;
       height: 70px;
     }
-    header img { height: 70px; filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.25)); }
+    header a.logo-link img {
+      height: 70px; filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.25));
+    }
     nav { display: flex; gap: 20px; flex-grow: 1; justify-content: center; }
     nav a {
       color: white; text-decoration: none;
@@ -96,16 +49,10 @@
   </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Bienvenidos a Aegis Clínica Dental</h1>
-      <p>Sonrisas saludables, experiencia confiable</p>
-      <a href="#contacto" class="hero-btn">Agenda tu hora</a>
-    </div>
-  </section>
-
   <header>
-    <img src="logo.png" alt="Logo de Aegis" />
+    <a href="#" class="logo-link">
+      <img src="logo.png" alt="Logo de Aegis" />
+    </a>
     <nav>
       <a href="#dentistas">Equipo</a>
       <a href="#horarios">Horarios</a>

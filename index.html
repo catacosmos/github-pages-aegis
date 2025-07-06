@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Aegis Clínica Dental en Santiago. Atención profesional, cercana y de calidad. Agenda tu hora con nuestro equipo.">
   <title>Aegis Clínica Dental</title>
   <!-- Fuente Poppins para header -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
@@ -320,6 +321,28 @@
         padding: 10px 16px;
         font-size: 0.9rem;
       }
+      .carousel-container {
+        aspect-ratio: 16 / 9;
+        background-color: #eaeaea;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+      
+      .carousel-slide {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .carousel-slide img {
+        flex-shrink: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
     }
   </style>
 </head>
@@ -372,28 +395,31 @@
     <h2>Horarios de Atención</h2>
     <table class="schedule-table">
       <tr><th>Día</th><th>Horario</th></tr>
-      <tr><td>Lunes a Viernes</td><td>09:00 - 19:00 hrs</td></tr>
-      <tr><td>Sábado</td><td>09:00 - 14:00 hrs</td></tr>
+      <tr><td>Lunes a Viernes</td><td>09:00 - 20:00 hrs</td></tr>
+      <tr><td>Sábado</td><td>10:00 - 19:00 hrs</td></tr>
       <tr><td>Domingo</td><td>Cerrado</td></tr>
     </table>
   </section>
 
   <section id="galeria" class="gallery" style="text-align: center; font-family: 'Inter', sans-serif;">
     <h2 style="margin-bottom: 20px;">Galería</h2>
-    <div class="carousel-container" style="position: relative; max-width: 700px; margin: auto; overflow: hidden;">
-      <div class="carousel-slide" style="display: flex; transition: transform 0.5s ease;">
-        <img src="Exterior.jpg" alt="Exterior Aegis" style="width: 100%; flex-shrink: 0;" />
-        <img src="Recepcion.jpg" alt="Recepción Aegis" style="width: 100%; flex-shrink: 0;" />
-        <img src="Sala_de_espera.jpg" alt="Sala de espera" style="width: 100%; flex-shrink: 0;" />
-        <img src="Box1.jpg" alt="Box 1" style="width: 100%; flex-shrink: 0;" />
-        <img src="Box2.jpg" alt="Box 2" style="width: 100%; flex-shrink: 0;" />
-        <img src="Box3.jpg" alt="Box 3" style="width: 100%; flex-shrink: 0;" /> 
+    <div class="carousel-container" style="max-width: 700px; margin: auto;">
+      <div class="carousel-slide">
+        <img src="Exterior.jpg" alt="Exterior Aegis" />
+        <img src="Recepcion.jpg" alt="Recepción Aegis" />
+        <img src="Sala_de_espera.jpg" alt="Sala de espera" />
+        <img src="Box1.jpg" alt="Box 1" />
+        <img src="Box2.jpg" alt="Box 2" />
+        <img src="Box3.jpg" alt="Box 3" />
       </div>
-
-      <!-- Botones -->
-      <button id="prev" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);
+  
+      <!-- Botones del carrusel con accesibilidad -->
+      <button id="prev" aria-label="Imagen anterior" title="Imagen anterior"
+        style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);
         background-color: rgba(0,0,0,0.5); border: none; color: white; font-size: 24px; padding: 8px; cursor: pointer;">‹</button>
-      <button id="next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);
+  
+      <button id="next" aria-label="Imagen siguiente" title="Imagen siguiente"
+        style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);
         background-color: rgba(0,0,0,0.5); border: none; color: white; font-size: 24px; padding: 8px; cursor: pointer;">›</button>
     </div>
   </section>

@@ -427,6 +427,26 @@
         font-size: 1rem;
       }
     }
+    @media (max-width: 600px) {
+      /* Ajuste para centrar la tabla de horarios y permitir scroll horizontal sin desplazamiento a la izquierda */
+      .schedule-table {
+        display: inline-table; /* Hace que la tabla se centre y mantenga su tamaño */
+        margin: 0 auto;        /* Centra horizontalmente */
+        font-size: 0.9rem;
+        overflow-x: auto;      /* Permite scroll horizontal */
+      }
+    
+      /* Ajuste para centrar la sección de información antes del footer */
+      .info-antes-footer {
+        flex-direction: column; /* Pone los ítems en columna */
+        align-items: center;    /* Centra los ítems horizontalmente */
+        text-align: center;     /* Centra el texto */
+        gap: 20px;
+        margin-left: 0;         /* Elimina margen izquierdo */
+        padding: 0 10px;        /* Un poco de padding lateral para evitar que toque bordes */
+      }
+    }
+
   </style>
 </head>
 

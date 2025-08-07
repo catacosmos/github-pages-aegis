@@ -446,6 +446,27 @@
         padding: 0 10px;        /* Un poco de padding lateral para evitar que toque bordes */
       }
     }
+    @media (max-width: 600px) {
+      /* Hace que las columnas del footer se apilen y centren */
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px; /* evita que queden pegados a los bordes */
+      }
+    
+      /* Cada columna del footer ocupa 100% y el texto se centra */
+      .footer-column {
+        flex: 1 1 100%;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+    
+      /* Asegura que links y texto dentro del footer también estén centrados */
+      .footer-column a {
+        justify-content: center; /* para que iconos + texto se centren */
+      }
+    }
 
   </style>
 </head>

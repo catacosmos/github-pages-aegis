@@ -633,50 +633,139 @@
   </section>
 
 <!-- =======================
-     SECCIÓN: PUBLICACIONES POPULARES DE INSTAGRAM
+     SECCIÓN: PUBLICACIONES POPULARES DE INSTAGRAM (CARRUSEL 9)
 ======================= -->
-<section id="instagram" style="text-align: center; font-family: 'Inter', sans-serif; padding: 60px 20px; background-color: #f8f9fa;">
-  <h2 style="margin-bottom: 30px; color: #015BAB; font-family: 'Poppins', sans-serif; font-weight: 600;">Nuestras publicaciones más populares</h2>
+<section id="instagram" style="position:relative; text-align:center; font-family:'Inter', sans-serif; padding:60px 20px; background:#f8f9fa;">
+  <h2 style="margin-bottom:24px; color:#015BAB; font-family:'Poppins', sans-serif; font-weight:600;">Nuestras publicaciones más populares</h2>
 
-  <div class="instagram-carousel" style="
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 20px;
-    padding-bottom: 10px;
-    scrollbar-width: thin;
-  ">
-    <!-- Publicaciones (9 en total) -->
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DOcDcNwEgd_/" data-instgrm-version="14" style="min-width:300px; max-width:300px; flex-shrink:0;"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DHWmsTHSt2u/" data-instgrm-version="14" style="min-width:300px; max-width:300px; flex-shrink:0;"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKk0hkiSgUk/" data-instgrm-version="14" style="min-width:300px; max-width:300px; flex-shrink:0;"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DIkncsFumdx/" data-instgrm-version="14" style="min-width:300px; max-width:300px; flex-shrink:0;"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DIVk5BOOdR5/" data-instgrm-version="14" style="min-width:300px; max-width:300px; flex-shrink:0;"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DHQwxCZuMMk/" data-instgrm-version="14" style="min-width:300px; max-width:300px; flex-shrink:0;"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DFwHq5tuUIm/" data-instgrm-version="14" style="min-width:300px; max-width:300px; flex-shrink:0;"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DEfg04YtTfL/" data-instgrm-version="14" style="min-width:300px; max-width:300px; flex-shrink:0;"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DCbNnpQt2oH/" data-instgrm-version="14" style="min-width:300px; max-width:300px; flex-shrink:0;"></blockquote>
+  <!-- CONTENEDOR CARRUSEL -->
+  <div class="instagram-carousel-wrap" style="max-width:1100px; margin:0 auto; position:relative;">
+    <!-- Flecha izquierda -->
+    <button id="insta-prev" aria-label="Anterior" style="
+      position:absolute; left:-10px; top:50%; transform:translateY(-50%);
+      width:40px; height:40px; border-radius:8px; border:none; background:rgba(1,91,171,0.95);
+      color:white; font-size:22px; cursor:pointer; z-index:50;
+      display:flex; align-items:center; justify-content:center;
+    ">‹</button>
+
+    <!-- Contenedor deslizable -->
+    <div id="instagram-carousel" style="
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      padding:8px 28px;
+      -webkit-overflow-scrolling:touch;
+    ">
+      <!-- 9 publicaciones (permalinks del perfil oficial) -->
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DOcDcNwEgd_/" data-instgrm-version="14" style="min-width:320px; max-width:320px; flex:0 0 320px;"></blockquote>
+
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DHWmsTHSt2u/" data-instgrm-version="14" style="min-width:320px; max-width:320px; flex:0 0 320px;"></blockquote>
+
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKk0hkiSgUk/" data-instgrm-version="14" style="min-width:320px; max-width:320px; flex:0 0 320px;"></blockquote>
+
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ0Wh8yMTiA/" data-instgrm-version="14" style="min-width:320px; max-width:320px; flex:0 0 320px;"></blockquote>
+
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DOnvEFsjUVX/" data-instgrm-version="14" style="min-width:320px; max-width:320px; flex:0 0 320px;"></blockquote>
+
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKfG6EXM4DL/" data-instgrm-version="14" style="min-width:320px; max-width:320px; flex:0 0 320px;"></blockquote>
+
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DOJIWp4D40i/" data-instgrm-version="14" style="min-width:320px; max-width:320px; flex:0 0 320px;"></blockquote>
+
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ0WA2tMkT9/" data-instgrm-version="14" style="min-width:320px; max-width:320px; flex:0 0 320px;"></blockquote>
+
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPkM-aFERfb/" data-instgrm-version="14" style="min-width:320px; max-width:320px; flex:0 0 320px;"></blockquote>
+    </div>
+
+    <!-- Flecha derecha -->
+    <button id="insta-next" aria-label="Siguiente" style="
+      position:absolute; right:-10px; top:50%; transform:translateY(-50%);
+      width:40px; height:40px; border-radius:8px; border:none; background:rgba(1,91,171,0.95);
+      color:white; font-size:22px; cursor:pointer; z-index:50;
+      display:flex; align-items:center; justify-content:center;
+    ">›</button>
   </div>
 
-  <!-- Script oficial de Instagram -->
+  <!-- Script oficial de Instagram (procesa los blockquotes) -->
   <script async src="//www.instagram.com/embed.js"></script>
 
-  <div style="margin-top: 30px;">
-    <a href="https://www.instagram.com/aegisclinicadental" target="_blank" style="
-      background-color: #015BAB;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    " onmouseover="this.style.backgroundColor='#019ea7'" onmouseout="this.style.backgroundColor='#015BAB'">
-      Ver más en Instagram
-    </a>
-  </div>
+  <!-- JS para controlar las flechas y comportamiento del carrusel -->
+  <script>
+    (function() {
+      const container = document.getElementById('instagram-carousel');
+      const btnNext = document.getElementById('insta-next');
+      const btnPrev = document.getElementById('insta-prev');
+
+      // Si el script de Instagram ya cargó, procesar embeds (defensivo)
+      function processInsta() {
+        try {
+          if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === 'function') {
+            window.instgrm.Embeds.process();
+          }
+        } catch (e) { /* no crítico */ }
+      }
+
+      // Espera a que el embed.js cargue y procese
+      window.addEventListener('load', () => {
+        // A veces el script es async y tarda; intentar varias veces
+        processInsta();
+        setTimeout(processInsta, 800);
+        setTimeout(processInsta, 1600);
+      });
+
+      // Calcula scroll distance: ancho visible del contenedor menos un pequeño margen
+      function scrollByWidth(direction = 1) {
+        const card = container.querySelector('.instagram-media') || container.firstElementChild;
+        const cardWidth = card ? card.getBoundingClientRect().width : 320;
+        const gap = 18; // debe coincidir con gap en CSS inline
+        const distance = Math.round(cardWidth + gap);
+        container.scrollBy({ left: distance * direction, behavior: 'smooth' });
+      }
+
+      btnNext.addEventListener('click', () => scrollByWidth(1));
+      btnPrev.addEventListener('click', () => scrollByWidth(-1));
+
+      // Ocultar flechas en pantallas pequeñas si se desea (opcional)
+      function updateArrowsVisibility() {
+        if (!container) return;
+        const canScrollLeft = container.scrollLeft > 5;
+        const canScrollRight = container.scrollWidth - container.clientWidth - container.scrollLeft > 5;
+        btnPrev.style.opacity = canScrollLeft ? '1' : '0.35';
+        btnNext.style.opacity = canScrollRight ? '1' : '0.35';
+      }
+      container.addEventListener('scroll', updateArrowsVisibility);
+      window.addEventListener('resize', updateArrowsVisibility);
+      // inicial
+      setTimeout(updateArrowsVisibility, 400);
+    })();
+  </script>
+
+  <style>
+    /* Estilos adicionales (limpios y pequeños) */
+    /* Quitar outline feo en foco y añadir sombra suave */
+    #insta-prev:focus, #insta-next:focus { outline: 2px solid rgba(1,91,171,0.25); outline-offset: 2px; }
+    /* Oculta scrollbar visual en webkit pero permite scroll */
+    #instagram-carousel::-webkit-scrollbar { height:8px; display:none; }
+    @media (max-width:600px) {
+      /* en móvil reducir ancho mínimo de cada embed para que se muestren mejor */
+      #instagram-carousel .instagram-media { min-width:260px !important; max-width:260px !important; flex:0 0 260px !important; }
+      /* alejar un poco las flechas */
+      #insta-prev { left:4px; }
+      #insta-next { right:4px; }
+    }
+  </style>
 </section>
 
+  
+  <section id="ubicacion">
+    <h2>Ubicación</h2>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.810156998764!2d-70.74583032366417!3d-33.41541277343011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662dc63beec3cd9%3A0x1d87f81e3658de84!2sTeniente%20Cruz%20570%2C%20Pudahuel%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1717638472060!5m2!1ses!2scl"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
 
   <div class="info-antes-footer">
     <div class="info-item">

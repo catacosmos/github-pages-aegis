@@ -44,7 +44,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       background: white;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      -shadow: 0 2px 8px rgb(0 0 0 / 0.1);
       height: 90px;
       display: flex;
       align-items: center;
@@ -102,13 +102,13 @@
       align-items: center;
       gap: 10px;
       box-shadow: 0 4px 10px rgb(32 212 68 / 0.3);
-      transition: background-color 0.3s ease, -shadow 0.3s ease;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
       user-select: none;
     }
     .header-btn:hover,
     .header-btn:focus {
       background-color: #1ebe57;
-      -shadow: 0 6px 14px rgb(30 190 87 / 0.5);
+      box-shadow: 0 6px 14px rgb(30 190 87 / 0.5);
     }
     .header-btn img {
       width: 22px;

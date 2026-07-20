@@ -72,7 +72,8 @@
       transform: translateY(40px);
       transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    section.visible {
+    /* Solución de especificidad: Ahora .visible es más fuerte */
+    section:not(#hero):not(#dentistas).visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -635,7 +636,7 @@
   <main>
     <section id="hero">
       <h1 style="margin: 0; font-size: inherit; font-weight: inherit;">
-        Aegis Clínica Dental
+        Bienvenido a Aegis Clínica Dental
       </h1>
     </section>
 

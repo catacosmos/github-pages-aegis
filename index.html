@@ -8,6 +8,9 @@
   <meta name="robots" content="index, follow" />
   <title>Aegis Clínica Dental</title>
   
+  <!-- Preload del banner para que cargue más rápido -->
+  <link rel="preload" href="recursos/iconos/banner.jpg" as="image" />
+
   <!-- Favicon -->
   <link rel="icon" href="recursos/iconos/icono.png" type="image/png" />
 
@@ -150,6 +153,7 @@
       max-width: none;
       height: 400px;
       margin: 0;
+      background-color: #015BAB; /* Color de fondo mientras carga la imagen */
       background: url('recursos/iconos/banner.jpg') center center / cover no-repeat;
       display: flex;
       align-items: center;
@@ -496,14 +500,38 @@
         padding: 20px;
         text-align: center;
       }
-      .dentist-card img {
-        width: 120px;
+      
+      /* Ajuste de tarjetas de doctores a 2 columnas */
+      .dentists {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
       }
+      .dentist-card {
+        padding: 15px 10px;
+      }
+      .dentist-card img {
+        width: 80px;
+        margin-bottom: 10px;
+      }
+      .dentist-card h3 {
+        font-size: 0.95rem;
+        margin: 5px 0;
+      }
+      .dentist-card p {
+        font-size: 0.8rem;
+        margin: 2px 0;
+      }
+
+      /* Centrado de tabla de horarios */
       .schedule-table {
         display: block;
+        width: max-content;
+        max-width: 100%;
+        margin: 0 auto;
         overflow-x: auto;
         font-size: 0.9rem;
       }
+      
       .footer-column {
         text-align: center;
         flex: 1 1 100%;
@@ -618,47 +646,45 @@
         <div class="dentist-card">
           <img src="recursos/doctores/dr.camilo.jpeg" alt="Dr. Camilo" loading="lazy" />
           <h3>Dr. Camilo Barrientos Morales</h3>
-          <p>Cirujano maxilofacial</p>
-          <p>Universidad del Desarrollo</p>
+          <p>Cirujano dentista - Universidad de Chile</p>
+          <p>Cirujano maxilofacial - Universidad del Desarrollo</p>
         </div>
-
+        
+        <div class="dentist-card">
+          <img src="recursos/doctores/dra.angelica.jpeg" alt="Dra. Angelica" loading="lazy" />
+          <h3>Angélica Burgos Díaz</h3>
+          <p>Cirujana dentista - Universidad de Chile</p>
+          <p>Odontopediatra - Universidad de los Andes</p>
+        </div>
+        
         <div class="dentist-card">
           <img src="recursos/doctores/dra.paulina.jpeg" alt="Dra. Paulina" loading="lazy" />
           <h3>Dra. Paulina Cortés Gutierréz</h3>
+          <p>Cirujana dentista - Universidad Andrés Bello</p>
           <p>Ortodoncista</p>
-          <p>Universidad Andrés Bello</p>
         </div>
 
         <div class="dentist-card">
           <img src="recursos/doctores/dr.david.jpeg" alt="Dr. David" loading="lazy" />
           <h3>Dr. David Jaña Salinas</h3>
-          <p>Endodoncista</p>
-          <p>Universidad de Chile</p>
+          <p>Cirujano dentista - Universidad de Chile</p>
+          <p>Endodoncista - Pontificia Universidad Católica de Chile</p>
+        </div>
+
+        <div class="dentist-card">
+          <img src="recursos/doctores/dra.mariana.jpeg" alt="Dra. Mariana" loading="lazy" />
+          <h3>Mariana Murúa Vial</h3>
+          <p>Cirujana dentista - Universidad de Chile</p>
+          <p>Periodoncista - Universidad de los Andes</p>
         </div>
 
         <div class="dentist-card">
           <img src="recursos/doctores/dr.francisco.JPG" alt="Dr. Francisco" loading="lazy" />
           <h3>Dr. Francisco Ugarte Cisternas</h3>
-          <p>Implantólogo dental</p>
-          <p>Universidad de Chile</p>
+          <p>Cirujano dentista - Universidad de Chile</p>
+          <p>Implantólogo dental - Universidad Autónoma de Chile</p>
         </div>
-
-        <!-- Plantilla para Periodoncia -->
-        <div class="dentist-card">
-          <img src="recursos/doctores/dr.placeholder.jpeg" alt="Especialista en Periodoncia" loading="lazy" />
-          <h3>Nombre del Doctor/a</h3>
-          <p>Periodoncista</p>
-          <p>Universidad...</p>
-        </div>
-
-        <!-- Plantilla para Odontopediatría -->
-        <div class="dentist-card">
-          <img src="recursos/doctores/dr.placeholder.jpeg" alt="Especialista en Odontopediatría" loading="lazy" />
-          <h3>Nombre del Doctor/a</h3>
-          <p>Odontopediatra</p>
-          <p>Universidad...</p>
-        </div>
-
+        
       </div>
 
       <!-- BLOQUE 2: ODONTOLOGÍA GENERAL Y ASISTENCIA -->
@@ -707,6 +733,13 @@
           <p>Universidad de Chile</p>
         </div>
 
+        <div class="dentist-card">
+          <img src="recursos/doctores/dra.denisse.jpg" alt="Denisse" loading="lazy" />
+          <h3>Denisse Almonacid Winlo</h3>
+          <p>Asistente dental</p>
+          <p>Instituto Profesional de Chile</p>
+        </div>
+        
         <div class="dentist-card">
           <img src="recursos/doctores/dra.bella.jpg" alt="Bella" loading="lazy" />
           <h3>Bella Campi Tomalá</h3>
@@ -826,6 +859,7 @@
         <h4>Horarios</h4>
         <p>Lunes a Viernes<br />09:00 – 20:00 hrs</p>
         <p>Sábados<br />09:00 – 17:00 hrs</p>
+        <p>Domingos<br />10:00 – 13:30 hrs</p>
       </div>
       <div class="footer-column" style="text-align:center;">
         <h4>Redes Sociales</h4>

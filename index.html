@@ -51,15 +51,26 @@
       font-family: 'Poppins', sans-serif;
     }
     
-    /* Estructura base para secciones del Home */
+    /* Estructura base para todas las secciones */
     section {
-      padding: 60px 20px;
+      padding: 50px 20px;
       max-width: 1000px;
       margin: auto;
     }
 
+    /* Animación en cascada SOLO para secciones inferiores del Home */
+    section:not(#hero):not(#nosotros):not(#horarios):not(#galeria):not(#ubicacion) {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    section:not(#hero):not(#nosotros):not(#horarios):not(#galeria):not(#ubicacion).visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* =======================
-       HEADER FIJO CON PESTAÑAS SEPARADAS
+       HEADER FIJO CON 3 PESTAÑAS PRINCIPALES
     ======================= */
     header {
       position: fixed;
@@ -86,11 +97,11 @@
     }
     nav {
       display: flex;
-      gap: 20px;
+      gap: 28px;
       flex-grow: 1;
       justify-content: center;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
     nav a {
       color: #444;
@@ -139,7 +150,7 @@
       position: relative;
       width: 100%;
       max-width: none;
-      height: 420px;
+      height: 400px;
       margin: 0;
       background-color: #015BAB;
       background: url('recursos/iconos/banner.jpg') center center / cover no-repeat;
@@ -156,7 +167,7 @@
     }
 
     /* =======================
-       SOBRE NOSOTROS (HOME INSTITUCIONAL)
+       SOBRE NOSOTROS
     ======================= */
     .about-container {
       display: grid;
@@ -197,52 +208,171 @@
     }
 
     /* =======================
-       ACCESOS RÁPIDOS A ESPECIALIDADES (HOME)
+       BOTÓN AGENDAR Y HORARIOS
     ======================= */
-    .preview-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 20px;
-    }
-    .preview-card {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
+    .whatsapp-agendar {
       text-align: center;
-      box-shadow: 0 4px 10px rgb(0 0 0 / 0.08);
-      border-top: 4px solid #015BAB;
+      padding: 20px;
+      margin-top: 40px;
     }
-    .preview-card h3 {
-      color: #015BAB;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.25rem;
-      margin-bottom: 15px;
-    }
-    .preview-card p {
-      color: #666;
-      font-size: 0.95rem;
-      margin-bottom: 25px;
-      line-height: 1.5;
-    }
-    .btn-primary-custom {
-      display: inline-block;
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
       background-color: #015BAB;
       color: white;
-      padding: 10px 22px;
+      padding: 10px 20px;
       border-radius: 8px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
       transition: background-color 0.3s ease;
+      user-select: none;
+      gap: 8px;
     }
-    .btn-primary-custom:hover {
-      background-color: #00B5AD;
+    .whatsapp-btn:hover,
+    .whatsapp-btn:focus {
+      background-color: #019ea7;
+    }
+    .whatsapp-btn img {
+      width: 24px;
+      height: 24px;
+    }
+    .schedule-table {
+      margin: auto;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 600px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+    }
+    .schedule-table th, .schedule-table td {
+      border: 1px solid #ddd;
+      padding: 10px 15px;
+    }
+    .schedule-table th {
+      background-color: #015BAB;
+      color: white;
+      font-weight: 600;
     }
 
     /* =======================
-       INFO ANTES DEL FOOTER
+       GALERÍA
     ======================= */
+    #galeria {
+      text-align: center;
+    }
+    #galeria h2 {
+      margin-bottom: 20px;
+    }
+    .carousel-container {
+      position: relative;
+      max-width: 700px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      background-color: #eaeaea;
+    }
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 100%;
+      height: 100%;
+    }
+    .carousel-slide img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 8px;
+      cursor: pointer;
+    }
+    #prev { left: 10px; }
+    #next { right: 10px; }
+
+    /* =======================
+       INSTAGRAM CAROUSEL
+    ======================= */
+    #instagram {
+      position: relative;
+      text-align: center;
+      padding: 60px 20px;
+      background: #f8f9fa;
+      max-width: none;
+    }
+    #instagram h2 {
+      margin-bottom: 24px;
+    }
+    .instagram-carousel-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .insta-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(1,91,171,0.95);
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .insta-nav:focus {
+      outline: 2px solid rgba(1,91,171,0.25);
+      outline-offset: 2px;
+    }
+    #insta-prev { left: -10px; }
+    #insta-next { right: -10px; }
+    #instagram-carousel {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 8px 28px;
+      -webkit-overflow-scrolling: touch;
+    }
+    #instagram-carousel::-webkit-scrollbar {
+      height: 8px;
+      display: none;
+    }
+    .instagram-media {
+      min-width: 320px;
+      max-width: 320px;
+      flex: 0 0 320px;
+    }
+
+    /* =======================
+       UBICACIÓN Y MAPA
+    ======================= */
+    #ubicacion .map-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    #ubicacion iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
     .info-antes-footer {
       display: flex;
       justify-content: center;
@@ -327,7 +457,7 @@
     }
 
     /* =======================
-       RESPONSIVE
+       MEDIA QUERIES RESPONSIVE
     ======================= */
     @media (max-width: 768px) {
       .footer-container {
@@ -347,12 +477,15 @@
         font-size: 1rem;
       }
       nav {
-        gap: 10px;
-        font-size: 0.8rem;
+        gap: 15px;
+        font-size: 0.9rem;
       }
       .header-btn {
-        padding: 8px 14px;
-        font-size: 0.85rem;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+      }
+      .carousel-container {
+        aspect-ratio: 16 / 9;
       }
     }
 
@@ -369,37 +502,65 @@
       nav {
         flex-direction: row;
         overflow-x: auto;
-        gap: 12px;
+        gap: 15px;
         width: 100%;
         justify-content: center;
-        padding-bottom: 5px;
       }
       nav::-webkit-scrollbar {
-        height: 4px;
+        height: 6px;
       }
       nav::-webkit-scrollbar-thumb {
         background-color: rgba(1, 91, 171, 0.5);
-        border-radius: 2px;
+        border-radius: 3px;
       }
       .header-btn {
         align-self: center;
-        padding: 8px 16px;
-        font-size: 0.9rem;
+        padding: 10px 18px;
+        font-size: 0.95rem;
       }
       #hero {
-        font-size: 1.4rem;
-        height: 240px;
+        font-size: 1.5rem;
+        height: 260px;
         padding: 20px;
+        text-align: center;
       }
-      .about-features {
-        grid-template-columns: 1fr;
+      
+      /* Centrado de tabla de horarios en móvil */
+      .schedule-table {
+        display: block;
+        width: max-content;
+        max-width: 100%;
+        margin: 0 auto;
+        overflow-x: auto;
+        font-size: 0.9rem;
+      }
+      
+      .footer-column {
+        text-align: center;
+        flex: 1 1 100%;
+      }
+      .footer-container {
+        padding: 0 20px;
+      }
+      .footer-column a {
+        justify-content: center;
       }
       .info-antes-footer {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
-        font-size: 0.95rem;
+        text-align: center;
+        gap: 20px;
+        font-size: 1rem;
+        margin-left: 0;
+        padding: 0; 
       }
+      .instagram-media {
+        min-width: 260px;
+        max-width: 260px;
+        flex: 0 0 260px;
+      }
+      #insta-prev { left: 4px; }
+      #insta-next { right: 4px; }
     }
   </style>
 
@@ -425,7 +586,27 @@
       "@type": "GeoCoordinates",
       "latitude": -33.4549101,
       "longitude": -70.7420724
-    }
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "10:00",
+        "closes": "13:30"
+      }
+    ]
   }
   </script>
 </head>
@@ -433,18 +614,13 @@
 <body>
 
   <header>
-    <a href="index.html" class="logo-link">
+    <a href="#" class="logo-link">
       <img src="recursos/iconos/logo.png" alt="Logo de Aegis" />
     </a>
     <nav>
       <a href="index.html" class="active">Inicio</a>
-      <a href="nosotros.html">Nosotros</a>
       <a href="especialidades.html">Especialidades</a>
       <a href="equipo.html">Equipo</a>
-      <a href="horarios.html">Horarios</a>
-      <a href="galeria.html">Galería</a>
-      <a href="ubicacion.html">Ubicación</a>
-      <a href="contacto.html">Contacto</a>
     </nav>
     <a href="https://wa.me/56984615838" target="_blank" class="header-btn">
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" />
@@ -452,6 +628,7 @@
     </a>
   </header>
 
+  <!-- Etiquetas HTML5 Semánticas para el contenido principal -->
   <main>
     <section id="hero">
       <h1 style="margin: 0; font-size: inherit; font-weight: inherit;">
@@ -459,13 +636,13 @@
       </h1>
     </section>
 
-    <!-- SECCIÓN INSTITUCIONAL: BIENVENIDA Y SOBRE NOSOTROS -->
-    <section id="nosotros-home">
-      <h2>Bienvenidos a nuestra clínica</h2>
+    <!-- 1. SECCIÓN NOSOTROS -->
+    <section id="nosotros">
+      <h2>Sobre Aegis Clínica Dental</h2>
       <div class="about-container">
         <div class="about-text">
-          <p>En <strong>Aegis Clínica Dental</strong> nos apasiona devolverle la salud y la confianza a tu sonrisa. Ubicados estratégicamente en Pudahuel a pasos del Metro Barrancas, ofrecemos atención odontológica integral, profesional y cercana.</p>
-          <p>Contamos con tecnología de vanguardia y un staff de cirujanos dentistas y especialistas titulados en las mejores universidades del país para cuidar de ti y de tu familia.</p>
+          <p>En <strong>Aegis Clínica Dental</strong> nos apasiona devolverle la salud y la confianza a tu sonrisa. Ubicados estratégicamente en Pudahuel a pasos del Metro Barrancas, ofrecemos una atención odontológica integral, profesional y profundamente humana.</p>
+          <p>Contamos con infraestructura moderna, tecnología avanzada y un staff de cirujanos dentistas y especialistas titulados en las mejores universidades del país, listos para cubrir todas tus necesidades de salud oral en un solo lugar.</p>
           
           <div class="about-features">
             <div class="feature-item">✔ Estacionamiento Gratuito</div>
@@ -480,25 +657,70 @@
       </div>
     </section>
 
-    <!-- SECCIÓN DE ACCESO RÁPIDO A ESPECIALIDADES -->
-    <section id="especialidades-home">
-      <h2>Nuestros Tratamientos Destacados</h2>
-      <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 30px;">
-        Descubre las distintas áreas de la salud oral en las que nos especializamos para entregarte soluciones definitivas.
-      </p>
+    <section class="whatsapp-agendar">
+      <h2>Agenda tu hora por WhatsApp</h2>
+      <a href="https://wa.me/56984615838" target="_blank" class="whatsapp-btn">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" />
+        Escríbenos aquí
+      </a>
+    </section>
 
-      <div class="preview-grid">
-        <div class="preview-card">
-          <h3>Especialidades Odontológicas</h3>
-          <p>Conoce nuestras áreas de Ortodoncia, Implantología, Endodoncia, Cirugía Maxilofacial, Periodoncia y Odontopediatría.</p>
-          <a href="especialidades.html" class="btn-primary-custom">Ver Especialidades</a>
+    <!-- 2. SECCIÓN HORARIOS -->
+    <section id="horarios" class="schedule">
+      <h2>Horarios de atención</h2>
+      <table class="schedule-table">
+        <tr><th>Día</th><th>Horario</th></tr>
+        <tr><td>Lunes a Viernes</td><td>09:00 - 20:00 hrs</td></tr>
+        <tr><td>Sábado</td><td>09:00 - 17:00 hrs</td></tr>
+        <tr><td>Domingo</td><td>10:00 - 13:30 hrs</td></tr>
+      </table>
+    </section>
+
+    <!-- 3. SECCIÓN GALERÍA -->
+    <section id="galeria" class="gallery">
+      <h2>Galería</h2>
+      <div class="carousel-container">
+        <div class="carousel-slide">
+          <img src="recursos/imagenes/Exterior.jpg" alt="Exterior Aegis" loading="lazy" />
+          <img src="recursos/imagenes/Recepcion.jpg" alt="Recepción Aegis" loading="lazy" />
+          <img src="recursos/imagenes/Sala_de_espera.jpg" alt="Sala de espera" loading="lazy" />
+          <img src="recursos/imagenes/Box1.jpg" alt="Box 1" loading="lazy" />
+          <img src="recursos/imagenes/Box2.jpg" alt="Box 2" loading="lazy" />
+          <img src="recursos/imagenes/Box3.jpg" alt="Box 3" loading="lazy" /> 
+        </div>
+        <button id="prev" class="carousel-btn" aria-label="Anterior">‹</button>
+        <button id="next" class="carousel-btn" aria-label="Siguiente">›</button>
+      </div>
+    </section>
+
+    <!-- SECCIÓN INSTAGRAM -->
+    <section id="instagram">
+      <h2>Nuestras publicaciones más populares</h2>
+      <div class="instagram-carousel-wrap">
+        <button id="insta-prev" class="insta-nav" aria-label="Anterior">‹</button>
+        
+        <div id="instagram-carousel">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXNb1fllpVa/?img_index=1" data-instgrm-version="14"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DWfhAJzgOm0/" data-instgrm-version="14"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ0Wh8yMTiA/" data-instgrm-version="14"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DUqMveMjf_0/" data-instgrm-version="14"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZdBowfoumU/" data-instgrm-version="14"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DUl0vGjkiJg/" data-instgrm-version="14"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ0WA2tMkT9/" data-instgrm-version="14"></blockquote>
         </div>
 
-        <div class="preview-card">
-          <h3>Nuestro Staff Médico</h3>
-          <p>Revisa la trayectoria y las universidades de origen de cada uno de nuestros doctores y especialistas certificados.</p>
-          <a href="equipo.html" class="btn-primary-custom">Conocer al Equipo</a>
-        </div>
+        <button id="insta-next" class="insta-nav" aria-label="Siguiente">›</button>
+      </div>
+    </section>
+
+    <!-- 4. SECCIÓN UBICACIÓN -->
+    <section id="ubicacion">
+      <h2>Ubicación</h2>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.810156998764!2d-70.74583032366417!3d-33.41541277343011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662dc63beec3cd9%3A0x1d87f81e3658de84!2sTeniente%20Cruz%20570%2C%20Pudahuel%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1717638472060!5m2!1ses!2scl"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </section>
 
@@ -518,6 +740,7 @@
     </div>
   </main>
 
+  <!-- 5. SECCIÓN CONTACTO (FOOTER) -->
   <footer id="contacto">
     <div class="footer-container">
       <div class="footer-column">
@@ -568,5 +791,102 @@
     <hr />
     <p class="copyright">© 2026 Aegis Clínica Dental. Todos los derechos reservados.</p>
   </footer>
+
+  <!-- Script oficial de Instagram (se carga de forma asíncrona) -->
+  <script async src="//www.instagram.com/embed.js"></script>
+
+  <!-- Scripts principales unificados -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // 1. Lógica del Carrusel Principal
+      const slide = document.querySelector('.carousel-slide');
+      if (slide) {
+        const images = slide.querySelectorAll('img');
+        const total = images.length;
+        let index = 0;
+
+        function updateSlide() {
+          slide.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        document.getElementById('next').addEventListener('click', () => {
+          index = (index + 1) % total;
+          updateSlide();
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+          index = (index - 1 + total) % total;
+          updateSlide();
+        });
+
+        setInterval(() => {
+          index = (index + 1) % total;
+          updateSlide();
+        }, 5000);
+      }
+
+      // 2. Lógica del Carrusel de Instagram
+      const instaContainer = document.getElementById('instagram-carousel');
+      const btnNextInsta = document.getElementById('insta-next');
+      const btnPrevInsta = document.getElementById('insta-prev');
+
+      if (instaContainer && btnNextInsta && btnPrevInsta) {
+        function processInsta() {
+          try {
+            if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === 'function') {
+              window.instgrm.Embeds.process();
+            }
+          } catch (e) { console.warn("Error cargando embeds de Instagram", e); }
+        }
+
+        window.addEventListener('load', () => {
+          processInsta();
+          setTimeout(processInsta, 800);
+          setTimeout(processInsta, 1600);
+        });
+
+        function scrollByWidth(direction = 1) {
+          const card = instaContainer.querySelector('.instagram-media') || instaContainer.firstElementChild;
+          const cardWidth = card ? card.getBoundingClientRect().width : 320;
+          const gap = 18; 
+          const distance = Math.round(cardWidth + gap);
+          instaContainer.scrollBy({ left: distance * direction, behavior: 'smooth' });
+        }
+
+        btnNextInsta.addEventListener('click', () => scrollByWidth(1));
+        btnPrevInsta.addEventListener('click', () => scrollByWidth(-1));
+
+        function updateArrowsVisibility() {
+          const canScrollLeft = instaContainer.scrollLeft > 5;
+          const canScrollRight = instaContainer.scrollWidth - instaContainer.clientWidth - instaContainer.scrollLeft > 5;
+          btnPrevInsta.style.opacity = canScrollLeft ? '1' : '0.35';
+          btnNextInsta.style.opacity = canScrollRight ? '1' : '0.35';
+        }
+
+        instaContainer.addEventListener('scroll', updateArrowsVisibility);
+        window.addEventListener('resize', updateArrowsVisibility);
+        setTimeout(updateArrowsVisibility, 400);
+      }
+
+      // 3. Animaciones al hacer scroll (Intersection Observer)
+      const sections = document.querySelectorAll('section:not(#hero):not(#nosotros):not(#horarios):not(#galeria):not(#ubicacion)');
+      const appearOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -80px 0px"
+      };
+
+      const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        });
+      }, appearOptions);
+
+      sections.forEach(section => {
+        appearOnScroll.observe(section);
+      });
+    });
+  </script>
 </body>
 </html>

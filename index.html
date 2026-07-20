@@ -67,12 +67,12 @@
     }
 
     /* Animación en cascada SOLO para las secciones inferiores */
-    section:not(#hero):not(#servicios):not(#dentistas) {
+    section:not(#hero):not(#nosotros):not(#servicios):not(#dentistas) {
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    section:not(#hero):not(#servicios):not(#dentistas).visible {
+    section:not(#hero):not(#nosotros):not(#servicios):not(#dentistas).visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -105,7 +105,7 @@
     }
     nav {
       display: flex;
-      gap: 24px;
+      gap: 20px;
       flex-grow: 1;
       justify-content: center;
       font-weight: 600;
@@ -174,7 +174,41 @@
     }
 
     /* =======================
-       TARJETAS DE ESPECIALIDADES (NUEVO HOME)
+       SOBRE NOSOTROS / POR QUÉ ELEGIRNOS
+    ======================= */
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .about-text p {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 25px;
+    }
+    .feature-item {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+      font-weight: 600;
+      color: #015BAB;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* =======================
+       TARJETAS DE ESPECIALIDADES
     ======================= */
     .services-grid {
       display: grid;
@@ -501,13 +535,17 @@
       .footer-column img.logo {
         margin-bottom: 20px;
       }
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
       .info-antes-footer {
         gap: 30px;
         font-size: 1rem;
       }
       nav {
-        gap: 15px;
-        font-size: 0.85rem;
+        gap: 12px;
+        font-size: 0.8rem;
       }
       .header-btn {
         padding: 10px 16px;
@@ -678,6 +716,7 @@
       <img src="recursos/iconos/logo.png" alt="Logo de Aegis" />
     </a>
     <nav>
+      <a href="#nosotros">Nosotros</a>
       <a href="#servicios">Especialidades</a>
       <a href="#dentistas">Equipo</a>
       <a href="#horarios">Horarios</a>
@@ -699,7 +738,24 @@
       </h1>
     </section>
 
-    <!-- NUEVA SECCIÓN: ENLACES DIRECTOS A LAS SUBPÁGINAS DE ESPECIALIDADES -->
+    <!-- SECCIÓN: SOBRE NOSOTROS / POR QUÉ ELEGIRNOS -->
+    <section id="nosotros">
+      <h2>Sobre Aegis Clínica Dental</h2>
+      <div class="about-container">
+        <div class="about-text">
+          <p>En <strong>Aegis Clínica Dental</strong> nos apasiona devolverle la salud y la confianza a tu sonrisa. Ubicados estratégicamente en Pudahuel a pasos del Metro Barrancas, ofrecemos una atención odontológica integral, profesional y profundamente humana.</p>
+          <p>Contamos con infraestructura moderna, tecnología avanzada y un staff de cirujanos dentistas y especialistas titulados en las mejores universidades del país, listos para cubrir todas tus necesidades de salud oral en un solo lugar.</p>
+        </div>
+        <div class="about-features">
+          <div class="feature-item">✔ Estacionamiento Gratuito</div>
+          <div class="feature-item">✔ A pasos de Metro Barrancas</div>
+          <div class="feature-item">✔ Especialistas Certificados</div>
+          <div class="feature-item">✔ Múltiples Medios de Pago</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: ENLACES DIRECTOS A LAS SUBPÁGINAS DE ESPECIALIDADES -->
     <section id="servicios">
       <h2>Nuestras Especialidades Odontológicas</h2>
       <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 30px;">
@@ -738,7 +794,7 @@
         </div>
 
         <div class="service-card">
-          <h3>Odontopediatria</h3>
+          <h3>Odontopediatría</h3>
           <p>Atención dental infantil cercana, didáctica y completamente libre de temores para los niños.</p>
           <a href="odontopediatria.html" class="service-link">Ver más detalles</a>
         </div>
@@ -1072,7 +1128,7 @@
       }
 
       // 3. Animaciones al hacer scroll (Intersection Observer)
-      const sections = document.querySelectorAll('section:not(#hero):not(#servicios):not(#dentistas)');
+      const sections = document.querySelectorAll('section:not(#hero):not(#nosotros):not(#servicios):not(#dentistas)');
       const appearOptions = {
         threshold: 0.15,
         rootMargin: "0px 0px -80px 0px"

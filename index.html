@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Aegis Clínica Dental en Santiago. Atención profesional, cercana y de calidad. Agenda tu hora con nuestro equipo." />
+  <meta name="description" content="Aegis Clínica Dental en Santiago. Atención profesional, cercana y de calidad con especialistas en implantes, ortodoncia, endodoncia y más. Agenda tu hora." />
   <meta name="author" content="Aegis Clínica Dental" />
   <meta name="robots" content="index, follow" />
-  <title>Aegis Clínica Dental</title>
+  <title>Aegis Clínica Dental | Tu clínica dental en Santiago y Pudahuel</title>
   
   <!-- Preload del banner para que cargue más rápido -->
   <link rel="preload" href="recursos/iconos/banner.jpg" as="image" />
@@ -66,14 +66,13 @@
       margin: auto;
     }
 
-    /* Animación en cascada SOLO para las secciones debajo de "Equipo" */
-    section:not(#hero):not(#dentistas) {
+    /* Animación en cascada SOLO para las secciones inferiores */
+    section:not(#hero):not(#servicios):not(#dentistas) {
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    /* Solución de especificidad: Ahora .visible es más fuerte */
-    section:not(#hero):not(#dentistas).visible {
+    section:not(#hero):not(#servicios):not(#dentistas).visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -106,11 +105,11 @@
     }
     nav {
       display: flex;
-      gap: 28px;
+      gap: 24px;
       flex-grow: 1;
       justify-content: center;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
     nav a {
       color: #444;
@@ -160,7 +159,7 @@
       max-width: none;
       height: 400px;
       margin: 0;
-      background-color: #015BAB; /* Color de fondo mientras carga la imagen */
+      background-color: #015BAB;
       background: url('recursos/iconos/banner.jpg') center center / cover no-repeat;
       display: flex;
       align-items: center;
@@ -170,6 +169,56 @@
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       font-size: 2.8rem;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    /* =======================
+       TARJETAS DE ESPECIALIDADES (NUEVO HOME)
+    ======================= */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 4px solid #015BAB;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
+    }
+    .service-card h3 {
+      color: #015BAB;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .service-link {
+      display: inline-block;
+      background-color: #015BAB;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease;
+    }
+    .service-link:hover {
+      background-color: #00B5AD;
     }
 
     /* =======================
@@ -458,7 +507,7 @@
       }
       nav {
         gap: 15px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
       .header-btn {
         padding: 10px 16px;
@@ -499,7 +548,7 @@
         font-size: 0.95rem;
       }
       #hero {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         height: 260px;
         padding: 20px;
         text-align: center;
@@ -565,7 +614,7 @@
     }
   </style>
 
-  <!-- Schema.org - Datos Estructurados para SEO Local -->
+  <!-- Schema.org - Datos Estructurados Avanzados para SEO Local e IA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -575,6 +624,7 @@
     "@id": "",
     "url": "https://aegisclinicadental.cl",
     "telephone": "+56984615838",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Av. Teniente Cruz 570, Local 2",
@@ -607,6 +657,14 @@
         "opens": "10:00",
         "closes": "13:30"
       }
+    ],
+    "medicalSpecialty": [
+      "MaxillofacialSurgery",
+      "Orthodontics",
+      "Endodontics",
+      "Periodontics",
+      "DentalImplants",
+      "PediatricDentistry"
     ]
   }
   </script>
@@ -620,6 +678,7 @@
       <img src="recursos/iconos/logo.png" alt="Logo de Aegis" />
     </a>
     <nav>
+      <a href="#servicios">Especialidades</a>
       <a href="#dentistas">Equipo</a>
       <a href="#horarios">Horarios</a>
       <a href="#galeria">Galería</a>
@@ -636,15 +695,61 @@
   <main>
     <section id="hero">
       <h1 style="margin: 0; font-size: inherit; font-weight: inherit;">
-        Bienvenido a Aegis Clínica Dental
+        Aegis Clínica Dental en Santiago
       </h1>
+    </section>
+
+    <!-- NUEVA SECCIÓN: ENLACES DIRECTOS A LAS SUBPÁGINAS DE ESPECIALIDADES -->
+    <section id="servicios">
+      <h2>Nuestras Especialidades Odontológicas</h2>
+      <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 30px;">
+        Conoce en detalle cada uno de nuestros tratamientos avanzados orientados a devolverte la salud y estética dental que mereces.
+      </p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Ortodoncia</h3>
+          <p>Alinea tus dientes y mejora tu mordida con brackets metálicos, estéticos o invisibles.</p>
+          <a href="ortodoncia.html" class="service-link">Ver más detalles</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Implantología</h3>
+          <p>Recupera tus piezas dentales perdidas de forma fija, segura y con aspecto natural.</p>
+          <a href="implantologia.html" class="service-link">Ver más detalles</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Endodoncia</h3>
+          <p>Tratamientos de conducto indoloros orientados a eliminar el dolor y salvar tus dientes.</p>
+          <a href="endodoncia.html" class="service-link">Ver más detalles</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Cirugía Maxilofacial</h3>
+          <p>Extracción experta de muelas del juicio y resolución de patologías de alta complejidad.</p>
+          <a href="cirugia-maxilofacial.html" class="service-link">Ver más detalles</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Periodoncia</h3>
+          <p>Cuidado especializado de las encías para prevenir y tratar la gingivitis y periodontitis.</p>
+          <a href="periodoncia.html" class="service-link">Ver más detalles</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Odontopediatria</h3>
+          <p>Atención dental infantil cercana, didáctica y completamente libre de temores para los niños.</p>
+          <a href="odontopediatria.html" class="service-link">Ver más detalles</a>
+        </div>
+      </div>
     </section>
 
     <section id="dentistas">
       <h2>Conoce a nuestro equipo</h2>
 
       <!-- BLOQUE 1: ESPECIALIDADES -->
-      <h3 class="team-section-title">Especialidades Odontológicas</h3>
+      <h3 class="team-section-title">Especialistas Certificados</h3>
       <div class="dentists">
         
         <div class="dentist-card">
@@ -967,8 +1072,7 @@
       }
 
       // 3. Animaciones al hacer scroll (Intersection Observer)
-      // Modificado para excluir el #hero y #dentistas del efecto de aparición
-      const sections = document.querySelectorAll('section:not(#hero):not(#dentistas)');
+      const sections = document.querySelectorAll('section:not(#hero):not(#servicios):not(#dentistas)');
       const appearOptions = {
         threshold: 0.15,
         rootMargin: "0px 0px -80px 0px"

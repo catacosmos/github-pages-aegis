@@ -50,35 +50,16 @@
       font-weight: 600;
       font-family: 'Poppins', sans-serif;
     }
-    .team-section-title {
-      text-align: center;
-      color: #444;
-      font-family: 'Poppins', sans-serif;
-      margin: 40px 0 25px;
-      font-weight: 500;
-      font-size: 1.4rem;
-    }
     
-    /* Estructura base para todas las secciones */
+    /* Estructura base para secciones del Home */
     section {
-      padding: 50px 20px;
+      padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
     }
 
-    /* Animación en cascada SOLO para las secciones inferiores */
-    section:not(#hero):not(#nosotros):not(#servicios):not(#dentistas) {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    section:not(#hero):not(#nosotros):not(#servicios):not(#dentistas).visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     /* =======================
-       HEADER FIJO
+       HEADER FIJO CON PESTAÑAS SEPARADAS
     ======================= */
     header {
       position: fixed;
@@ -119,7 +100,8 @@
       transition: color 0.3s ease;
     }
     nav a:hover,
-    nav a:focus {
+    nav a:focus,
+    nav a.active {
       color: #00B5AD;
     }
     .header-btn {
@@ -157,7 +139,7 @@
       position: relative;
       width: 100%;
       max-width: none;
-      height: 400px;
+      height: 420px;
       margin: 0;
       background-color: #015BAB;
       background: url('recursos/iconos/banner.jpg') center center / cover no-repeat;
@@ -174,7 +156,7 @@
     }
 
     /* =======================
-       SOBRE NOSOTROS / POR QUÉ ELEGIRNOS
+       SOBRE NOSOTROS (HOME INSTITUCIONAL)
     ======================= */
     .about-container {
       display: grid;
@@ -206,242 +188,61 @@
       align-items: center;
       gap: 10px;
     }
+    .about-img img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+      object-fit: cover;
+      height: 320px;
+    }
 
     /* =======================
-       TARJETAS DE ESPECIALIDADES
+       ACCESOS RÁPIDOS A ESPECIALIDADES (HOME)
     ======================= */
-    .services-grid {
+    .preview-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
       margin-top: 20px;
     }
-    .service-card {
+    .preview-card {
       background: white;
       border-radius: 12px;
-      padding: 25px;
+      padding: 30px;
       text-align: center;
       box-shadow: 0 4px 10px rgb(0 0 0 / 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       border-top: 4px solid #015BAB;
     }
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
-    }
-    .service-card h3 {
+    .preview-card h3 {
       color: #015BAB;
       font-family: 'Poppins', sans-serif;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
+      font-size: 1.25rem;
+      margin-bottom: 15px;
     }
-    .service-card p {
+    .preview-card p {
       color: #666;
       font-size: 0.95rem;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      line-height: 1.5;
     }
-    .service-link {
+    .btn-primary-custom {
       display: inline-block;
       background-color: #015BAB;
       color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
+      padding: 10px 22px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       transition: background-color 0.3s ease;
     }
-    .service-link:hover {
+    .btn-primary-custom:hover {
       background-color: #00B5AD;
     }
 
     /* =======================
-       EQUIPO MÉDICO
+       INFO ANTES DEL FOOTER
     ======================= */
-    .dentists {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-    .dentist-card {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
-    }
-    .dentist-card img {
-      width: 150px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
-
-    /* =======================
-       BOTÓN AGENDAR Y HORARIOS
-    ======================= */
-    .whatsapp-agendar {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    .whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      background-color: #015BAB;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-      user-select: none;
-      gap: 8px;
-    }
-    .whatsapp-btn:hover,
-    .whatsapp-btn:focus {
-      background-color: #019ea7;
-    }
-    .whatsapp-btn img {
-      width: 24px;
-      height: 24px;
-    }
-    .schedule-table {
-      margin: auto;
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 600px;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-    }
-    .schedule-table th, .schedule-table td {
-      border: 1px solid #ddd;
-      padding: 10px 15px;
-    }
-    .schedule-table th {
-      background-color: #015BAB;
-      color: white;
-      font-weight: 600;
-    }
-
-    /* =======================
-       GALERÍA
-    ======================= */
-    #galeria {
-      text-align: center;
-    }
-    #galeria h2 {
-      margin-bottom: 20px;
-    }
-    .carousel-container {
-      position: relative;
-      max-width: 700px;
-      margin: auto;
-      overflow: hidden;
-      border-radius: 10px;
-      background-color: #eaeaea;
-    }
-    .carousel-slide {
-      display: flex;
-      transition: transform 0.5s ease;
-      width: 100%;
-      height: 100%;
-    }
-    .carousel-slide img {
-      width: 100%;
-      flex-shrink: 0;
-      object-fit: cover;
-    }
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0,0,0,0.5);
-      border: none;
-      color: white;
-      font-size: 24px;
-      padding: 8px;
-      cursor: pointer;
-    }
-    #prev { left: 10px; }
-    #next { right: 10px; }
-
-    /* =======================
-       INSTAGRAM CAROUSEL
-    ======================= */
-    #instagram {
-      position: relative;
-      text-align: center;
-      padding: 60px 20px;
-      background: #f8f9fa;
-      max-width: none;
-    }
-    #instagram h2 {
-      margin-bottom: 24px;
-    }
-    .instagram-carousel-wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-    }
-    .insta-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      border: none;
-      background: rgba(1,91,171,0.95);
-      color: white;
-      font-size: 22px;
-      cursor: pointer;
-      z-index: 50;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .insta-nav:focus {
-      outline: 2px solid rgba(1,91,171,0.25);
-      outline-offset: 2px;
-    }
-    #insta-prev { left: -10px; }
-    #insta-next { right: -10px; }
-    #instagram-carousel {
-      display: flex;
-      gap: 18px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 8px 28px;
-      -webkit-overflow-scrolling: touch;
-    }
-    #instagram-carousel::-webkit-scrollbar {
-      height: 8px;
-      display: none;
-    }
-    .instagram-media {
-      min-width: 320px;
-      max-width: 320px;
-      flex: 0 0 320px;
-    }
-
-    /* =======================
-       UBICACIÓN Y MAPA
-    ======================= */
-    #ubicacion .map-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-    #ubicacion iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: 0;
-    }
     .info-antes-footer {
       display: flex;
       justify-content: center;
@@ -477,6 +278,8 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
     }
     .footer-column {
       flex: 1 1 180px;
@@ -524,7 +327,7 @@
     }
 
     /* =======================
-       MEDIA QUERIES RESPONSIVE
+       RESPONSIVE
     ======================= */
     @media (max-width: 768px) {
       .footer-container {
@@ -544,15 +347,12 @@
         font-size: 1rem;
       }
       nav {
-        gap: 12px;
+        gap: 10px;
         font-size: 0.8rem;
       }
       .header-btn {
-        padding: 10px 16px;
-        font-size: 0.9rem;
-      }
-      .carousel-container {
-        aspect-ratio: 16 / 9;
+        padding: 8px 14px;
+        font-size: 0.85rem;
       }
     }
 
@@ -569,90 +369,41 @@
       nav {
         flex-direction: row;
         overflow-x: auto;
-        gap: 15px;
+        gap: 12px;
         width: 100%;
         justify-content: center;
+        padding-bottom: 5px;
       }
       nav::-webkit-scrollbar {
-        height: 6px;
+        height: 4px;
       }
       nav::-webkit-scrollbar-thumb {
         background-color: rgba(1, 91, 171, 0.5);
-        border-radius: 3px;
+        border-radius: 2px;
       }
       .header-btn {
         align-self: center;
-        padding: 10px 18px;
-        font-size: 0.95rem;
+        padding: 8px 16px;
+        font-size: 0.9rem;
       }
       #hero {
         font-size: 1.4rem;
-        height: 260px;
+        height: 240px;
         padding: 20px;
-        text-align: center;
       }
-      
-      /* Ajuste de tarjetas de doctores a 2 columnas */
-      .dentists {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-      }
-      .dentist-card {
-        padding: 15px 10px;
-      }
-      .dentist-card img {
-        width: 80px;
-        margin-bottom: 10px;
-      }
-      .dentist-card h3 {
-        font-size: 0.95rem;
-        margin: 5px 0;
-      }
-      .dentist-card p {
-        font-size: 0.8rem;
-        margin: 2px 0;
-      }
-
-      /* Centrado de tabla de horarios */
-      .schedule-table {
-        display: block;
-        width: max-content;
-        max-width: 100%;
-        margin: 0 auto;
-        overflow-x: auto;
-        font-size: 0.9rem;
-      }
-      
-      .footer-column {
-        text-align: center;
-        flex: 1 1 100%;
-      }
-      .footer-container {
-        padding: 0 20px;
-      }
-      .footer-column a {
-        justify-content: center;
+      .about-features {
+        grid-template-columns: 1fr;
       }
       .info-antes-footer {
         flex-direction: column;
         align-items: center;
-        text-align: center;
-        gap: 20px;
-        font-size: 1rem;
-        margin-left: 0;
-        padding: 0; 
+        gap: 15px;
+        font-size: 0.95rem;
       }
-      .instagram-media {
-        min-width: 260px;
-        max-width: 260px;
-        flex: 0 0 260px;
-      }
-      #insta-prev { left: 4px; }
-      #insta-next { right: 4px; }
     }
   </style>
 
-  <!-- Schema.org - Datos Estructurados Avanzados para SEO Local e IA -->
+  <!-- Schema.org - Datos Estructurados para SEO Local -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -662,7 +413,6 @@
     "@id": "",
     "url": "https://aegisclinicadental.cl",
     "telephone": "+56984615838",
-    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Av. Teniente Cruz 570, Local 2",
@@ -675,54 +425,26 @@
       "@type": "GeoCoordinates",
       "latitude": -33.4549101,
       "longitude": -70.7420724
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "09:00",
-        "closes": "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Sunday",
-        "opens": "10:00",
-        "closes": "13:30"
-      }
-    ],
-    "medicalSpecialty": [
-      "MaxillofacialSurgery",
-      "Orthodontics",
-      "Endodontics",
-      "Periodontics",
-      "DentalImplants",
-      "PediatricDentistry"
-    ]
+    }
   }
   </script>
-
 </head>
 
 <body>
 
   <header>
-    <a href="#" class="logo-link">
+    <a href="index.html" class="logo-link">
       <img src="recursos/iconos/logo.png" alt="Logo de Aegis" />
     </a>
     <nav>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#servicios">Especialidades</a>
-      <a href="#dentistas">Equipo</a>
-      <a href="#horarios">Horarios</a>
-      <a href="#galeria">Galería</a>
-      <a href="#ubicacion">Ubicación</a>
-      <a href="#contacto">Contacto</a>
+      <a href="index.html" class="active">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="especialidades.html">Especialidades</a>
+      <a href="equipo.html">Equipo</a>
+      <a href="horarios.html">Horarios</a>
+      <a href="galeria.html">Galería</a>
+      <a href="ubicacion.html">Ubicación</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
     <a href="https://wa.me/56984615838" target="_blank" class="header-btn">
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" />
@@ -730,7 +452,6 @@
     </a>
   </header>
 
-  <!-- Etiquetas HTML5 Semánticas para el contenido principal -->
   <main>
     <section id="hero">
       <h1 style="margin: 0; font-size: inherit; font-weight: inherit;">
@@ -738,249 +459,46 @@
       </h1>
     </section>
 
-    <!-- SECCIÓN: SOBRE NOSOTROS / POR QUÉ ELEGIRNOS -->
-    <section id="nosotros">
-      <h2>Sobre Aegis Clínica Dental</h2>
+    <!-- SECCIÓN INSTITUCIONAL: BIENVENIDA Y SOBRE NOSOTROS -->
+    <section id="nosotros-home">
+      <h2>Bienvenidos a nuestra clínica</h2>
       <div class="about-container">
         <div class="about-text">
-          <p>En <strong>Aegis Clínica Dental</strong> nos apasiona devolverle la salud y la confianza a tu sonrisa. Ubicados estratégicamente en Pudahuel a pasos del Metro Barrancas, ofrecemos una atención odontológica integral, profesional y profundamente humana.</p>
-          <p>Contamos con infraestructura moderna, tecnología avanzada y un staff de cirujanos dentistas y especialistas titulados en las mejores universidades del país, listos para cubrir todas tus necesidades de salud oral en un solo lugar.</p>
+          <p>En <strong>Aegis Clínica Dental</strong> nos apasiona devolverle la salud y la confianza a tu sonrisa. Ubicados estratégicamente en Pudahuel a pasos del Metro Barrancas, ofrecemos atención odontológica integral, profesional y cercana.</p>
+          <p>Contamos con tecnología de vanguardia y un staff de cirujanos dentistas y especialistas titulados en las mejores universidades del país para cuidar de ti y de tu familia.</p>
+          
+          <div class="about-features">
+            <div class="feature-item">✔ Estacionamiento Gratuito</div>
+            <div class="feature-item">✔ A pasos de Metro Barrancas</div>
+            <div class="feature-item">✔ Especialistas Certificados</div>
+            <div class="feature-item">✔ Múltiples Medios de Pago</div>
+          </div>
         </div>
-        <div class="about-features">
-          <div class="feature-item">✔ Estacionamiento Gratuito</div>
-          <div class="feature-item">✔ A pasos de Metro Barrancas</div>
-          <div class="feature-item">✔ Especialistas Certificados</div>
-          <div class="feature-item">✔ Múltiples Medios de Pago</div>
+        <div class="about-img">
+          <img src="recursos/imagenes/Recepcion.jpg" alt="Recepción Aegis Clínica Dental" loading="lazy" />
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN: ENLACES DIRECTOS A LAS SUBPÁGINAS DE ESPECIALIDADES -->
-    <section id="servicios">
-      <h2>Nuestras Especialidades Odontológicas</h2>
+    <!-- SECCIÓN DE ACCESO RÁPIDO A ESPECIALIDADES -->
+    <section id="especialidades-home">
+      <h2>Nuestros Tratamientos Destacados</h2>
       <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 30px;">
-        Conoce en detalle cada uno de nuestros tratamientos avanzados orientados a devolverte la salud y estética dental que mereces.
+        Descubre las distintas áreas de la salud oral en las que nos especializamos para entregarte soluciones definitivas.
       </p>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Ortodoncia</h3>
-          <p>Alinea tus dientes y mejora tu mordida con brackets metálicos, estéticos o invisibles.</p>
-          <a href="ortodoncia.html" class="service-link">Ver más detalles</a>
+
+      <div class="preview-grid">
+        <div class="preview-card">
+          <h3>Especialidades Odontológicas</h3>
+          <p>Conoce nuestras áreas de Ortodoncia, Implantología, Endodoncia, Cirugía Maxilofacial, Periodoncia y Odontopediatría.</p>
+          <a href="especialidades.html" class="btn-primary-custom">Ver Especialidades</a>
         </div>
 
-        <div class="service-card">
-          <h3>Implantología</h3>
-          <p>Recupera tus piezas dentales perdidas de forma fija, segura y con aspecto natural.</p>
-          <a href="implantologia.html" class="service-link">Ver más detalles</a>
+        <div class="preview-card">
+          <h3>Nuestro Staff Médico</h3>
+          <p>Revisa la trayectoria y las universidades de origen de cada uno de nuestros doctores y especialistas certificados.</p>
+          <a href="equipo.html" class="btn-primary-custom">Conocer al Equipo</a>
         </div>
-
-        <div class="service-card">
-          <h3>Endodoncia</h3>
-          <p>Tratamientos de conducto indoloros orientados a eliminar el dolor y salvar tus dientes.</p>
-          <a href="endodoncia.html" class="service-link">Ver más detalles</a>
-        </div>
-
-        <div class="service-card">
-          <h3>Cirugía Maxilofacial</h3>
-          <p>Extracción experta de muelas del juicio y resolución de patologías de alta complejidad.</p>
-          <a href="cirugia-maxilofacial.html" class="service-link">Ver más detalles</a>
-        </div>
-
-        <div class="service-card">
-          <h3>Periodoncia</h3>
-          <p>Cuidado especializado de las encías para prevenir y tratar la gingivitis y periodontitis.</p>
-          <a href="periodoncia.html" class="service-link">Ver más detalles</a>
-        </div>
-
-        <div class="service-card">
-          <h3>Odontopediatría</h3>
-          <p>Atención dental infantil cercana, didáctica y completamente libre de temores para los niños.</p>
-          <a href="odontopediatria.html" class="service-link">Ver más detalles</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="dentistas">
-      <h2>Conoce a nuestro equipo</h2>
-
-      <!-- BLOQUE 1: ESPECIALIDADES -->
-      <h3 class="team-section-title">Especialistas Certificados</h3>
-      <div class="dentists">
-        
-        <div class="dentist-card">
-          <img src="recursos/doctores/dr.camilo.jpg" alt="Dr. Camilo" loading="lazy" />
-          <h3>Dr. Camilo Barrientos Morales</h3>
-          <p>Cirujano dentista - UChile</p>
-          <br>
-          <p>Cirujano maxilofacial - Universidad del Desarrollo</p>
-        </div>
-        
-        <div class="dentist-card">
-          <img src="recursos/doctores/dra.angelica.jpeg" alt="Dra. Angelica" loading="lazy" />
-          <h3>Dra. Angélica Burgos Díaz</h3>
-          <p>Cirujana dentista - UChile</p>
-          <br>
-          <p>Odontopediatra - Universidad de los Andes</p>
-        </div>
-        
-        <div class="dentist-card">
-          <img src="recursos/doctores/dra.paulina.jpeg" alt="Dra. Paulina" loading="lazy" />
-          <h3>Dra. Paulina Cortés Gutierréz</h3>
-          <p>Cirujana dentista - UNAB</p>
-          <br>
-          <p>Ortodoncista - Universidad Católica de Uruguay</p>
-        </div>
-
-        <div class="dentist-card">
-          <img src="recursos/doctores/dr.david.jpeg" alt="Dr. David" loading="lazy" />
-          <h3>Dr. David Jaña Salinas</h3>
-          <p>Cirujano dentista - UChile</p>
-          <br>
-          <p>Endodoncista - Pontificia Universidad Católica de Chile</p>
-        </div>
-
-        <div class="dentist-card">
-          <img src="recursos/doctores/dra.mariana.jpg" alt="Dra. Mariana" loading="lazy" />
-          <h3>Dra. Mariana Murúa Vial</h3>
-          <p>Cirujana dentista - UChile</p>
-          <br>
-          <p>Periodoncista - Universidad de los Andes</p>
-        </div>
-
-        <div class="dentist-card">
-          <img src="recursos/doctores/dr.francisco.JPG" alt="Dr. Francisco" loading="lazy" />
-          <h3>Dr. Francisco Ugarte Cisternas</h3>
-          <p>Cirujano dentista - UChile</p>
-          <br>
-          <p>Implantólogo dental - Universidad Autónoma de Chile</p>
-        </div>
-        
-      </div>
-
-      <!-- BLOQUE 2: ODONTOLOGÍA GENERAL Y ASISTENCIA -->
-      <h3 class="team-section-title">Odontología General y Asistencia</h3>
-      <div class="dentists">
-        
-        <div class="dentist-card">
-          <img src="recursos/doctores/dr.sebastian.jpeg" alt="Dr. Sebastián" loading="lazy" />
-          <h3>Dr. Sebastián González Carrasco</h3>
-          <p>Cirujano dentista</p>
-          <p>Universidad de Chile</p>
-        </div>
-
-        <div class="dentist-card">
-          <img src="recursos/doctores/dra.carolina.JPG" alt="Dra. Carolina" loading="lazy" />
-          <h3>Dra. Carolina Belmar Lillo</h3>
-          <p>Cirujana dentista</p>
-          <p>Universidad de Chile</p>
-        </div>
-
-        <div class="dentist-card">
-          <img src="recursos/doctores/dr.franco.jpeg" alt="Dr. Franco" loading="lazy" />
-          <h3>Dr. Franco Bustios Concha</h3>
-          <p>Cirujano dentista</p>
-          <p>Universidad Diego Portales</p>
-        </div>
-
-        <div class="dentist-card">
-          <img src="recursos/doctores/dra.arantxa.jpg" alt="Dra. Arantxa" loading="lazy" />
-          <h3>Dra. Arantxa Ladrón de Guevera Benítez</h3>
-          <p>Cirujana dentista</p>
-          <p>Universidad de Chile</p>
-        </div>
-
-        <div class="dentist-card">
-          <img src="recursos/doctores/dra.jael.jpeg" alt="Dra. Jael" loading="lazy" />
-          <h3>Dra. Jael Maldonado Chamorro</h3>
-          <p>Cirujana dentista</p>
-          <p>Universidad Andrés Bello</p>
-        </div>
-
-        <div class="dentist-card">
-          <img src="recursos/doctores/dra.karina.jpeg" alt="Dra. Karina" loading="lazy" />
-          <h3>Dra. Karina Saavedra Llanos</h3>
-          <p>Cirujana dentista</p>
-          <p>Universidad de Chile</p>
-        </div>
-
-        <div class="dentist-card">
-          <img src="recursos/doctores/dra.denisse.jpg" alt="Denisse" loading="lazy" />
-          <h3>Denisse Almonacid Winlo</h3>
-          <p>Asistente dental</p>
-          <p>Instituto Profesional de Chile</p>
-        </div>
-        
-        <div class="dentist-card">
-          <img src="recursos/doctores/dra.bella.jpg" alt="Bella" loading="lazy" />
-          <h3>Bella Campi Tomalá</h3>
-          <p>Asistente dental</p>
-          <p>Instituto ICEL</p>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="whatsapp-agendar">
-      <h2>Agenda tu hora por WhatsApp</h2>
-      <a href="https://wa.me/56984615838" target="_blank" class="whatsapp-btn">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" />
-        Escríbenos aquí
-      </a>
-    </section>
-
-    <section id="horarios" class="schedule">
-      <h2>Horarios de atención</h2>
-      <table class="schedule-table">
-        <tr><th>Día</th><th>Horario</th></tr>
-        <tr><td>Lunes a Viernes</td><td>09:00 - 20:00 hrs</td></tr>
-        <tr><td>Sábado</td><td>09:00 - 17:00 hrs</td></tr>
-        <tr><td>Domingo</td><td>10:00 - 13:30 hrs</td></tr>
-      </table>
-    </section>
-
-    <section id="galeria" class="gallery">
-      <h2>Galería</h2>
-      <div class="carousel-container">
-        <div class="carousel-slide">
-          <img src="recursos/imagenes/Exterior.jpg" alt="Exterior Aegis" loading="lazy" />
-          <img src="recursos/imagenes/Recepcion.jpg" alt="Recepción Aegis" loading="lazy" />
-          <img src="recursos/imagenes/Sala_de_espera.jpg" alt="Sala de espera" loading="lazy" />
-          <img src="recursos/imagenes/Box1.jpg" alt="Box 1" loading="lazy" />
-          <img src="recursos/imagenes/Box2.jpg" alt="Box 2" loading="lazy" />
-          <img src="recursos/imagenes/Box3.jpg" alt="Box 3" loading="lazy" /> 
-        </div>
-        <button id="prev" class="carousel-btn" aria-label="Anterior">‹</button>
-        <button id="next" class="carousel-btn" aria-label="Siguiente">›</button>
-      </div>
-    </section>
-
-    <section id="instagram">
-      <h2>Nuestras publicaciones más populares</h2>
-      <div class="instagram-carousel-wrap">
-        <button id="insta-prev" class="insta-nav" aria-label="Anterior">‹</button>
-        
-        <div id="instagram-carousel">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXNb1fllpVa/?img_index=1" data-instgrm-version="14"></blockquote>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DWfhAJzgOm0/" data-instgrm-version="14"></blockquote>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ0Wh8yMTiA/" data-instgrm-version="14"></blockquote>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DUqMveMjf_0/" data-instgrm-version="14"></blockquote>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZdBowfoumU/" data-instgrm-version="14"></blockquote>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DUl0vGjkiJg/" data-instgrm-version="14"></blockquote>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ0WA2tMkT9/" data-instgrm-version="14"></blockquote>
-        </div>
-
-        <button id="insta-next" class="insta-nav" aria-label="Siguiente">›</button>
-      </div>
-    </section>
-
-    <section id="ubicacion">
-      <h2>Ubicación</h2>
-      <div class="map-container">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.810156998764!2d-70.74583032366417!3d-33.41541277343011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662dc63beec3cd9%3A0x1d87f81e3658de84!2sTeniente%20Cruz%20570%2C%20Pudahuel%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1717638472060!5m2!1ses!2scl"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
       </div>
     </section>
 
@@ -1050,102 +568,5 @@
     <hr />
     <p class="copyright">© 2026 Aegis Clínica Dental. Todos los derechos reservados.</p>
   </footer>
-
-  <!-- Script oficial de Instagram (se carga de forma asíncrona) -->
-  <script async src="//www.instagram.com/embed.js"></script>
-
-  <!-- Scripts principales unificados -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // 1. Lógica del Carrusel Principal
-      const slide = document.querySelector('.carousel-slide');
-      if (slide) {
-        const images = slide.querySelectorAll('img');
-        const total = images.length;
-        let index = 0;
-
-        function updateSlide() {
-          slide.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        document.getElementById('next').addEventListener('click', () => {
-          index = (index + 1) % total;
-          updateSlide();
-        });
-
-        document.getElementById('prev').addEventListener('click', () => {
-          index = (index - 1 + total) % total;
-          updateSlide();
-        });
-
-        setInterval(() => {
-          index = (index + 1) % total;
-          updateSlide();
-        }, 5000);
-      }
-
-      // 2. Lógica del Carrusel de Instagram
-      const instaContainer = document.getElementById('instagram-carousel');
-      const btnNextInsta = document.getElementById('insta-next');
-      const btnPrevInsta = document.getElementById('insta-prev');
-
-      if (instaContainer && btnNextInsta && btnPrevInsta) {
-        function processInsta() {
-          try {
-            if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === 'function') {
-              window.instgrm.Embeds.process();
-            }
-          } catch (e) { console.warn("Error cargando embeds de Instagram", e); }
-        }
-
-        window.addEventListener('load', () => {
-          processInsta();
-          setTimeout(processInsta, 800);
-          setTimeout(processInsta, 1600);
-        });
-
-        function scrollByWidth(direction = 1) {
-          const card = instaContainer.querySelector('.instagram-media') || instaContainer.firstElementChild;
-          const cardWidth = card ? card.getBoundingClientRect().width : 320;
-          const gap = 18; 
-          const distance = Math.round(cardWidth + gap);
-          instaContainer.scrollBy({ left: distance * direction, behavior: 'smooth' });
-        }
-
-        btnNextInsta.addEventListener('click', () => scrollByWidth(1));
-        btnPrevInsta.addEventListener('click', () => scrollByWidth(-1));
-
-        function updateArrowsVisibility() {
-          const canScrollLeft = instaContainer.scrollLeft > 5;
-          const canScrollRight = instaContainer.scrollWidth - instaContainer.clientWidth - instaContainer.scrollLeft > 5;
-          btnPrevInsta.style.opacity = canScrollLeft ? '1' : '0.35';
-          btnNextInsta.style.opacity = canScrollRight ? '1' : '0.35';
-        }
-
-        instaContainer.addEventListener('scroll', updateArrowsVisibility);
-        window.addEventListener('resize', updateArrowsVisibility);
-        setTimeout(updateArrowsVisibility, 400);
-      }
-
-      // 3. Animaciones al hacer scroll (Intersection Observer)
-      const sections = document.querySelectorAll('section:not(#hero):not(#nosotros):not(#servicios):not(#dentistas)');
-      const appearOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -80px 0px"
-      };
-
-      const appearOnScroll = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        });
-      }, appearOptions);
-
-      sections.forEach(section => {
-        appearOnScroll.observe(section);
-      });
-    });
-  </script>
 </body>
 </html>

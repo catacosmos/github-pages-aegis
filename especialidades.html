@@ -214,7 +214,6 @@
     @media (min-width: 769px) {
       body { padding-top: 90px; }
       
-      /* Header en una sola línea con logo a la izquierda, menú al centro y botón a la derecha */
       header { 
         height: 90px; 
         padding: 0 40px; 
@@ -223,7 +222,7 @@
       }
       .logo-link img { height: 70px; }
       .header-bottom-row {
-        display: contents; /* Anula el contenedor para alinear hijos directos del header */
+        display: contents; 
       }
       nav { gap: 28px; font-size: 1rem; }
       nav a { padding: 6px 0; border-radius: 0; background: transparent !important; }
@@ -286,7 +285,25 @@
 
   <main>
     <div class="services-grid">
-      <!-- 1. Ortodoncia -->
+      <!-- 1. Cirugía Maxilofacial -->
+      <div class="service-card">
+        <div class="service-img-wrap"><img src="recursos/imagenes/maxilofacial.jpg" alt="Cirugía Maxilofacial" /></div>
+        <div class="service-content">
+          <div><h3>Maxilofacial</h3><p>Extracción experta de muelas del juicio y patologías complejas.</p></div>
+          <a href="cirugia-maxilofacial.html" class="service-link">Ver detalles</a>
+        </div>
+      </div>
+
+      <!-- 2. Odontopediatría -->
+      <div class="service-card">
+        <div class="service-img-wrap"><img src="recursos/imagenes/odontopediatria.jpg" alt="Odontopediatría" /></div>
+        <div class="service-content">
+          <div><h3>Odontopediatría</h3><p>Odontología infantil cercana, didáctica y libre de temores.</p></div>
+          <a href="odontopediatria.html" class="service-link">Ver detalles</a>
+        </div>
+      </div>
+
+      <!-- 3. Ortodoncia -->
       <div class="service-card">
         <div class="service-img-wrap"><img src="recursos/imagenes/ortodoncia.jpg" alt="Ortodoncia" /></div>
         <div class="service-content">
@@ -295,30 +312,12 @@
         </div>
       </div>
 
-      <!-- 2. Implantología -->
-      <div class="service-card">
-        <div class="service-img-wrap"><img src="recursos/imagenes/implantologia.jfif" alt="Implantología" /></div>
-        <div class="service-content">
-          <div><h3>Implantología</h3><p>Recupera tus piezas dentales perdidas de forma fija y natural.</p></div>
-          <a href="implantologia.html" class="service-link">Ver detalles</a>
-        </div>
-      </div>
-
-      <!-- 3. Endodoncia -->
+      <!-- 4. Endodoncia -->
       <div class="service-card">
         <div class="service-img-wrap"><img src="recursos/imagenes/endodoncia.jpg" alt="Endodoncia" /></div>
         <div class="service-content">
           <div><h3>Endodoncia</h3><p>Tratamientos de conducto indoloros para salvar tus dientes.</p></div>
           <a href="endodoncia.html" class="service-link">Ver detalles</a>
-        </div>
-      </div>
-
-      <!-- 4. Cirugía Maxilofacial -->
-      <div class="service-card">
-        <div class="service-img-wrap"><img src="recursos/imagenes/maxilofacial.jpg" alt="Cirugía Maxilofacial" /></div>
-        <div class="service-content">
-          <div><h3>Maxilofacial</h3><p>Extracción experta de muelas del juicio y patologías complejas.</p></div>
-          <a href="cirugia-maxilofacial.html" class="service-link">Ver detalles</a>
         </div>
       </div>
 
@@ -331,12 +330,12 @@
         </div>
       </div>
 
-      <!-- 6. Odontopediatría -->
+      <!-- 6. Implantología -->
       <div class="service-card">
-        <div class="service-img-wrap"><img src="recursos/imagenes/odontopediatria.jpg" alt="Odontopediatría" /></div>
+        <div class="service-img-wrap"><img src="recursos/imagenes/implantologia.jfif" alt="Implantología" /></div>
         <div class="service-content">
-          <div><h3>Odontopediatría</h3><p>Odontología infantil cercana, didáctica y libre de temores.</p></div>
-          <a href="odontopediatria.html" class="service-link">Ver detalles</a>
+          <div><h3>Implantología</h3><p>Recupera tus piezas dentales perdidas de forma fija y natural.</p></div>
+          <a href="implantologia.html" class="service-link">Ver detalles</a>
         </div>
       </div>
 

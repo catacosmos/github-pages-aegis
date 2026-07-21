@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Especialistas en Odontopediatría en Pudahuel y Santiago junto a la Dra. Angélica Burgos (@draangelicakids). Atención dental infantil cercana y sin miedo." />
+  <meta name="description" content="Especialistas en Odontopediatría en Pudahuel y Santiago junto a la Dra. Angélica Burgos (@draangelicakids). Convenios escolares y descuentos especiales." />
   <meta name="author" content="Aegis Clínica Dental" />
   <meta name="robots" content="index, follow" />
   <title>Odontopediatría y Dentista Infantil en Santiago | Aegis Clínica Dental</title>
@@ -16,7 +16,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Especialistas en Odontopediatría | Aegis Clínica Dental" />
-  <meta property="og:description" content="Cuidamos la sonrisa de los más pequeños con la Dra. Angélica Burgos. Enfoque cálido y sin temor en Pudahuel." />
+  <meta property="og:description" content="Cuidamos la sonrisa de los más pequeños con la Dra. Angélica Burgos. Convenios escolares y promociones vigentes." />
   <meta property="og:image" content="https://aegisclinicadental.cl/recursos/iconos/banner.jpg" />
   <meta property="og:url" content="https://aegisclinicadental.cl/odontopediatria.html" />
   <meta property="og:type" content="website" />
@@ -171,16 +171,76 @@
       font-size: 0.9rem;
       line-height: 1.5;
     }
+    
+    /* Enlace de Instagram limpio y estilizado */
     .insta-link {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      color: #E1306C;
+      gap: 8px;
+      color: #333;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      background: #fff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
     }
-    .insta-link:hover { text-decoration: underline; }
+    .insta-link:hover { transform: translateY(-2px); }
+    .insta-link img {
+      width: 20px;
+      height: 20px;
+      border-radius: 0;
+      box-shadow: none;
+      margin: 0;
+    }
+
+    /* Sección de Convenios / Flyer promocional */
+    .promo-banner {
+      background: linear-gradient(135deg, #015BAB, #00B5AD);
+      color: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      margin: 30px 0;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .promo-banner h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: white;
+    }
+    .promo-banner p {
+      color: #f0f8ff;
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+    }
+    .promo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .promo-card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 8px;
+      backdrop-filter: blur(5px);
+    }
+    .promo-card h4 {
+      margin: 0 0 8px 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      color: #ffeb3b;
+    }
+    .promo-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: white;
+    }
 
     /* Sección de publicaciones de Instagram Kids */
     .kids-instagram-section {
@@ -337,6 +397,7 @@
         flex-direction: column;
         text-align: center;
       }
+      .insta-link { justify-content: center; }
       footer {
         padding: 30px 15px 20px 15px;
         margin-top: 40px;
@@ -444,21 +505,36 @@
           <li>Odontopediatra (Universidad de los Andes).</li>
         </ul>
         <a href="https://www.instagram.com/draangelicakids/" target="_blank" class="insta-link">
-          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram" width="16" />
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram" />
           @draangelicakids
         </a>
       </div>
     </div>
 
-    <!-- Sección de publicaciones destacadas de Instagram Kids -->
+    <!-- BANNER DE CONVENIOS Y PROMOCIONES DE VACACIONES DE INVIERNO -->
+    <div class="promo-banner">
+      <h3>¡Convenios Escolares y Vacaciones de Invierno!</h3>
+      <p>Si eres apoderado de algún colegio, jardín infantil o escuela de lenguaje en Pudahuel, Maipú y alrededores, ¡esta oportunidad es para tus hijos y tu familia! Clínica Aegis está en busca de convenios con instituciones educativas.</p>
+      <div class="promo-grid">
+        <div class="promo-card">
+          <h4>50% DTO.</h4>
+          <p>En tu primera consulta odontopediátrica.</p>
+        </div>
+        <div class="promo-card">
+          <h4>20% DTO.</h4>
+          <p>Descuento único en todas las prestaciones de la clínica.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de publicaciones de Instagram Kids -->
     <div class="kids-instagram-section">
       <h3>¡Visita su espacio dedicado a los niños en Instagram!</h3>
       <p style="font-size: 0.9rem; margin-bottom: 15px;">Descubre consejos divertidos y cómo preparamos a los pequeños para su visita:</p>
       <div class="instagram-carousel-wrap">
         <div id="instagram-carousel">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DGrB1UVuG5H/" data-instgrm-version="14"></blockquote>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DFgS59zOSfD/" data-instgrm-version="14"></blockquote>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DFWpTquO59S/" data-instgrm-version="14"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZ5iShvxCeN/" data-instgrm-version="14"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYVxE9etYUX/" data-instgrm-version="14"></blockquote>
         </div>
       </div>
     </div>
@@ -480,8 +556,8 @@
 
     <div class="cta-box">
       <h3>¿Es la primera vez de tu hijo en el dentista?</h3>
-      <p>Agenda una consulta preventiva con la Dra. Angélica Burgos y regálale una experiencia dental feliz.</p>
-      <a href="https://wa.me/56984615838?text=Hola,%20quiero%20agendar%20una%20hora%20de%20odontopediatría%20con%20la%20Dra.%20Angélica" target="_blank" class="whatsapp-btn-large">
+      <p>Aprovecha nuestros descuentos de vacaciones de invierno y agenda una consulta preventiva con la Dra. Angélica Burgos.</p>
+      <a href="https://wa.me/56984615838?text=Hola,%20quiero%20más%20información%20sobre%20los%20convenios%20escolares%20y%20descuentos%20de%20odontopediatría" target="_blank" class="whatsapp-btn-large">
         <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" width="24" />
         Escríbenos por WhatsApp
       </a>

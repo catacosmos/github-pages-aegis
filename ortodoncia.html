@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Especialistas en Ortodoncia en Pudahuel y Santiago. Brackets metálicos, estéticos e invisibles. Agenda tu evaluación en Aegis Clínica Dental." />
+  <meta name="description" content="Especialistas en Ortodoncia en Pudahuel y Santiago. Brackets metálicos, estéticos y ortodoncia invisible (Invisalign). Agenda tu evaluación en Aegis Clínica Dental." />
   <meta name="author" content="Aegis Clínica Dental" />
   <meta name="robots" content="index, follow" />
-  <title>Ortodoncia en Santiago y Pudahuel | Aegis Clínica Dental</title>
+  <title>Ortodoncia e Invisalign en Santiago y Pudahuel | Aegis Clínica Dental</title>
   
   <!-- Favicon -->
-  <link rel="icon" href="../recursos/iconos/icono.png" type="image/png" />
+  <link rel="icon" href="recursos/iconos/icono.png" type="image/png" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://aegisclinicadental.cl/ortodoncia.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Especialistas en Ortodoncia | Aegis Clínica Dental" />
-  <meta property="og:description" content="Mejora tu sonrisa y mordida con nuestros especialistas certificados. Agenda tu hora hoy." />
+  <meta property="og:title" content="Ortodoncia e Invisalign | Aegis Clínica Dental" />
+  <meta property="og:description" content="Alinea tu sonrisa con la Dra. Paulina Cortés. Brackets tradicionales, estéticos y alineadores invisibles en Pudahuel." />
   <meta property="og:image" content="https://aegisclinicadental.cl/recursos/iconos/banner.jpg" />
   <meta property="og:url" content="https://aegisclinicadental.cl/ortodoncia.html" />
   <meta property="og:type" content="website" />
@@ -26,76 +26,169 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
+    /* =======================
+       RESET Y ESTILOS BASE
+    ======================= */
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      padding-top: 90px;
+    body { 
+      margin: 0; 
+      font-family: 'Inter', sans-serif; 
+      background-color: #f9f9f9; 
+      color: #333; 
+      padding-top: 130px; /* Espacio para header móvil de 2 filas */
       scroll-behavior: smooth;
-      line-height: 1.6;
-    }
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: white;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-      height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
-      z-index: 10000;
-      font-family: 'Poppins', sans-serif;
-    }
-    .logo-link img { height: 70px; }
-    nav { display: flex; gap: 28px; font-weight: 600; }
-    nav a { color: #444; text-decoration: none; }
-    nav a:hover { color: #00B5AD; }
-    
-    .header-btn {
-      background-color: #25D366;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-weight: 700;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
+    /* =======================
+       HEADER (WEB Y MÓVIL)
+    ======================= */
+    header { 
+      position: fixed; 
+      top: 0; left: 0; right: 0; 
+      background: white; 
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1); 
+      display: flex; 
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center;
+      padding: 10px 15px; 
+      z-index: 10000; 
+      font-family: 'Poppins', sans-serif; 
+    }
+    .logo-link img { height: 45px; }
+    
+    .header-bottom-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    nav { display: flex; gap: 10px; font-weight: 600; font-size: 0.85rem; }
+    nav a { 
+      color: #444; 
+      text-decoration: none; 
+      transition: color 0.3s ease; 
+      white-space: nowrap; 
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    nav a:hover { color: #00B5AD; }
+    nav a.active { color: #00B5AD; background-color: rgba(0, 181, 173, 0.1); }
+
+    .header-btn { 
+      background-color: #25D366; 
+      color: white; 
+      padding: 6px 12px; 
+      border-radius: 30px; 
+      font-weight: 700; 
+      text-decoration: none; 
+      display: flex; 
+      align-items: center; 
+      gap: 5px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+
+    /* =======================
+       HERO BANNER
+    ======================= */
+    .page-hero {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      background-color: #015BAB;
+      background: url('recursos/iconos/banner.jpg') center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.8rem;
+      text-align: center;
+      padding: 0 15px;
+      margin-bottom: 30px;
+    }
+
+    /* =======================
+       CONTENIDO PRINCIPAL
+    ======================= */
     main {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 0 auto 40px auto;
       background: white;
-      padding: 50px;
+      padding: 40px 25px;
       border-radius: 16px;
       box-shadow: 0 4px 15px rgb(0 0 0 / 0.05);
+      line-height: 1.7;
     }
 
-    h1, h2 {
+    h2 {
       color: #015BAB;
       font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      margin-top: 40px;
+      border-bottom: 2px solid #f2f2f2;
+      padding-bottom: 10px;
     }
-    h1 { font-size: 2.2rem; margin-bottom: 20px; text-align: center; }
-    h2 { font-size: 1.5rem; margin-top: 40px; border-bottom: 2px solid #f2f2f2; padding-bottom: 10px; }
-    
-    p { font-size: 1.05rem; color: #555; margin-bottom: 20px; }
+    p { font-size: 1rem; color: #555; margin-bottom: 20px; }
+    ul { color: #555; margin-bottom: 20px; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    strong { color: #333; }
 
+    /* Perfil de la Doctora */
+    .doctor-profile {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+      border-left: 5px solid #00B5AD;
+    }
+    .doctor-profile img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .doctor-info h3 {
+      margin: 0 0 5px 0;
+      color: #015BAB;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+    }
+    .doctor-info p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Caja de llamada a la acción */
     .cta-box {
       background: #f0f8ff;
-      border-left: 5px solid #015BAB;
-      padding: 30px;
+      border: 2px dashed #015BAB;
+      padding: 30px 20px;
       margin-top: 40px;
-      border-radius: 8px;
+      border-radius: 12px;
       text-align: center;
     }
-    .whatsapp-btn {
+    .cta-box h3 {
+      color: #015BAB;
+      margin-top: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    .whatsapp-btn-large {
       display: inline-flex;
       align-items: center;
-      background-color: #015BAB;
+      background-color: #25D366;
       color: white;
       padding: 12px 25px;
       border-radius: 8px;
@@ -104,47 +197,134 @@
       font-family: 'Poppins', sans-serif;
       margin-top: 15px;
       gap: 10px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
-    .whatsapp-btn:hover { background-color: #019ea7; }
+    .whatsapp-btn-large:hover { 
+      background-color: #1ebe57; 
+      transform: translateY(-2px);
+    }
 
+    /* =======================
+       FOOTER (MÓVIL DEFAULT)
+    ======================= */
     footer {
       background-color: #f2f2f2;
+      color: #333;
+      padding: 30px 15px 20px 15px;
+      font-family: 'Inter', sans-serif;
+      margin-top: 40px;
+    }
+    .footer-container {
+      width: 100%;
+      padding: 0 10px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
       text-align: center;
-      padding: 30px;
-      color: #777;
-      margin-top: 60px;
+    }
+    .footer-column { margin-bottom: 10px; }
+    .footer-column h4 {
+      color: #015BAB;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+    .footer-column img.logo {
+      max-width: 110px;
+      margin: 0 auto 5px auto;
+      display: block;
+    }
+    .footer-column p { margin: 6px 0; font-size: 0.82rem; line-height: 1.4; }
+    .footer-column a {
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .footer-column a:hover { color: #015BAB; }
+    .footer-column img.icon { width: 14px; height: 14px; flex-shrink: 0; }
+    .social-icons {
+      margin-top: 10px;
+      display: flex; 
+      justify-content: center; 
+      gap: 10px;
+    }
+    .social-icons img { width: 26px; height: 26px; }
+    hr {
+      margin: 20px auto 15px;
+      max-width: 1000px;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+    .copyright { text-align: center; font-size: 0.75rem; color: #777; }
+
+    /* =======================
+       MEDIA QUERIES MÓVIL
+    ======================= */
+    @media (max-width: 768px) {
+      /* OCULTA EL BOTÓN DE WHATSAPP DEL HEADER EN CELULAR */
+      .header-btn.mobile-hide { display: none !important; }
+      
+      .doctor-profile {
+        flex-direction: column;
+        text-align: center;
+      }
     }
 
-    @media (max-width: 768px) {
-      main { padding: 20px; margin: 20px; }
-      nav { display: none; }
-      header { padding: 0 20px; }
+    /* =======================
+       MEDIA QUERIES WEB
+    ======================= */
+    @media (min-width: 769px) {
+      body { padding-top: 90px; }
+      
+      header { 
+        height: 90px; 
+        padding: 0 40px; 
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .logo-link img { height: 70px; }
+      .header-bottom-row { display: contents; }
+      nav { gap: 28px; font-size: 1rem; }
+      nav a { padding: 6px 0; border-radius: 0; background: transparent !important; }
+      .header-btn { padding: 10px 20px; font-size: 1rem; gap: 10px; }
+      
+      .page-hero { height: 300px; font-size: 2.2rem; margin-bottom: 50px; }
+      main { padding: 50px; margin: 0 auto 60px auto; }
+      
+      footer { padding: 50px 20px; margin-top: 60px; }
+      .footer-container {
+        grid-template-columns: 1fr 1.8fr 1.2fr 1fr;
+        text-align: left;
+        padding: 0 40px;
+        gap: 30px;
+      }
+      .footer-column h4 { text-align: left; font-size: 1.1rem; margin-bottom: 15px; }
+      .footer-column img.logo { max-width: 140px; margin: 10px 0 0 0; }
+      .footer-column p { font-size: 0.95rem; margin: 12px 0; }
+      .footer-column a { justify-content: flex-start; }
+      .footer-column img.icon { width: 18px; height: 18px; }
+      .social-icons { justify-content: flex-start; }
+      .social-icons img { width: 32px; height: 32px; }
+      .copyright { font-size: 0.9em; }
     }
   </style>
 
-  <!-- Schema.org específico para el servicio de Ortodoncia -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     "name": "Ortodoncia en Santiago y Pudahuel - Aegis Clínica Dental",
-    "description": "Tratamientos de ortodoncia con especialistas certificados en Aegis Clínica Dental.",
+    "description": "Alineadores invisibles Invisalign y brackets con la Dra. Paulina Cortés en Aegis Clínica Dental.",
     "about": {
       "@type": "MedicalProcedure",
-      "name": "Ortodoncia",
+      "name": "Ortodoncia e Invisalign",
       "bodyLocation": "Dental",
       "procedureType": "NonSurgicalProcedure"
-    },
-    "provider": {
-      "@type": "Dentist",
-      "name": "Aegis Clínica Dental",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. Teniente Cruz 570, Local 2",
-        "addressLocality": "Pudahuel",
-        "addressRegion": "Región Metropolitana",
-        "addressCountry": "CL"
-      }
     }
   }
   </script>
@@ -152,52 +332,112 @@
 <body>
 
   <header>
-    <a href="index.html" class="logo-link">
-      <img src="recursos/iconos/logo.png" alt="Logo de Aegis" />
-    </a>
-    <nav>
-      <a href="index.html#dentistas">Equipo</a>
-      <a href="index.html#horarios">Horarios</a>
-      <a href="index.html#ubicacion">Ubicación</a>
-    </nav>
-    <a href="https://wa.me/56984615838" target="_blank" class="header-btn">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" width="20" />
-      Agendar Cita
-    </a>
+    <a href="index.html" class="logo-link"><img src="recursos/iconos/logo.png" alt="Logo Aegis" /></a>
+    <div class="header-bottom-row">
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="especialidades.html" class="active">Especialidades</a>
+        <a href="equipo.html">Equipo</a>
+      </nav>
+      <!-- Se agregó la clase "mobile-hide" para que no se vea en celular -->
+      <a href="https://wa.me/56984615838" target="_blank" class="header-btn mobile-hide">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" width="18" />
+        WhatsApp
+      </a>
+    </div>
   </header>
 
+  <!-- Banner -->
+  <div class="page-hero">
+    <h1 style="margin: 0; font-size: inherit; font-weight: inherit;">Ortodoncia</h1>
+  </div>
+
   <main>
-    <h1>Especialistas en Ortodoncia en Pudahuel y Santiago</h1>
+    <p>En <strong>Aegis Clínica Dental</strong> sabemos que una sonrisa alineada no solo mejora tu autoestima, sino también tu salud dental. Corregir la posición de tus dientes te permite masticar mejor, facilita el cepillado diario y previene el desgaste prematuro de tus piezas dentales.</p>
+
+    <h2>Conoce a nuestra especialista</h2>
     
-    <p>¿Buscas alinear tus dientes y mejorar tu sonrisa con profesionales de confianza? En <strong>Aegis Clínica Dental</strong> contamos con especialistas certificados en ortodoncia para entregarte un tratamiento seguro, estético y adaptado a tus necesidades.</p>
+    <div class="doctor-profile">
+      <img src="recursos/doctores/dra.paulina.jpeg" alt="Dra. Paulina Cortés" loading="lazy" />
+      <div class="doctor-info">
+        <h3>Dra. Paulina Cortés Gutiérrez</h3>
+        <p>Tu tratamiento estará en las mejores manos. La Dra. Paulina es Cirujana Dentista y cuenta con una sólida formación clínica:</p>
+        <ul style="margin-top: 10px; margin-bottom: 0;">
+          <li>Especialista en Ortodoncia y Ortopedia Dentomaxilar (Universidad Católica de Uruguay).</li>
+          <li>Diplomado en Ortodoncia Interceptiva (Universidad Católica de Chile).</li>
+          <li>Certificación oficial como <strong>Invisalign Doctor</strong>.</li>
+        </ul>
+      </div>
+    </div>
 
-    <h2>¿Qué es la Ortodoncia y por qué es importante?</h2>
-    <p>La ortodoncia es la especialidad odontológica encargada de corregir la posición de los dientes y los maxilares mal posicionados. Unos dientes apiñados o una mala mordida no solo afectan la estética de tu sonrisa, sino que también dificultan la higiene dental, provocando mayor acumulación de placa, caries, desgaste prematuro e incluso problemas en la articulación de la mandíbula.</p>
-
-    <h2>Tipos de tratamientos de ortodoncia disponibles</h2>
-    <p>Dependiendo de tu diagnóstico y estilo de vida, nuestros especialistas te orientarán sobre la mejor alternativa:</p>
+    <h2>Tus opciones de tratamiento</h2>
+    <p>Luego de una evaluación clínica y radiográfica, la Dra. Paulina te recomendará la opción que mejor se adapte a tu caso y a tu estilo de vida:</p>
     <ul>
-      <li><strong>Brackets Metálicos:</strong> El sistema tradicional más resistente, eficiente y utilizado para corregir todo tipo de maloclusiones.</li>
-      <li><strong>Brackets Estéticos (Zafiro o Cerámica):</strong> Una opción mucho más discreta, ya que los materiales se camuflan perfectamente con el color natural de tus dientes.</li>
-      <li><strong>Ortodoncia Interceptiva:</strong> Tratamientos enfocados en niños y jóvenes en etapa de crecimiento para guiar el desarrollo correcto de los huesos maxilares.</li>
+      <li><strong>Ortodoncia Invisible (Invisalign):</strong> Somos una de las pocas clínicas en el sector poniente que cuenta con esta tecnología. Son alineadores transparentes y removibles que mueven tus dientes de forma cómoda, sin alambres metálicos ni molestias al comer.</li>
+      <li><strong>Brackets Estéticos:</strong> Hechos de zafiro o cerámica, se camuflan muy bien con el color de tus dientes. Son la opción ideal si buscas discreción sin utilizar alineadores.</li>
+      <li><strong>Brackets Metálicos:</strong> El sistema tradicional, muy resistente y altamente efectivo para corregir desde casos sencillos hasta los más complejos.</li>
+      <li><strong>Ortodoncia Interceptiva:</strong> Tratamientos enfocados en niños y adolescentes en etapa de crecimiento, diseñados para guiar el desarrollo correcto de los huesos maxilares y prevenir problemas a futuro.</li>
     </ul>
-
-    <h2>¿Por qué elegir Aegis Clínica Dental?</h2>
-    <p>Nuestra clínica se encuentra ubicada a pasos del Metro Barrancas (Av. Teniente Cruz 570, Pudahuel), ofreciendo un espacio moderno, estacionamiento gratuito y un equipo de cirujanos dentistas y ortodoncistas formados en las mejores universidades del país, como la <strong>Universidad Andrés Bello</strong>.</p>
 
     <div class="cta-box">
       <h3>¿Listo para transformar tu sonrisa?</h3>
-      <p>Da el primer paso y agenda tu evaluación ortodóntica directamente con nuestro equipo.</p>
-      <a href="https://wa.me/56984615838?text=Hola,%20quiero%20más%20información%20sobre%20el%20tratamiento%20de%20ortodoncia" target="_blank" class="whatsapp-btn">
+      <p>Agenda hoy mismo tu evaluación ortodóntica. Resolveremos todas tus dudas y diseñaremos un plan a tu medida.</p>
+      <a href="https://wa.me/56984615838?text=Hola,%20quiero%20agendar%20una%20evaluación%20de%20ortodoncia%20con%20la%20Dra.%20Paulina" target="_blank" class="whatsapp-btn-large">
         <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" width="24" />
         Escríbenos por WhatsApp
       </a>
     </div>
   </main>
 
-  <footer>
-    <p>© 2026 Aegis Clínica Dental. Todos los derechos reservados.</p>
+  <footer id="contacto">
+    <div class="footer-container">
+      <div class="footer-column">
+        <img src="recursos/iconos/logo.png" alt="Logo Aegis Clínica Dental" class="logo" />
+      </div>
+      <div class="footer-column">
+        <h4>Contacto</h4>
+        <p>
+          <a href="https://www.google.com/maps/place/Aegis+Clínica+Dental+🦷/@-33.4549101,-70.7420724,17z/data=!3m1!4b1!4m6!3m5!1s0x9662c379345f2b41:0x82fd931608201ab5!8m2!3d-33.4549101!4d-70.7394975!16s%2Fg%2F11glwckvkj?entry=ttu&g_ep=EgoyMDI1MDYxMC4xIKXMDSoASAFQAw%3D%3D" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Ubicación" class="icon" />
+            Av. Teniente Cruz 570, Local 2, Santiago
+          </a>
+        </p>
+        <p>
+          <a href="tel:+56984615838">
+            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Teléfono" class="icon" />
+            +56 9 8461 5838
+          </a>
+        </p>
+        <p>
+          <a href="mailto:aegisclinicadental@gmail.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Correo" class="icon" />
+            aegisclinicadental@gmail.com
+          </a>
+        </p>
+      </div>
+      <div class="footer-column">
+        <h4>Horarios</h4>
+        <p>Lunes a Viernes<br />09:00 – 20:00 hrs</p>
+        <p>Sábados<br />09:00 – 17:00 hrs</p>
+        <p>Domingos<br />10:00 – 13:30 hrs</p>
+      </div>
+      <div class="footer-column">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/aegisclinicadental?igsh=aGl1Z254aGNjMmFu" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61574232590531&mibextid=ZbWKwL" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" />
+          </a>
+          <a href="mailto:aegisclinicadental@gmail.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Correo" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p class="copyright">© 2026 Aegis Clínica Dental. Todos los derechos reservados.</p>
   </footer>
-
 </body>
 </html>

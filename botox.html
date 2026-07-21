@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Tratamientos de Estética Facial y Toxina Botulínica (Botox) en Pudahuel y Santiago. Rejuvenecimiento facial y prevención de arrugas en Aegis Clínica Dental." />
+  <meta name="author" content="Aegis Clínica Dental" />
+  <meta name="robots" content="index, follow" />
+  <title>Estética Facial y Botox en Santiago y Pudahuel | Aegis Clínica Dental</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="recursos/iconos/icono.png" type="image/png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://aegisclinicadental.cl/botox.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Estética Facial y Botox | Aegis Clínica Dental" />
+  <meta property="og:description" content="Suaviza líneas de expresión y rejuvenece tu rostro de forma natural. Agenda tu evaluación en Pudahuel." />
+  <meta property="og:image" content="https://aegisclinicadental.cl/recursos/iconos/banner.jpg" />
+  <meta property="og:url" content="https://aegisclinicadental.cl/botox.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =======================
+       RESET Y ESTILOS BASE
+    ======================= */
+    * { box-sizing: border-box; }
+    body { 
+      margin: 0; 
+      font-family: 'Inter', sans-serif; 
+      background-color: #f9f9f9; 
+      color: #333; 
+      padding-top: 130px; /* Espacio para header móvil de 2 filas */
+      scroll-behavior: smooth;
+    }
+
+    /* =======================
+       HEADER (WEB Y MÓVIL)
+    ======================= */
+    header { 
+      position: fixed; 
+      top: 0; left: 0; right: 0; 
+      background: white; 
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1); 
+      display: flex; 
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center;
+      padding: 10px 15px; 
+      z-index: 10000; 
+      font-family: 'Poppins', sans-serif; 
+    }
+    .logo-link img { height: 45px; }
+    
+    .header-bottom-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    nav { display: flex; gap: 10px; font-weight: 600; font-size: 0.85rem; }
+    nav a { 
+      color: #444; 
+      text-decoration: none; 
+      transition: color 0.3s ease; 
+      white-space: nowrap; 
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    nav a:hover { color: #00B5AD; }
+    nav a.active { color: #00B5AD; background-color: rgba(0, 181, 173, 0.1); }
+
+    .header-btn { 
+      background-color: #25D366; 
+      color: white; 
+      padding: 6px 12px; 
+      border-radius: 30px; 
+      font-weight: 700; 
+      text-decoration: none; 
+      display: flex; 
+      align-items: center; 
+      gap: 5px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+
+    /* =======================
+       HERO BANNER
+    ======================= */
+    .page-hero {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      background-color: #015BAB;
+      background: url('recursos/iconos/banner.jpg') center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.8rem;
+      text-align: center;
+      padding: 0 15px;
+      margin-bottom: 30px;
+    }
+
+    /* =======================
+       CONTENIDO PRINCIPAL
+    ======================= */
+    main {
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+      background: white;
+      padding: 40px 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgb(0 0 0 / 0.05);
+      line-height: 1.7;
+    }
+
+    h2 {
+      color: #015BAB;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      margin-top: 40px;
+      border-bottom: 2px solid #f2f2f2;
+      padding-bottom: 10px;
+    }
+    p { font-size: 1rem; color: #555; margin-bottom: 20px; }
+    ul { color: #555; margin-bottom: 20px; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    strong { color: #333; }
+
+    /* Enlace de Instagram limpio y estilizado */
+    .insta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: #f8f9fa;
+      padding: 6px 14px;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+      border: 1px solid #eaeaea;
+    }
+    .insta-link:hover { transform: translateY(-2px); }
+    .insta-link img {
+      width: 20px;
+      height: 20px;
+      border-radius: 0;
+      box-shadow: none;
+      margin: 0;
+    }
+
+    /* Sección del post de Instagram */
+    .instagram-post-section {
+      margin-top: 35px;
+      background: #f8f9fa;
+      padding: 25px 15px;
+      border-radius: 12px;
+      border-left: 5px solid #00B5AD;
+      text-align: center;
+    }
+    .instagram-post-section h3 {
+      color: #015BAB;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+    .instagram-post-section p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .post-wrapper {
+      max-width: 400px;
+      margin: 0 auto 15px auto;
+    }
+
+    /* Caja punteada con fondo celeste */
+    .dashed-cta-box {
+      border: 2px dashed #015BAB;
+      border-radius: 12px;
+      padding: 30px 20px;
+      text-align: center;
+      background: #f0f8ff;
+      margin-top: 30px;
+    }
+    .dashed-cta-box h3 {
+      color: #015BAB;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .dashed-cta-box p {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .whatsapp-btn-green {
+      display: inline-flex;
+      align-items: center;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      gap: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 3px 8px rgba(37, 211, 102, 0.3);
+    }
+    .whatsapp-btn-green:hover {
+      background-color: #1ebe57;
+      transform: translateY(-2px);
+    }
+
+    /* =======================
+       FOOTER UNIFICADO (ESTILO EQUIPO)
+    ======================= */
+    footer {
+      background-color: #f2f2f2;
+      color: #333;
+      padding: 50px 20px;
+      font-family: 'Inter', sans-serif;
+      margin-top: 60px;
+    }
+    .footer-container {
+      width: 100%;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.8fr 1.2fr 1fr;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .footer-column {
+      margin-bottom: 20px;
+    }
+    .footer-column h4 {
+      color: #015BAB;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+    .footer-column img.logo {
+      max-width: 140px;
+      margin-top: 10px;
+    }
+    .footer-column p {
+      margin: 12px 0;
+      font-size: 0.95rem;
+    }
+    .footer-column a {
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .footer-column a:hover {
+      color: #015BAB;
+    }
+    .footer-column img.icon {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .social-icons {
+      margin-top: 15px;
+      display: flex; 
+      justify-content: flex-start; 
+      gap: 15px;
+    }
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+    }
+    hr {
+      margin: 40px auto 20px;
+      max-width: 1000px;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+    .copyright {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    /* =======================
+       MEDIA QUERIES MÓVIL
+    ======================= */
+    @media (max-width: 768px) {
+      .header-btn.mobile-hide { display: none !important; }
+      .insta-link { justify-content: center; }
+      footer {
+        padding: 30px 15px 20px 15px;
+        margin-top: 40px;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .footer-column h4 { text-align: center; }
+      .footer-column a { justify-content: center; }
+      .social-icons { justify-content: center; }
+      .footer-column img.logo {
+        max-width: 110px;
+        margin: 0 auto 5px auto;
+        display: block;
+      }
+    }
+
+    /* =======================
+       MEDIA QUERIES WEB
+    ======================= */
+    @media (min-width: 769px) {
+      body { padding-top: 90px; }
+      
+      header { 
+        height: 90px; 
+        padding: 0 40px; 
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .logo-link img { height: 70px; }
+      .header-bottom-row { display: contents; }
+      nav { gap: 28px; font-size: 1rem; }
+      nav a { padding: 6px 0; border-radius: 0; background: transparent !important; }
+      .header-btn { padding: 10px 20px; font-size: 1rem; gap: 10px; }
+      
+      .page-hero { height: 300px; font-size: 2.2rem; margin-bottom: 50px; }
+      main { padding: 50px; margin: 0 auto 60px auto; }
+    }
+  </style>
+
+  <!-- Schema.org específico para Estética Facial / Botox -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Estética Facial y Botox en Santiago y Pudahuel - Aegis Clínica Dental",
+    "description": "Tratamientos de toxina botulínica y rejuvenecimiento facial en Aegis Clínica Dental.",
+    "about": {
+      "@type": "MedicalProcedure",
+      "name": "Toxina botulínica / Estética facial",
+      "bodyLocation": "Rostro",
+      "procedureType": "NonSurgicalProcedure"
+    },
+    "provider": {
+      "@type": "Dentist",
+      "name": "Aegis Clínica Dental",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Teniente Cruz 570, Local 2",
+        "addressLocality": "Pudahuel",
+        "addressRegion": "Región Metropolitana",
+        "postalCode": "9020000",
+        "addressCountry": "CL"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo-link"><img src="recursos/iconos/logo.png" alt="Logo de Aegis" /></a>
+    <div class="header-bottom-row">
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="especialidades.html" class="active">Especialidades</a>
+        <a href="equipo.html">Equipo</a>
+      </nav>
+      <a href="https://wa.me/56984615838" target="_blank" class="header-btn mobile-hide">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" width="18" />
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <div class="page-hero">
+    <h1 style="margin: 0; font-size: inherit; font-weight: inherit;">Estética Facial (Botox)</h1>
+  </div>
+
+  <main>
+    <p>La estética facial busca armonizar los rasgos del rostro y suavizar los signos del envejecimiento de manera sutil y natural. En <strong>Aegis Clínica Dental</strong> ofrecemos tratamientos estéticos orientados a relajar la musculatura facial, prevenir arrugas dinámicas y potenciar tu bienestar y confianza.</p>
+
+    <h2>¿Qué es la Toxina Botulínica y qué zonas trata?</h2>
+    <p>El tratamiento con botox es seguro, ambulatorio y altamente efectivo para relajar los músculos que generan líneas de expresión, logrando un aspecto fresco y descansado:</p>
+    <ul>
+      <li><strong>Tercios Superiores del Rostro:</strong> Suaviza y previene líneas en la frente, el entrecejo y las patas de gallo.</li>
+      <li><strong>Resultados Naturales:</strong> Relaja la musculatura de forma controlada sin perder la expresividad natural del rostro.</li>
+      <li><strong>Enfoque Profesional:</strong> Aplicado por nuestro equipo clínico calificado bajo rigurosos estándares de seguridad y confort.</li>
+    </ul>
+
+    <!-- SECCIÓN DE INSTAGRAM CON LA DRA. JAEL MALDONADO -->
+    <div class="instagram-post-section">
+      <h3>¡Conoce más junto a la Dra. Jael Maldonado!</h3>
+      <p>Te invitamos a revisar nuestra publicación sobre los beneficios y resultados de la toxina botulínica:</p>
+      <div class="post-wrapper">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DCpqgjBA-ek/?img_index=3" data-instgrm-version="14"></blockquote>
+      </div>
+      <a href="https://www.instagram.com/drajaelmaldonado/" target="_blank" class="insta-link">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram" />
+        Sigue a la Dra. Jael en @drajaelmaldonado
+      </a>
+    </div>
+
+    <h2>Tratamiento seguro y con resultados naturales</h2>
+    <p>En Aegis Clínica Dental priorizamos resultados armónicos que respeten tus rasgos originales. Te esperamos en Av. Teniente Cruz 570, Local 2, Pudahuel (a pasos del Metro Barrancas), con estacionamiento gratuito y un espacio diseñado para tu tranquilidad.</p>
+
+    <h2>Un espacio diseñado para tu bienestar y armonía facial</h2>
+    <p>Combinamos técnicas avanzadas y un entorno clínico seguro para entregarte una experiencia cómoda y de la más alta calidad.</p>
+
+    <div class="dashed-cta-box">
+      <h3>¿Quieres rejuvenecer y refrescar tu mirada?</h3>
+      <p>Agenda hoy mismo tu evaluación de estética facial con nuestro equipo especialista.</p>
+      <a href="https://wa.me/56984615838?text=Hola,%20quiero%20más%20información%20sobre%20los%20tratamientos%20de%20botox%20y%20estética%20facial" target="_blank" class="whatsapp-btn-green">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" width="20" />
+        Escríbenos por WhatsApp
+      </a>
+    </div>
+  </main>
+
+  <footer id="contacto">
+    <div class="footer-container">
+      <div class="footer-column">
+        <img src="recursos/iconos/logo.png" alt="Logo Aegis Clínica Dental" class="logo" />
+      </div>
+      <div class="footer-column">
+        <h4>Datos de Contacto</h4>
+        <p>
+          <a href="https://www.google.com/maps/place/Aegis+Clínica+Dental+🦷/@-33.4549101,-70.7420724,17z/data=!3m1!4b1!4m6!3m5!1s0x9662c379345f2b41:0x82fd931608201ab5!8m2!3d-33.4549101!4d-70.7394975!16s%2Fg%2F11glwckvkj?entry=ttu&g_ep=EgoyMDI1MDYxMC4xIKXMDSoASAFQAw%3D%3D" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Ubicación" class="icon" />
+            Av. Teniente Cruz 570, Local 2, Santiago, Chile
+          </a>
+        </p>
+        <p>
+          <a href="tel:+56984615838">
+            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Teléfono" class="icon" />
+            +56 9 8461 5838
+          </a>
+        </p>
+        <p>
+          <a href="mailto:aegisclinicadental@gmail.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Correo" class="icon" />
+            aegisclinicadental@gmail.com
+          </a>
+        </p>
+      </div>
+      <div class="footer-column">
+        <h4>Horarios</h4>
+        <p>Lunes a Viernes<br />09:00 – 20:00 hrs</p>
+        <p>Sábados<br />09:00 – 17:00 hrs</p>
+        <p>Domingos<br />10:00 – 13:30 hrs</p>
+      </div>
+      <div class="footer-column">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/aegisclinicadental?igsh=aGl1Z254aGNjMmFu" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61574232590531&mibextid=ZbWKwL" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" />
+          </a>
+          <a href="mailto:aegisclinicadental@gmail.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Correo" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p class="copyright">© 2026 Aegis Clínica Dental. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Script oficial de Instagram para incrustar el post -->
+  <script async src="//www.instagram.com/embed.js"></script>
+</body>
+</html>

@@ -10,29 +10,197 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #333; padding-top: 110px; }
-    header { position: fixed; top: 0; left: 0; right: 0; background: white; box-shadow: 0 2px 8px rgb(0 0 0 / 0.1); height: 90px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; z-index: 10000; font-family: 'Poppins', sans-serif; }
+    body { 
+      margin: 0; 
+      font-family: 'Inter', sans-serif; 
+      background-color: #f9f9f9; 
+      color: #333; 
+      padding-top: 90px; 
+    }
+    header { 
+      position: fixed; 
+      top: 0; left: 0; right: 0; 
+      background: white; 
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1); 
+      height: 90px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 0 40px; 
+      z-index: 10000; 
+      font-family: 'Poppins', sans-serif; 
+    }
     .logo-link img { height: 70px; }
     nav { display: flex; gap: 28px; font-weight: 600; font-size: 1rem; }
-    nav a { color: #444; text-decoration: none; }
+    nav a { color: #444; text-decoration: none; transition: color 0.3s ease; }
     nav a:hover, nav a.active { color: #00B5AD; }
-    .header-btn { background-color: #25D366; color: white; padding: 10px 20px; border-radius: 30px; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .header-btn { 
+      background-color: #25D366; 
+      color: white; 
+      padding: 10px 20px; 
+      border-radius: 30px; 
+      font-weight: 700; 
+      text-decoration: none; 
+      display: flex; 
+      align-items: center; 
+      gap: 10px; 
+    }
     
-    main { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-    h1 { color: #015BAB; font-family: 'Poppins', sans-serif; text-align: center; margin-bottom: 30px; }
+    /* =======================
+       BANNER SUPERIOR (ESTILO HERO)
+    ======================= */
+    .page-hero {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background-color: #015BAB;
+      background: url('recursos/iconos/banner.jpg') center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 2.2rem;
+      text-align: center;
+      padding: 0 20px;
+      margin-bottom: 50px;
+    }
+
+    main { 
+      max-width: 1000px; 
+      margin: 0 auto; 
+      padding: 0 20px 60px 20px; 
+    }
     
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-    .service-card { background: white; border-radius: 12px; overflow: hidden; text-align: center; box-shadow: 0 4px 10px rgb(0 0 0 / 0.08); display: flex; flex-direction: column; }
+    .services-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 25px; 
+    }
+    .service-card { 
+      background: white; 
+      border-radius: 12px; 
+      overflow: hidden; 
+      text-align: center; 
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.08); 
+      display: flex; 
+      flex-direction: column; 
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+    }
     .service-img-wrap { width: 100%; height: 160px; overflow: hidden; }
-    .service-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .service-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .service-card:hover .service-img-wrap img { transform: scale(1.08); }
+
     .service-content { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
     .service-card h3 { color: #015BAB; font-family: 'Poppins', sans-serif; font-size: 1.15rem; margin-bottom: 10px; }
     .service-card p { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
-    .service-link { display: inline-block; background-color: #015BAB; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .service-link { display: inline-block; background-color: #015BAB; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background-color 0.3s ease; }
     .service-link:hover { background-color: #00B5AD; }
     
-    footer { background-color: #f2f2f2; text-align: center; padding: 30px; color: #777; margin-top: 60px; }
-    @media(max-width:768px){ nav{display:none;} header{padding:0 20px;} }
+    /* =======================
+       FOOTER IDÉNTICO AL EQUIPO
+    ======================= */
+    footer {
+      background-color: #f2f2f2;
+      color: #333;
+      padding: 50px 20px;
+      font-family: 'Inter', sans-serif;
+      margin-top: 60px;
+    }
+    .footer-container {
+      width: 100%;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.8fr 1.2fr 1fr;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .footer-column {
+      margin-bottom: 20px;
+    }
+    .footer-column h4 {
+      color: #015BAB;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+    .footer-column img.logo {
+      max-width: 140px;
+      margin-top: 10px;
+    }
+    .footer-column p {
+      margin: 12px 0;
+      font-size: 0.95rem;
+    }
+    .footer-column a {
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .footer-column a:hover {
+      color: #015BAB;
+    }
+    .footer-column img.icon {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .social-icons {
+      margin-top: 15px;
+      display: flex; 
+      justify-content: flex-start; 
+      gap: 15px;
+    }
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+    }
+    hr {
+      margin: 40px auto 20px;
+      max-width: 1000px;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+    .copyright {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    @media(max-width:768px){ 
+      nav { display: none; } 
+      header { padding: 0 20px; } 
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .footer-column h4 {
+        text-align: center;
+      }
+      .footer-column a {
+        justify-content: center;
+      }
+      .social-icons {
+        justify-content: center;
+      }
+      .page-hero {
+        height: 200px;
+        font-size: 1.8rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -49,8 +217,12 @@
     </a>
   </header>
   
+  <!-- Banner con imagen de fondo para el título -->
+  <div class="page-hero">
+    <h1 style="margin: 0; font-size: inherit; font-weight: inherit;">Nuestras Especialidades Odontológicas</h1>
+  </div>
+
   <main>
-    <h1>Nuestras Especialidades Odontológicas</h1>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-img-wrap"><img src="recursos/imagenes/Box1.jpg" alt="Ortodoncia" /></div>
@@ -76,8 +248,7 @@
       <div class="service-card">
         <div class="service-img-wrap"><img src="recursos/imagenes/Sala_de_espera.jpg" alt="Cirugía Maxilofacial" /></div>
         <div class="service-content">
-          <div><h3>Cirugía Maxilofacial</h3><p>Extracción experta de muelas del juicio y resolución de patologías complejas.</p>
-          </div>
+          <div><h3>Cirugía Maxilofacial</h3><p>Extracción experta de muelas del juicio y resolución de patologías complejas.</p></div>
           <a href="cirugia-maxilofacial.html" class="service-link">Ver más detalles</a>
         </div>
       </div>
@@ -98,6 +269,55 @@
     </div>
   </main>
 
-  <footer><p>© 2026 Aegis Clínica Dental. Todos los derechos reservados.</p></footer>
+  <footer id="contacto">
+    <div class="footer-container">
+      <div class="footer-column">
+        <img src="recursos/iconos/logo.png" alt="Logo Aegis Clínica Dental" class="logo" />
+      </div>
+      <div class="footer-column">
+        <h4>Contacto</h4>
+        <p>
+          <a href="https://www.google.com/maps/place/Aegis+Clínica+Dental+🦷/@-33.4549101,-70.7420724,17z/data=!3m1!4b1!4m6!3m5!1s0x9662c379345f2b41:0x82fd931608201ab5!8m2!3d-33.4549101!4d-70.7394975!16s%2Fg%2F11glwckvkj?entry=ttu&g_ep=EgoyMDI1MDYxMC4xIKXMDSoASAFQAw%3D%3D" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Ubicación" class="icon" />
+            Av. Teniente Cruz 570, Local 2, Santiago, Chile
+          </a>
+        </p>
+        <p>
+          <a href="tel:+56984615838">
+            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Teléfono" class="icon" />
+            +56 9 8461 5838
+          </a>
+        </p>
+        <p>
+          <a href="mailto:aegisclinicadental@gmail.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Correo" class="icon" />
+            aegisclinicadental@gmail.com
+          </a>
+        </p>
+      </div>
+      <div class="footer-column">
+        <h4>Horarios</h4>
+        <p>Lunes a Viernes<br />09:00 – 20:00 hrs</p>
+        <p>Sábados<br />09:00 – 17:00 hrs</p>
+        <p>Domingos<br />10:00 – 13:30 hrs</p>
+      </div>
+      <div class="footer-column">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/aegisclinicadental?igsh=aGl1Z254aGNjMmFu" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61574232590531&mibextid=ZbWKwL" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" />
+          </a>
+          <a href="mailto:aegisclinicadental@gmail.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Correo" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p class="copyright">© 2026 Aegis Clínica Dental. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>

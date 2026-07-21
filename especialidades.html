@@ -15,35 +15,37 @@
       font-family: 'Inter', sans-serif; 
       background-color: #f9f9f9; 
       color: #333; 
-      padding-top: 90px; 
+      padding-top: 80px; 
     }
     header { 
       position: fixed; 
       top: 0; left: 0; right: 0; 
       background: white; 
       box-shadow: 0 2px 8px rgb(0 0 0 / 0.1); 
-      height: 90px; 
+      height: 75px; 
       display: flex; 
       align-items: center; 
       justify-content: space-between; 
-      padding: 0 40px; 
+      padding: 0 20px; 
       z-index: 10000; 
       font-family: 'Poppins', sans-serif; 
     }
-    .logo-link img { height: 70px; }
-    nav { display: flex; gap: 28px; font-weight: 600; font-size: 1rem; }
-    nav a { color: #444; text-decoration: none; transition: color 0.3s ease; }
+    .logo-link img { height: 50px; }
+    nav { display: flex; gap: 15px; font-weight: 600; font-size: 0.9rem; }
+    nav a { color: #444; text-decoration: none; transition: color 0.3s ease; white-space: nowrap; }
     nav a:hover, nav a.active { color: #00B5AD; }
     .header-btn { 
       background-color: #25D366; 
       color: white; 
-      padding: 10px 20px; 
+      padding: 8px 14px; 
       border-radius: 30px; 
       font-weight: 700; 
       text-decoration: none; 
       display: flex; 
       align-items: center; 
-      gap: 10px; 
+      gap: 6px;
+      font-size: 0.85rem;
+      white-space: nowrap;
     }
     
     /* =======================
@@ -52,7 +54,7 @@
     .page-hero {
       position: relative;
       width: 100%;
-      height: 300px;
+      height: 220px;
       background-color: #015BAB;
       background: url('recursos/iconos/banner.jpg') center center / cover no-repeat;
       display: flex;
@@ -62,146 +64,165 @@
       text-shadow: 0 2px 8px rgba(0,0,0,0.7);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       text-align: center;
-      padding: 0 20px;
-      margin-bottom: 50px;
+      padding: 0 15px;
+      margin-bottom: 30px;
     }
 
     main { 
       max-width: 1000px; 
       margin: 0 auto; 
-      padding: 0 20px 60px 20px; 
+      padding: 0 15px 40px 15px; 
     }
     
+    /* 2 Columnas para celulares en las tarjetas */
     .services-grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-      gap: 25px; 
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 12px; 
     }
     .service-card { 
       background: white; 
-      border-radius: 12px; 
+      border-radius: 10px; 
       overflow: hidden; 
       text-align: center; 
-      box-shadow: 0 4px 10px rgb(0 0 0 / 0.08); 
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.08); 
       display: flex; 
       flex-direction: column; 
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease;
     }
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
-    }
-    .service-img-wrap { width: 100%; height: 160px; overflow: hidden; }
-    .service-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-    .service-card:hover .service-img-wrap img { transform: scale(1.08); }
+    .service-img-wrap { width: 100%; height: 110px; overflow: hidden; }
+    .service-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
-    .service-content { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
-    .service-card h3 { color: #015BAB; font-family: 'Poppins', sans-serif; font-size: 1.15rem; margin-bottom: 10px; }
-    .service-card p { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
-    .service-link { display: inline-block; background-color: #015BAB; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background-color 0.3s ease; }
+    .service-content { padding: 12px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
+    .service-card h3 { color: #015BAB; font-family: 'Poppins', sans-serif; font-size: 0.95rem; margin-bottom: 6px; }
+    .service-card p { color: #666; font-size: 0.75rem; margin-bottom: 12px; line-height: 1.3; }
+    .service-link { display: inline-block; background-color: #015BAB; color: white; padding: 6px 10px; border-radius: 5px; text-decoration: none; font-weight: 600; font-size: 0.75rem; }
     .service-link:hover { background-color: #00B5AD; }
     
     /* =======================
-       FOOTER IDÉNTICO AL EQUIPO
+       FOOTER COMPACTO Y ESTÉTICO
     ======================= */
     footer {
       background-color: #f2f2f2;
       color: #333;
-      padding: 50px 20px;
+      padding: 30px 15px 20px 15px;
       font-family: 'Inter', sans-serif;
-      margin-top: 60px;
+      margin-top: 40px;
     }
     .footer-container {
       width: 100%;
-      padding: 0 40px;
+      padding: 0 10px;
       display: grid;
-      grid-template-columns: 1fr 1.8fr 1.2fr 1fr;
-      gap: 30px;
+      grid-template-columns: 1fr 1.5fr 1fr 1fr;
+      gap: 20px;
       max-width: 1200px;
       margin: 0 auto;
       align-items: start;
     }
     .footer-column {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
     .footer-column h4 {
       color: #015BAB;
       font-family: 'Poppins', sans-serif;
-      margin-bottom: 15px;
-      font-size: 1.1rem;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
       text-align: left;
     }
     .footer-column img.logo {
-      max-width: 140px;
-      margin-top: 10px;
+      max-width: 110px;
+      margin-top: 5px;
     }
     .footer-column p {
-      margin: 12px 0;
-      font-size: 0.95rem;
+      margin: 6px 0;
+      font-size: 0.82rem;
+      line-height: 1.4;
     }
     .footer-column a {
       color: #333;
       text-decoration: none;
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 6px;
     }
     .footer-column a:hover {
       color: #015BAB;
     }
     .footer-column img.icon {
-      width: 18px;
-      height: 18px;
+      width: 14px;
+      height: 14px;
       margin-top: 3px;
       flex-shrink: 0;
     }
     .social-icons {
-      margin-top: 15px;
+      margin-top: 10px;
       display: flex; 
       justify-content: flex-start; 
-      gap: 15px;
+      gap: 10px;
     }
     .social-icons img {
-      width: 32px;
-      height: 32px;
+      width: 26px;
+      height: 26px;
     }
     hr {
-      margin: 40px auto 20px;
+      margin: 20px auto 15px;
       max-width: 1000px;
       border: none;
-      border-top: 1px solid #ccc;
+      border-top: 1px solid #ddd;
     }
     .copyright {
       text-align: center;
-      font-size: 0.9em;
+      font-size: 0.75rem;
       color: #777;
     }
 
     /* =======================
-       MEDIA QUERIES RESPONSIVE
+       MEDIA QUERIES COMPUTADOR Y TABLET
     ======================= */
-    @media(max-width:768px){ 
-      nav { display: none; } 
-      header { padding: 0 20px; } 
+    @media (min-width: 769px) {
+      body { padding-top: 90px; }
+      header { height: 90px; padding: 0 40px; }
+      .logo-link img { height: 70px; }
+      nav { gap: 28px; font-size: 1rem; }
+      .header-btn { padding: 10px 20px; font-size: 1rem; gap: 10px; }
+      .page-hero { height: 300px; font-size: 2.2rem; margin-bottom: 50px; }
+      main { padding: 0 20px 60px 20px; }
+      .services-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+      .service-card { border-radius: 12px; box-shadow: 0 4px 10px rgb(0 0 0 / 0.08); }
+      .service-img-wrap { height: 160px; }
+      .service-content { padding: 20px; }
+      .service-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+      .service-card p { font-size: 0.9rem; margin-bottom: 20px; }
+      .service-link { padding: 8px 16px; font-size: 0.9rem; border-radius: 6px; }
+      footer { padding: 50px 20px; margin-top: 60px; }
+      .footer-container { padding: 0 40px; gap: 30px; }
+      .footer-column h4 { font-size: 1.1rem; margin-bottom: 15px; }
+      .footer-column img.logo { max-width: 140px; margin-top: 10px; }
+      .footer-column p { font-size: 0.95rem; margin: 12px 0; }
+      .footer-column img.icon { width: 18px; height: 18px; }
+      .social-icons img { width: 32px; height: 32px; }
+      .copyright { font-size: 0.9em; }
+    }
+
+    /* Adaptación específica para footer en móviles */
+    @media(max-width: 768px){ 
       .footer-container {
         grid-template-columns: 1fr;
         text-align: center;
-        padding: 0 20px;
+        padding: 0 10px;
+        gap: 15px;
       }
       .footer-column h4 {
         text-align: center;
+        margin-bottom: 6px;
       }
       .footer-column a {
         justify-content: center;
       }
       .social-icons {
         justify-content: center;
-      }
-      .page-hero {
-        height: 200px;
-        font-size: 1.8rem;
       }
     }
   </style>
@@ -215,7 +236,7 @@
       <a href="equipo.html">Equipo</a>
     </nav>
     <a href="https://wa.me/56984615838" target="_blank" class="header-btn">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" width="20" />
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" width="18" />
       WhatsApp
     </a>
   </header>
@@ -231,8 +252,8 @@
       <div class="service-card">
         <div class="service-img-wrap"><img src="recursos/imagenes/ortodoncia.jpg" alt="Ortodoncia" /></div>
         <div class="service-content">
-          <div><h3>Ortodoncia</h3><p>Alinea tus dientes y mejora tu mordida con brackets metálicos, estéticos o invisibles.</p></div>
-          <a href="ortodoncia.html" class="service-link">Ver más detalles</a>
+          <div><h3>Ortodoncia</h3><p>Alinea tus dientes y mejora tu mordida.</p></div>
+          <a href="ortodoncia.html" class="service-link">Ver detalles</a>
         </div>
       </div>
 
@@ -240,8 +261,8 @@
       <div class="service-card">
         <div class="service-img-wrap"><img src="recursos/imagenes/implantologia.jfif" alt="Implantología" /></div>
         <div class="service-content">
-          <div><h3>Implantología</h3><p>Recupera tus piezas dentales perdidas de forma fija, segura y con aspecto natural.</p></div>
-          <a href="implantologia.html" class="service-link">Ver más detalles</a>
+          <div><h3>Implantología</h3><p>Recupera tus piezas dentales perdidas de forma fija.</p></div>
+          <a href="implantologia.html" class="service-link">Ver detalles</a>
         </div>
       </div>
 
@@ -249,8 +270,8 @@
       <div class="service-card">
         <div class="service-img-wrap"><img src="recursos/imagenes/endodoncia.jpg" alt="Endodoncia" /></div>
         <div class="service-content">
-          <div><h3>Endodoncia</h3><p>Tratamientos de conducto indoloros orientados a eliminar el dolor y salvar tus dientes.</p></div>
-          <a href="endodoncia.html" class="service-link">Ver más detalles</a>
+          <div><h3>Endodoncia</h3><p>Tratamientos de conducto indoloros para salvar tus dientes.</p></div>
+          <a href="endodoncia.html" class="service-link">Ver detalles</a>
         </div>
       </div>
 
@@ -258,8 +279,8 @@
       <div class="service-card">
         <div class="service-img-wrap"><img src="recursos/imagenes/maxilofacial.jpg" alt="Cirugía Maxilofacial" /></div>
         <div class="service-content">
-          <div><h3>Cirugía Maxilofacial</h3><p>Extracción experta de muelas del juicio y resolución de patologías complejas.</p></div>
-          <a href="cirugia-maxilofacial.html" class="service-link">Ver más detalles</a>
+          <div><h3>Maxilofacial</h3><p>Extracción experta de muelas del juicio y patologías.</p></div>
+          <a href="cirugia-maxilofacial.html" class="service-link">Ver detalles</a>
         </div>
       </div>
 
@@ -267,8 +288,8 @@
       <div class="service-card">
         <div class="service-img-wrap"><img src="recursos/imagenes/periodoncia.jfif" alt="Periodoncia" /></div>
         <div class="service-content">
-          <div><h3>Periodoncia</h3><p>Cuidado especializado de las encías para prevenir y tratar la gingivitis y periodontitis.</p></div>
-          <a href="periodoncia.html" class="service-link">Ver más detalles</a>
+          <div><h3>Periodoncia</h3><p>Cuidado especializado de las encías y salud periodontal.</p></div>
+          <a href="periodoncia.html" class="service-link">Ver detalles</a>
         </div>
       </div>
 
@@ -276,26 +297,26 @@
       <div class="service-card">
         <div class="service-img-wrap"><img src="recursos/imagenes/odontopediatria.jpg" alt="Odontopediatría" /></div>
         <div class="service-content">
-          <div><h3>Odontopediatría</h3><p>Odontología infantil cercana, didáctica y completamente libre de temores.</p></div>
-          <a href="odontopediatria.html" class="service-link">Ver más detalles</a>
+          <div><h3>Odontopediatría</h3><p>Odontología infantil cercana y libre de temores.</p></div>
+          <a href="odontopediatria.html" class="service-link">Ver detalles</a>
         </div>
       </div>
 
-      <!-- 7. Estética Dental (Blanqueamiento y Joyas Dentales) -->
+      <!-- 7. Estética Dental -->
       <div class="service-card">
         <div class="service-img-wrap"><img src="recursos/imagenes/estetica.jpg" alt="Estética Dental" /></div>
         <div class="service-content">
-          <div><h3>Estética Dental</h3><p>Blanqueamiento dental profesional y aplicación de joyas o cristales dentales seguros para tu esmalte.</p></div>
-          <a href="estetica.html" class="service-link">Ver más detalles</a>
+          <div><h3>Estética Dental</h3><p>Blanqueamiento y aplicación de joyas dentales seguras.</p></div>
+          <a href="estetica.html" class="service-link">Ver detalles</a>
         </div>
       </div>
 
-      <!-- 8. Estética Facial (Toxina Botulínica / Botox) -->
+      <!-- 8. Estética Facial (Botox) -->
       <div class="service-card">
         <div class="service-img-wrap"><img src="recursos/imagenes/botox.jfif" alt="Estética Facial" /></div>
         <div class="service-content">
-          <div><h3>Estética Facial (Botox)</h3><p>Aplicación de toxina botulínica en frente, entrecejo y patas de gallo para un aspecto rejuvenecido y natural.</p></div>
-          <a href="botox.html" class="service-link">Ver más detalles</a>
+          <div><h3>Estética Facial</h3><p>Toxina botulínica para un aspecto rejuvenecido.</p></div>
+          <a href="botox.html" class="service-link">Ver detalles</a>
         </div>
       </div>
     </div>
@@ -311,7 +332,7 @@
         <p>
           <a href="https://www.google.com/maps/place/Aegis+Clínica+Dental+🦷/@-33.4549101,-70.7420724,17z/data=!3m1!4b1!4m6!3m5!1s0x9662c379345f2b41:0x82fd931608201ab5!8m2!3d-33.4549101!4d-70.7394975!16s%2Fg%2F11glwckvkj?entry=ttu&g_ep=EgoyMDI1MDYxMC4xIKXMDSoASAFQAw%3D%3D" target="_blank">
             <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Ubicación" class="icon" />
-            Av. Teniente Cruz 570, Local 2, Santiago, Chile
+            Av. Teniente Cruz 570, Local 2, Santiago
           </a>
         </p>
         <p>
@@ -329,9 +350,9 @@
       </div>
       <div class="footer-column">
         <h4>Horarios</h4>
-        <p>Lunes a Viernes<br />09:00 – 20:00 hrs</p>
-        <p>Sábados<br />09:00 – 17:00 hrs</p>
-        <p>Domingos<br />10:00 – 13:30 hrs</p>
+        <p>Lun - Vie: 09:00 – 20:00 hrs</p>
+        <p>Sáb: 09:00 – 17:00 hrs</p>
+        <p>Dom: 10:00 – 13:30 hrs</p>
       </div>
       <div class="footer-column">
         <h4>Redes Sociales</h4>

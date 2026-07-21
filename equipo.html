@@ -20,7 +20,7 @@
       font-family: 'Inter', sans-serif;
       background-color: #f9f9f9;
       color: #333;
-      padding-top: 110px;
+      padding-top: 90px;
     }
     header {
       position: fixed;
@@ -65,17 +65,32 @@
       gap: 10px;
     }
 
-    main {
-      max-width: 1000px;
-      margin: 40px auto;
+    /* =======================
+       BANNER SUPERIOR (ESTILO HERO)
+    ======================= */
+    .page-hero {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background-color: #015BAB;
+      background: url('recursos/iconos/banner.jpg') center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 2.2rem;
+      text-align: center;
       padding: 0 20px;
+      margin-bottom: 50px;
     }
 
-    h1 {
-      color: #015BAB;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      margin-bottom: 40px;
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px 60px 20px;
     }
 
     .team-section-title {
@@ -133,7 +148,7 @@
     }
 
     /* =======================
-       FOOTER
+       FOOTER CORREGIDO (ESPACIADO)
     ======================= */
     footer {
       background-color: #f2f2f2;
@@ -145,44 +160,55 @@
     .footer-container {
       width: 100%;
       padding: 0 40px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-width: 1100px;
+      display: grid;
+      grid-template-columns: 1fr 1.8fr 1.2fr 1fr; /* Asignamos espacio proporcional a cada columna para que no se peguen */
+      gap: 30px;
+      max-width: 1200px;
       margin: 0 auto;
+      align-items: start;
     }
     .footer-column {
-      flex: 1 1 180px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+    }
+    .footer-column h4 {
+      color: #015BAB;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
     }
     .footer-column img.logo {
-      max-width: 150px;
-      margin-top: 20px;
+      max-width: 140px;
+      margin-top: 10px;
     }
     .footer-column p {
-      margin: 15px 0;
+      margin: 12px 0;
+      font-size: 0.95rem;
     }
     .footer-column a {
       color: #333;
       text-decoration: none;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .footer-column a:hover {
+      color: #015BAB;
     }
     .footer-column img.icon {
       width: 18px;
-      vertical-align: middle;
-      margin-right: 10px;
+      height: 18px;
+      margin-top: 3px;
+      flex-shrink: 0;
     }
     .social-icons {
       margin-top: 15px;
       display: flex; 
-      justify-content: center; 
+      justify-content: flex-start; 
       gap: 15px;
     }
     .social-icons img {
       width: 32px;
       height: 32px;
-      vertical-align: middle;
     }
     hr {
       margin: 40px auto 20px;
@@ -208,15 +234,19 @@
         height: 130px;
       }
       .footer-container {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
         text-align: center;
-      }
-      .footer-column img.logo {
-        margin-bottom: 20px;
+        padding: 0 20px;
       }
       .footer-column a {
         justify-content: center;
+      }
+      .social-icons {
+        justify-content: center;
+      }
+      .page-hero {
+        height: 200px;
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -238,9 +268,12 @@
     </a>
   </header>
 
-  <main>
-    <h1>Conoce a Nuestro Equipo Médico</h1>
+  <!-- Banner con imagen de fondo para el título -->
+  <div class="page-hero">
+    <h1 style="margin: 0; font-size: inherit; font-weight: inherit;">Conoce a Nuestro Equipo Médico</h1>
+  </div>
 
+  <main>
     <!-- BLOQUE 1: ESPECIALISTAS (Con redirección a sus respectivas pestañas) -->
     <h3 class="team-section-title">Especialistas Certificados</h3>
     <div class="dentists">
@@ -295,7 +328,7 @@
 
     </div>
 
-    <!-- BLOQUE 2: ODONTOLOGÍA GENERAL Y ASISTENCIA (Tarjetas informativas sin enlace de especialidad) -->
+    <!-- BLOQUE 2: ODONTOLOGÍA GENERAL Y ASISTENCIA -->
     <h3 class="team-section-title">Odontología General y Asistencia</h3>
     <div class="dentists">
       

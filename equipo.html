@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nuestro Equipo | Aegis Clínica Dental</title>
+  <link rel="icon" href="recursos/iconos/icono.png" type="image/png" />
+  <link rel="canonical" href="https://aegisclinicadental.cl/equipo.html" />
+  
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding-top: 110px;
+    }
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: white;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      z-index: 10000;
+      font-family: 'Poppins', sans-serif;
+    }
+    .logo-link img {
+      height: 70px;
+    }
+    nav {
+      display: flex;
+      gap: 28px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    nav a {
+      color: #444;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #00B5AD;
+    }
+    .header-btn {
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      color: #015BAB;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .team-section-title {
+      text-align: center;
+      color: #444;
+      font-family: 'Poppins', sans-serif;
+      margin: 40px 0 25px;
+      font-weight: 500;
+      font-size: 1.4rem;
+    }
+
+    .dentists {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .dentist-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+    }
+    .dentist-card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .dentist-card h3 {
+      font-size: 1.1rem;
+      color: #015BAB;
+      margin: 10px 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    .dentist-card p {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 4px 0;
+    }
+
+    footer {
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 30px;
+      color: #777;
+      margin-top: 60px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+      header { padding: 0 20px; }
+      .dentists {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+      .dentist-card img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo-link">
+      <img src="recursos/iconos/logo.png" alt="Logo de Aegis" />
+    </a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="especialidades.html">Especialidades</a>
+      <a href="equipo.html" class="active">Equipo</a>
+    </nav>
+    <a href="https://wa.me/56984615838" target="_blank" class="header-btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" width="20" />
+      WhatsApp
+    </a>
+  </header>
+
+  <main>
+    <h1>Conoce a Nuestro Equipo Médico</h1>
+
+    <!-- BLOQUE 1: ESPECIALIDADES -->
+    <h3 class="team-section-title">Especialistas Certificados</h3>
+    <div class="dentists">
+      <div class="dentist-card">
+        <img src="recursos/doctores/dr.camilo.jpg" alt="Dr. Camilo" loading="lazy" />
+        <h3>Dr. Camilo Barrientos Morales</h3>
+        <p>Cirujano dentista - UChile</p>
+        <br>
+        <p>Cirujano maxilofacial - UDD</p>
+      </div>
+      
+      <div class="dentist-card">
+        <img src="recursos/doctores/dra.angelica.jpeg" alt="Dra. Angelica" loading="lazy" />
+        <h3>Dra. Angélica Burgos Díaz</h3>
+        <p>Cirujana dentista - UChile</p>
+        <br>
+        <p>Odontopediatra - U. de los Andes</p>
+      </div>
+      
+      <div class="dentist-card">
+        <img src="recursos/doctores/dra.paulina.jpeg" alt="Dra. Paulina" loading="lazy" />
+        <h3>Dra. Paulina Cortés Gutierréz</h3>
+        <p>Cirujana dentista - UNAB</p>
+        <br>
+        <p>Ortodoncista - U. Católica de Uruguay</p>
+      </div>
+
+      <div class="dentist-card">
+        <img src="recursos/doctores/dr.david.jpeg" alt="Dr. David" loading="lazy" />
+        <h3>Dr. David Jaña Salinas</h3>
+        <p>Cirujano dentista - UChile</p>
+        <br>
+        <p>Endodoncista - PUC</p>
+      </div>
+
+      <div class="dentist-card">
+        <img src="recursos/doctores/dra.mariana.jpg" alt="Dra. Mariana" loading="lazy" />
+        <h3>Dra. Mariana Murúa Vial</h3>
+        <p>Cirujana dentista - UChile</p>
+        <br>
+        <p>Periodoncista - U. de los Andes</p>
+      </div>
+
+      <div class="dentist-card">
+        <img src="recursos/doctores/dr.francisco.JPG" alt="Dr. Francisco" loading="lazy" />
+        <h3>Dr. Francisco Ugarte Cisternas</h3>
+        <p>Cirujano dentista - UChile</p>
+        <br>
+        <p>Implantólogo dental - UA</p>
+      </div>
+    </div>
+
+    <!-- BLOQUE 2: ODONTOLOGÍA GENERAL Y ASISTENCIA -->
+    <h3 class="team-section-title">Odontología General y Asistencia</h3>
+    <div class="dentists">
+      <div class="dentist-card">
+        <img src="recursos/doctores/dr.sebastian.jpeg" alt="Dr. Sebastián" loading="lazy" />
+        <h3>Dr. Sebastián González Carrasco</h3>
+        <p>Cirujano dentista</p>
+        <p>Universidad de Chile</p>
+      </div>
+
+      <div class="dentist-card">
+        <img src="recursos/doctores/dra.carolina.JPG" alt="Dra. Carolina" loading="lazy" />
+        <h3>Dra. Carolina Belmar Lillo</h3>
+        <p>Cirujana dentista</p>
+        <p>Universidad de Chile</p>
+      </div>
+
+      <div class="dentist-card">
+        <img src="recursos/doctores/dr.franco.jpeg" alt="Dr. Franco" loading="lazy" />
+        <h3>Dr. Franco Bustios Concha</h3>
+        <p>Cirujano dentista</p>
+        <p>Universidad Diego Portales</p>
+      </div>
+
+      <div class="dentist-card">
+        <img src="recursos/doctores/dra.arantxa.jpg" alt="Dra. Arantxa" loading="lazy" />
+        <h3>Dra. Arantxa Ladrón de Guevera Benítez</h3>
+        <p>Cirujana dentista</p>
+        <p>Universidad de Chile</p>
+      </div>
+
+      <div class="dentist-card">
+        <img src="recursos/doctores/dra.jael.jpeg" alt="Dra. Jael" loading="lazy" />
+        <h3>Dra. Jael Maldonado Chamorro</h3>
+        <p>Cirujana dentista</p>
+        <p>Universidad Andrés Bello</p>
+      </div>
+
+      <div class="dentist-card">
+        <img src="recursos/doctores/dra.karina.jpeg" alt="Dra. Karina" loading="lazy" />
+        <h3>Dra. Karina Saavedra Llanos</h3>
+        <p>Cirujana dentista</p>
+        <p>Universidad de Chile</p>
+      </div>
+
+      <div class="dentist-card">
+        <img src="recursos/doctores/dra.denisse.jpg" alt="Denisse" loading="lazy" />
+        <h3>Denisse Almonacid Winlo</h3>
+        <p>Asistente dental</p>
+        <p>Instituto Profesional de Chile</p>
+      </div>
+      
+      <div class="dentist-card">
+        <img src="recursos/doctores/dra.bella.jpg" alt="Bella" loading="lazy" />
+        <h3>Bella Campi Tomalá</h3>
+        <p>Asistente dental</p>
+        <p>Instituto ICEL</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Aegis Clínica Dental. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

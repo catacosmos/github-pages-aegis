@@ -172,66 +172,70 @@
       line-height: 1.5;
     }
 
-    /* Caja de llamada a la acción */
-    .cta-box {
-      background: #f0f8ff;
-      border: 2px dashed #015BAB;
-      padding: 30px 20px;
+    /* Estilo de la caja punteada idéntica a la referencia */
+    .info-section-title {
+      color: #015BAB;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-align: center;
       margin-top: 40px;
+      margin-bottom: 15px;
+    }
+    .info-box-wrapper {
+      background: white;
       border-radius: 12px;
+      padding: 10px 0;
+      margin-top: 20px;
       text-align: center;
     }
-    .cta-box h3 {
-      color: #015BAB;
-      margin-top: 0;
-      font-family: 'Poppins', sans-serif;
+    .info-text-desc {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 25px auto;
+      text-align: center;
     }
-    .whatsapp-btn-large {
+    .dashed-cta-box {
+      border: 2px dashed #015BAB;
+      border-radius: 12px;
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      background: #fff;
+    }
+    .dashed-cta-box h3 {
+      color: #015BAB;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .dashed-cta-box p {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .whatsapp-btn-green {
       display: inline-flex;
       align-items: center;
       background-color: #25D366;
       color: white;
-      padding: 12px 25px;
+      padding: 10px 22px;
       border-radius: 8px;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       font-family: 'Poppins', sans-serif;
-      margin-top: 15px;
-      gap: 10px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      font-size: 0.95rem;
+      gap: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 3px 8px rgba(37, 211, 102, 0.3);
     }
-    .whatsapp-btn-large:hover { 
-      background-color: #1ebe57; 
+    .whatsapp-btn-green:hover {
+      background-color: #1ebe57;
       transform: translateY(-2px);
-    }
-
-    /* =======================
-       APARTADO INFORMATIVO FINAL (SOBRE LA CLÍNICA)
-    ======================= */
-    .info-antes-footer {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      color: #015BAB;
-      font-size: 1.05rem;
-      margin: 50px auto 20px auto;
-      max-width: 900px;
-      text-align: center;
-      background: white;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgb(0 0 0 / 0.05);
-    }
-    .info-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 500;
-    }
-    .info-item img {
-      width: 24px;
-      height: 24px;
     }
 
     /* =======================
@@ -319,14 +323,6 @@
         flex-direction: column;
         text-align: center;
       }
-      .info-antes-footer {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        font-size: 0.95rem;
-        padding: 20px;
-        margin: 30px 15px;
-      }
       footer {
         padding: 30px 15px 20px 15px;
         margin-top: 40px;
@@ -365,7 +361,7 @@
       .header-btn { padding: 10px 20px; font-size: 1rem; gap: 10px; }
       
       .page-hero { height: 300px; font-size: 2.2rem; margin-bottom: 50px; }
-      main { padding: 50px; margin: 0 auto 30px auto; }
+      main { padding: 50px; margin: 0 auto 60px auto; }
     }
   </style>
 
@@ -447,34 +443,23 @@
       <li><strong>Cuidado de piezas vecinas:</strong> No requiere tallar o desgastar los dientes sanos adyacentes (como ocurre con los puentes tradicionales).</li>
     </ul>
 
-    <h2>Tratamiento seguro y con tecnología avanzada</h2>
-    <p>Sabemos que la idea de una intervención quirúrgica puede generar dudas o inquietudes; sin embargo, gracias a los avances en anestesia moderna, la planificación digital y la amplia experiencia de nuestro especialista, el procedimiento de implantes es altamente seguro, controlado y cómodo. Te esperamos en Av. Teniente Cruz 570, Local 2, Pudahuel (a pasos del Metro Barrancas), con estacionamiento gratuito y un equipo dispuesto a devolverte la tranquilidad.</p>
+    <!-- SECCIÓN FINAL ESTILO CAJA PUNTEADA -->
+    <div class="info-box-wrapper">
+      <div class="info-section-title">Un espacio diseñado para recuperar tu sonrisa definitiva</div>
+      <p class="info-text-desc">
+        Sabemos que la idea de una intervención quirúrgica puede generar dudas; sin embargo, gracias a la anestesia moderna, la planificación digital y la experiencia de nuestro especialista, el procedimiento es totalmente seguro, controlado y cómodo. Te esperamos en Av. Teniente Cruz 570, Local 2, Pudahuel (a pasos del Metro Barrancas), con estacionamiento gratuito para que tu llegada sea cómoda y segura.
+      </p>
 
-    <div class="cta-box">
-      <h3>Recupera tu sonrisa definitiva</h3>
-      <p>Agenda una evaluación con el Dr. Francisco Ugarte para estudiar tu caso y entregarte la mejor solución en implantes.</p>
-      <a href="https://wa.me/56984615838?text=Hola,%20quiero%20más%20información%20sobre%20implantes%20dentales%20con%20el%20Dr.%20Francisco" target="_blank" class="whatsapp-btn-large">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" width="24" />
-        Escríbenos por WhatsApp
-      </a>
+      <div class="dashed-cta-box">
+        <h3>¿Quieres recuperar tus piezas dentales perdidas?</h3>
+        <p>Agenda una evaluación con el Dr. Francisco Ugarte para estudiar tu caso y entregarte la mejor solución en implantes.</p>
+        <a href="https://wa.me/56984615838?text=Hola,%20quiero%20más%20información%20sobre%20implantes%20dentales%20con%20el%20Dr.%20Francisco" target="_blank" class="whatsapp-btn-green">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" width="20" />
+          Escríbenos por WhatsApp
+        </a>
+      </div>
     </div>
   </main>
-
-  <!-- Apartado institucional sobre la clínica -->
-  <div class="info-antes-footer">
-    <div class="info-item">
-      <img src="recursos/iconos/auto.svg" alt="Estacionamiento gratuito" />
-      <span>Estacionamiento gratuito</span>
-    </div>
-    <div class="info-item">
-      <img src="recursos/iconos/pago.svg" alt="Distintos métodos de pago" />
-      <span>Distintos métodos de pago</span>
-    </div>
-    <div class="info-item">
-      <img src="recursos/iconos/metro.svg" alt="Metro Barrancas" />
-      <span>A pasos de Metro Barrancas</span>
-    </div>
-  </div>
 
   <footer id="contacto">
     <div class="footer-container">

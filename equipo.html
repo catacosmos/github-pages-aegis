@@ -92,20 +92,34 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
     }
+
+    /* Estilo de la tarjeta convertida en enlace interactivo */
     .dentist-card {
       background: white;
       border-radius: 12px;
       padding: 20px;
       text-align: center;
       box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .dentist-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+    }
+
+    /* Fotografía en formato ovalado */
     .dentist-card img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
+      width: 140px;
+      height: 175px;
       object-fit: cover;
+      border-radius: 50% / 40%;
       margin-bottom: 15px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
     }
+
     .dentist-card h3 {
       font-size: 1.1rem;
       color: #015BAB;
@@ -136,7 +150,7 @@
       }
       .dentist-card img {
         width: 100px;
-        height: 100px;
+        height: 130px;
       }
     }
   </style>
@@ -161,116 +175,120 @@
   <main>
     <h1>Conoce a Nuestro Equipo Médico</h1>
 
-    <!-- BLOQUE 1: ESPECIALIDADES -->
+    <!-- BLOQUE 1: ESPECIALISTAS (Con redirección a sus respectivas pestañas) -->
     <h3 class="team-section-title">Especialistas Certificados</h3>
     <div class="dentists">
-      <div class="dentist-card">
+      
+      <a href="cirugia-maxilofacial.html" class="dentist-card">
         <img src="recursos/doctores/dr.camilo.jpg" alt="Dr. Camilo" loading="lazy" />
         <h3>Dr. Camilo Barrientos Morales</h3>
         <p>Cirujano dentista - UChile</p>
         <br>
         <p>Cirujano maxilofacial - UDD</p>
-      </div>
+      </a>
       
-      <div class="dentist-card">
+      <a href="odontopediatria.html" class="dentist-card">
         <img src="recursos/doctores/dra.angelica.jpeg" alt="Dra. Angelica" loading="lazy" />
         <h3>Dra. Angélica Burgos Díaz</h3>
         <p>Cirujana dentista - UChile</p>
         <br>
         <p>Odontopediatra - U. de los Andes</p>
-      </div>
+      </a>
       
-      <div class="dentist-card">
+      <a href="ortodoncia.html" class="dentist-card">
         <img src="recursos/doctores/dra.paulina.jpeg" alt="Dra. Paulina" loading="lazy" />
         <h3>Dra. Paulina Cortés Gutierréz</h3>
         <p>Cirujana dentista - UNAB</p>
         <br>
         <p>Ortodoncista - U. Católica de Uruguay</p>
-      </div>
+      </a>
 
-      <div class="dentist-card">
+      <a href="endodoncia.html" class="dentist-card">
         <img src="recursos/doctores/dr.david.jpeg" alt="Dr. David" loading="lazy" />
         <h3>Dr. David Jaña Salinas</h3>
         <p>Cirujano dentista - UChile</p>
         <br>
         <p>Endodoncista - PUC</p>
-      </div>
+      </a>
 
-      <div class="dentist-card">
+      <a href="periodoncia.html" class="dentist-card">
         <img src="recursos/doctores/dra.mariana.jpg" alt="Dra. Mariana" loading="lazy" />
         <h3>Dra. Mariana Murúa Vial</h3>
         <p>Cirujana dentista - UChile</p>
         <br>
         <p>Periodoncista - U. de los Andes</p>
-      </div>
+      </a>
 
-      <div class="dentist-card">
+      <a href="implantologia.html" class="dentist-card">
         <img src="recursos/doctores/dr.francisco.JPG" alt="Dr. Francisco" loading="lazy" />
         <h3>Dr. Francisco Ugarte Cisternas</h3>
         <p>Cirujano dentista - UChile</p>
         <br>
         <p>Implantólogo dental - UA</p>
-      </div>
+      </a>
+
     </div>
 
-    <!-- BLOQUE 2: ODONTOLOGÍA GENERAL Y ASISTENCIA -->
+    <!-- BLOQUE 2: ODONTOLOGÍA GENERAL Y ASISTENCIA (Tarjetas informativas sin enlace de especialidad) -->
     <h3 class="team-section-title">Odontología General y Asistencia</h3>
     <div class="dentists">
-      <div class="dentist-card">
+      
+      <div class="dentist-card" style="cursor: default;">
         <img src="recursos/doctores/dr.sebastian.jpeg" alt="Dr. Sebastián" loading="lazy" />
         <h3>Dr. Sebastián González Carrasco</h3>
         <p>Cirujano dentista</p>
         <p>Universidad de Chile</p>
       </div>
 
-      <div class="dentist-card">
+      <div class="dentist-card" style="cursor: default;">
         <img src="recursos/doctores/dra.carolina.JPG" alt="Dra. Carolina" loading="lazy" />
         <h3>Dra. Carolina Belmar Lillo</h3>
         <p>Cirujana dentista</p>
         <p>Universidad de Chile</p>
       </div>
 
-      <div class="dentist-card">
+      <div class="dentist-card" style="cursor: default;">
         <img src="recursos/doctores/dr.franco.jpeg" alt="Dr. Franco" loading="lazy" />
         <h3>Dr. Franco Bustios Concha</h3>
         <p>Cirujano dentista</p>
         <p>Universidad Diego Portales</p>
       </div>
 
-      <div class="dentist-card">
+      <div class="dentist-card" style="cursor: default;">
         <img src="recursos/doctores/dra.arantxa.jpg" alt="Dra. Arantxa" loading="lazy" />
         <h3>Dra. Arantxa Ladrón de Guevera Benítez</h3>
         <p>Cirujana dentista</p>
         <p>Universidad de Chile</p>
       </div>
 
-      <div class="dentist-card">
+      <div class="dentist-card" style="cursor: default;">
         <img src="recursos/doctores/dra.jael.jpeg" alt="Dra. Jael" loading="lazy" />
         <h3>Dra. Jael Maldonado Chamorro</h3>
         <p>Cirujana dentista</p>
         <p>Universidad Andrés Bello</p>
       </div>
 
-      <div class="dentist-card">
+      <div class="dentist-card" style="cursor: default;">
         <img src="recursos/doctores/dra.karina.jpeg" alt="Dra. Karina" loading="lazy" />
         <h3>Dra. Karina Saavedra Llanos</h3>
         <p>Cirujana dentista</p>
         <p>Universidad de Chile</p>
       </div>
 
-      <div class="dentist-card">
+      <div class="dentist-card" style="cursor: default;">
         <img src="recursos/doctores/dra.denisse.jpg" alt="Denisse" loading="lazy" />
         <h3>Denisse Almonacid Winlo</h3>
         <p>Asistente dental</p>
         <p>Instituto Profesional de Chile</p>
       </div>
       
-      <div class="dentist-card">
+      <div class="dentist-card" style="cursor: default;">
         <img src="recursos/doctores/dra.bella.jpg" alt="Bella" loading="lazy" />
         <h3>Bella Campi Tomalá</h3>
         <p>Asistente dental</p>
         <p>Instituto ICEL</p>
       </div>
+
     </div>
   </main>
 

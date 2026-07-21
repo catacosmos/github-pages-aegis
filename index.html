@@ -40,7 +40,7 @@
       font-family: 'Inter', sans-serif;
       background-color: #f9f9f9;
       color: #333;
-      padding-top: 75px; 
+      padding-top: 130px; /* Espacio para header móvil de 2 filas */
       scroll-behavior: smooth;
     }
     h2 {
@@ -70,24 +70,23 @@
     }
 
     /* =======================
-       HEADER FIJO CON 3 PESTAÑAS PRINCIPALES
+       HEADER MÓVIL (POR DEFECTO)
     ======================= */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
       background: white;
       box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-      height: 90px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
+      justify-content: center;
+      padding: 10px 15px;
       z-index: 10000;
       font-family: 'Poppins', sans-serif;
-      font-weight: 500;
     }
     .logo-link img {
-      height: 70px;
+      height: 45px;
       cursor: pointer;
       user-select: none;
       transition: transform 0.3s ease;
@@ -95,39 +94,52 @@
     .logo-link img:hover {
       transform: scale(1.05);
     }
+
+    .header-bottom-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+      width: 100%;
+    }
+
     nav {
       display: flex;
-      gap: 28px;
-      flex-grow: 1;
-      justify-content: center;
+      gap: 10px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.85rem;
     }
     nav a {
       color: #444;
       text-decoration: none;
-      position: relative;
-      padding: 6px 0;
       transition: color 0.3s ease;
+      white-space: nowrap;
+      padding: 4px 8px;
+      border-radius: 4px;
     }
-    nav a:hover,
-    nav a:focus,
+    nav a:hover { color: #00B5AD; }
+
+    /* Pestaña activa en Turquesa */
     nav a.active {
       color: #00B5AD;
+      background-color: rgba(0, 181, 173, 0.1);
     }
+
     .header-btn {
       background-color: #25D366;
       color: white;
-      padding: 12px 22px;
+      padding: 6px 12px;
       border-radius: 30px;
       font-weight: 700;
       font-family: 'Poppins', sans-serif;
-      font-size: 1rem;
+      font-size: 0.8rem;
       text-decoration: none;
       white-space: nowrap;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 5px;
       box-shadow: 0 4px 10px rgb(32 212 68 / 0.3);
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
       user-select: none;
@@ -138,8 +150,8 @@
       box-shadow: 0 6px 14px rgb(30 190 87 / 0.5);
     }
     .header-btn img {
-      width: 22px;
-      height: 22px;
+      width: 18px;
+      height: 18px;
       filter: drop-shadow(0 0 1px rgba(0,0,0,0.15));
     }
 
@@ -394,80 +406,125 @@
     }
 
     /* =======================
-       FOOTER
+       FOOTER COMPACTO (MÓVIL)
     ======================= */
     footer {
       background-color: #f2f2f2;
       color: #333;
-      padding: 50px 20px;
+      padding: 30px 15px 20px 15px;
       font-family: 'Inter', sans-serif;
     }
     .footer-container {
       width: 100%;
-      padding: 0 40px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-width: 1100px;
+      padding: 0 10px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      max-width: 1200px;
       margin: 0 auto;
+      text-align: center;
     }
     .footer-column {
-      flex: 1 1 180px;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
+    }
+    .footer-column h4 {
+      color: #015BAB;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+      text-align: center;
     }
     .footer-column img.logo {
-      max-width: 150px;
-      margin-top: 20px;
+      max-width: 110px;
+      margin: 0 auto 5px auto;
+      display: block;
     }
     .footer-column p {
-      margin: 15px 0;
+      margin: 6px 0;
+      font-size: 0.82rem;
+      line-height: 1.4;
     }
     .footer-column a {
       color: #333;
       text-decoration: none;
       display: flex;
       align-items: center;
+      justify-content: center;
+      gap: 6px;
     }
+    .footer-column a:hover { color: #015BAB; }
     .footer-column img.icon {
-      width: 18px;
-      vertical-align: middle;
-      margin-right: 10px;
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
     }
     .social-icons {
-      margin-top: 15px;
+      margin-top: 10px;
       display: flex; 
       justify-content: center; 
-      gap: 15px;
+      gap: 10px;
     }
-    .social-icons img {
-      width: 32px;
-      height: 32px;
-      vertical-align: middle;
-    }
+    .social-icons img { width: 26px; height: 26px; }
     hr {
-      margin: 40px auto 20px;
+      margin: 20px auto 15px;
       max-width: 1000px;
       border: none;
-      border-top: 1px solid #ccc;
+      border-top: 1px solid #ddd;
     }
     .copyright {
       text-align: center;
-      font-size: 0.9em;
+      font-size: 0.75rem;
       color: #777;
     }
 
     /* =======================
-       MEDIA QUERIES RESPONSIVE
+       VERSIÓN WEB / COMPUTADOR (min-width: 769px)
     ======================= */
-    @media (max-width: 768px) {
+    @media (min-width: 769px) {
+      body { padding-top: 90px; }
+      
+      header { 
+        height: 90px; 
+        padding: 0 40px; 
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .logo-link img { height: 70px; }
+      .header-bottom-row {
+        display: contents;
+      }
+      nav { gap: 28px; font-size: 1rem; }
+      nav a { padding: 6px 0; border-radius: 0; background: transparent !important; }
+      .header-btn { padding: 10px 20px; font-size: 1rem; gap: 10px; }
+
+      .about-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+      #hero {
+        font-size: 2.8rem;
+        height: 400px;
+      }
+      
+      /* Footer web en 4 columnas */
+      footer { padding: 50px 20px; }
       .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        grid-template-columns: 1fr 1.8fr 1.2fr 1fr;
+        text-align: left;
+        padding: 0 40px;
+        gap: 30px;
       }
-      .footer-column img.logo {
-        margin-bottom: 20px;
-      }
+      .footer-column h4 { text-align: left; font-size: 1.1rem; margin-bottom: 15px; }
+      .footer-column img.logo { max-width: 140px; margin: 10px 0 0 0; }
+      .footer-column p { font-size: 0.95rem; margin: 12px 0; }
+      .footer-column a { justify-content: flex-start; }
+      .footer-column img.icon { width: 18px; height: 18px; }
+      .social-icons { justify-content: flex-start; }
+      .social-icons img { width: 32px; height: 32px; }
+      .copyright { font-size: 0.9em; }
+    }
+
+    @media (max-width: 768px) {
       .about-container {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -476,56 +533,18 @@
         gap: 30px;
         font-size: 1rem;
       }
-      nav {
-        gap: 15px;
-        font-size: 0.9rem;
-      }
-      .header-btn {
-        padding: 10px 16px;
-        font-size: 0.9rem;
-      }
       .carousel-container {
         aspect-ratio: 16 / 9;
       }
     }
 
     @media (max-width: 600px) {
-      body {
-        padding-top: 130px;
-      }
-      header {
-        flex-direction: column;
-        height: auto;
-        padding: 10px 15px;
-        gap: 8px;
-      }
-      nav {
-        flex-direction: row;
-        overflow-x: auto;
-        gap: 15px;
-        width: 100%;
-        justify-content: center;
-      }
-      nav::-webkit-scrollbar {
-        height: 6px;
-      }
-      nav::-webkit-scrollbar-thumb {
-        background-color: rgba(1, 91, 171, 0.5);
-        border-radius: 3px;
-      }
-      .header-btn {
-        align-self: center;
-        padding: 10px 18px;
-        font-size: 0.95rem;
-      }
       #hero {
         font-size: 1.5rem;
         height: 260px;
         padding: 20px;
         text-align: center;
       }
-      
-      /* Centrado de tabla de horarios en móvil */
       .schedule-table {
         display: block;
         width: max-content;
@@ -533,17 +552,6 @@
         margin: 0 auto;
         overflow-x: auto;
         font-size: 0.9rem;
-      }
-      
-      .footer-column {
-        text-align: center;
-        flex: 1 1 100%;
-      }
-      .footer-container {
-        padding: 0 20px;
-      }
-      .footer-column a {
-        justify-content: center;
       }
       .info-antes-footer {
         flex-direction: column;
@@ -614,18 +622,20 @@
 <body>
 
   <header>
-    <a href="#" class="logo-link">
+    <a href="index.html" class="logo-link">
       <img src="recursos/iconos/logo.png" alt="Logo de Aegis" />
     </a>
-    <nav>
-      <a href="index.html" class="active">Inicio</a>
-      <a href="especialidades.html">Especialidades</a>
-      <a href="equipo.html">Equipo</a>
-    </nav>
-    <a href="https://wa.me/56984615838" target="_blank" class="header-btn">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" />
-      WhatsApp
-    </a>
+    <div class="header-bottom-row">
+      <nav>
+        <a href="index.html" class="active">Inicio</a>
+        <a href="especialidades.html">Especialidades</a>
+        <a href="equipo.html">Equipo</a>
+      </nav>
+      <a href="https://wa.me/56984615838" target="_blank" class="header-btn">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" width="18" />
+        WhatsApp
+      </a>
+    </div>
   </header>
 
   <!-- Etiquetas HTML5 Semánticas para el contenido principal -->
@@ -747,7 +757,7 @@
         <img src="recursos/iconos/logo.png" alt="Logo Aegis Clínica Dental" class="logo" />
       </div>
       <div class="footer-column">
-        <h4>Datos de Contacto</h4>
+        <h4>Contacto</h4>
         <p>
           <a href="https://www.google.com/maps/place/Aegis+Clínica+Dental+🦷/@-33.4549101,-70.7420724,17z/data=!3m1!4b1!4m6!3m5!1s0x9662c379345f2b41:0x82fd931608201ab5!8m2!3d-33.4549101!4d-70.7394975!16s%2Fg%2F11glwckvkj?entry=ttu&g_ep=EgoyMDI1MDYxMC4xIKXMDSoASAFQAw%3D%3D" target="_blank">
             <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Ubicación" class="icon" />
@@ -773,7 +783,7 @@
         <p>Sábados<br />09:00 – 17:00 hrs</p>
         <p>Domingos<br />10:00 – 13:30 hrs</p>
       </div>
-      <div class="footer-column" style="text-align:center;">
+      <div class="footer-column">
         <h4>Redes Sociales</h4>
         <div class="social-icons">
           <a href="https://www.instagram.com/aegisclinicadental?igsh=aGl1Z254aGNjMmFu" target="_blank">

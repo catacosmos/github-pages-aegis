@@ -141,7 +141,7 @@
     li { margin-bottom: 10px; }
     strong { color: #333; }
 
-    /* Perfil del Doctor */
+    /* Perfil del Doctor con foto ovalada */
     .doctor-profile {
       display: flex;
       align-items: center;
@@ -154,10 +154,11 @@
     }
     .doctor-profile img {
       width: 100px;
-      height: 100px;
-      border-radius: 50%;
+      height: 125px;
       object-fit: cover;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 50% / 40%;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+      flex-shrink: 0;
     }
     .doctor-info h3 {
       margin: 0 0 5px 0;
@@ -166,20 +167,32 @@
       font-size: 1.2rem;
     }
     .doctor-info p {
-      margin: 0 0 10px 0;
+      margin: 0 0 8px 0;
       font-size: 0.9rem;
       line-height: 1.5;
     }
     .insta-link {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      color: #E1306C;
+      gap: 8px;
+      color: #333;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      background: #fff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
     }
-    .insta-link:hover { text-decoration: underline; }
+    .insta-link:hover { transform: translateY(-2px); }
+    .insta-link img {
+      width: 20px;
+      height: 20px;
+      border-radius: 0;
+      box-shadow: none;
+      margin: 0;
+    }
 
     /* Caja de llamada a la acción */
     .cta-box {
@@ -215,62 +228,80 @@
     }
 
     /* =======================
-       FOOTER COMPACTO (MÓVIL)
+       FOOTER UNIFICADO (ESTILO EQUIPO)
     ======================= */
     footer {
       background-color: #f2f2f2;
       color: #333;
-      padding: 30px 15px 20px 15px;
+      padding: 50px 20px;
       font-family: 'Inter', sans-serif;
-      margin-top: 40px;
+      margin-top: 60px;
     }
     .footer-container {
       width: 100%;
-      padding: 0 10px;
+      padding: 0 40px;
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
+      grid-template-columns: 1fr 1.8fr 1.2fr 1fr;
+      gap: 30px;
       max-width: 1200px;
       margin: 0 auto;
-      text-align: center;
+      align-items: start;
     }
-    .footer-column { margin-bottom: 10px; }
+    .footer-column {
+      margin-bottom: 20px;
+    }
     .footer-column h4 {
       color: #015BAB;
       font-family: 'Poppins', sans-serif;
-      margin-bottom: 6px;
-      font-size: 0.95rem;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      text-align: left;
     }
     .footer-column img.logo {
-      max-width: 110px;
-      margin: 0 auto 5px auto;
-      display: block;
+      max-width: 140px;
+      margin-top: 10px;
     }
-    .footer-column p { margin: 6px 0; font-size: 0.82rem; line-height: 1.4; }
+    .footer-column p {
+      margin: 12px 0;
+      font-size: 0.95rem;
+    }
     .footer-column a {
       color: #333;
       text-decoration: none;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    .footer-column a:hover { color: #015BAB; }
-    .footer-column img.icon { width: 14px; height: 14px; flex-shrink: 0; }
-    .social-icons {
-      margin-top: 10px;
-      display: flex; 
-      justify-content: center; 
+      align-items: flex-start;
       gap: 10px;
     }
-    .social-icons img { width: 26px; height: 26px; }
+    .footer-column a:hover {
+      color: #015BAB;
+    }
+    .footer-column img.icon {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .social-icons {
+      margin-top: 15px;
+      display: flex; 
+      justify-content: flex-start; 
+      gap: 15px;
+    }
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+    }
     hr {
-      margin: 20px auto 15px;
+      margin: 40px auto 20px;
       max-width: 1000px;
       border: none;
-      border-top: 1px solid #ddd;
+      border-top: 1px solid #ccc;
     }
-    .copyright { text-align: center; font-size: 0.75rem; color: #777; }
+    .copyright {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+    }
 
     /* =======================
        MEDIA QUERIES MÓVIL
@@ -280,6 +311,24 @@
       .doctor-profile {
         flex-direction: column;
         text-align: center;
+      }
+      .insta-link { justify-content: center; }
+      footer {
+        padding: 30px 15px 20px 15px;
+        margin-top: 40px;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .footer-column h4 { text-align: center; }
+      .footer-column a { justify-content: center; }
+      .social-icons { justify-content: center; }
+      .footer-column img.logo {
+        max-width: 110px;
+        margin: 0 auto 5px auto;
+        display: block;
       }
     }
 
@@ -303,22 +352,6 @@
       
       .page-hero { height: 300px; font-size: 2.2rem; margin-bottom: 50px; }
       main { padding: 50px; margin: 0 auto 60px auto; }
-      
-      footer { padding: 50px 20px; margin-top: 60px; }
-      .footer-container {
-        grid-template-columns: 1fr 1.8fr 1.2fr 1fr;
-        text-align: left;
-        padding: 0 40px;
-        gap: 30px;
-      }
-      .footer-column h4 { text-align: left; font-size: 1.1rem; margin-bottom: 15px; }
-      .footer-column img.logo { max-width: 140px; margin: 10px 0 0 0; }
-      .footer-column p { font-size: 0.95rem; margin: 12px 0; }
-      .footer-column a { justify-content: flex-start; }
-      .footer-column img.icon { width: 18px; height: 18px; }
-      .social-icons { justify-content: flex-start; }
-      .social-icons img { width: 32px; height: 32px; }
-      .copyright { font-size: 0.9em; }
     }
   </style>
 
@@ -387,7 +420,7 @@
           <li>Endodoncista (Pontificia Universidad Católica de Chile - PUC).</li>
         </ul>
         <a href="https://www.instagram.com/dr.davidjana/" target="_blank" class="insta-link">
-          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram" width="16" />
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram" />
           @dr.davidjana
         </a>
       </div>
@@ -424,11 +457,11 @@
         <img src="recursos/iconos/logo.png" alt="Logo Aegis Clínica Dental" class="logo" />
       </div>
       <div class="footer-column">
-        <h4>Contacto</h4>
+        <h4>Datos de Contacto</h4>
         <p>
           <a href="https://www.google.com/maps/place/Aegis+Clínica+Dental+🦷/@-33.4549101,-70.7420724,17z/data=!3m1!4b1!4m6!3m5!1s0x9662c379345f2b41:0x82fd931608201ab5!8m2!3d-33.4549101!4d-70.7394975!16s%2Fg%2F11glwckvkj?entry=ttu&g_ep=EgoyMDI1MDYxMC4xIKXMDSoASAFQAw%3D%3D" target="_blank">
             <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Ubicación" class="icon" />
-            Av. Teniente Cruz 570, Local 2, Santiago
+            Av. Teniente Cruz 570, Local 2, Santiago, Chile
           </a>
         </p>
         <p>
@@ -446,9 +479,9 @@
       </div>
       <div class="footer-column">
         <h4>Horarios</h4>
-        <p>Lun - Vie: 09:00 – 20:00 hrs</p>
-        <p>Sáb: 09:00 – 17:00 hrs</p>
-        <p>Dom: 10:00 – 13:30 hrs</p>
+        <p>Lunes a Viernes<br />09:00 – 20:00 hrs</p>
+        <p>Sábados<br />09:00 – 17:00 hrs</p>
+        <p>Domingos<br />10:00 – 13:30 hrs</p>
       </div>
       <div class="footer-column">
         <h4>Redes Sociales</h4>

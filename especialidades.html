@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Especialidades Odontológicas | Aegis Clínica Dental</title>
+  <link rel="icon" href="recursos/iconos/icono.png" type="image/png" />
+  <link rel="canonical" href="https://aegisclinicadental.cl/especialidades.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #333; padding-top: 110px; }
+    header { position: fixed; top: 0; left: 0; right: 0; background: white; box-shadow: 0 2px 8px rgb(0 0 0 / 0.1); height: 90px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; z-index: 10000; font-family: 'Poppins', sans-serif; }
+    .logo-link img { height: 70px; }
+    nav { display: flex; gap: 28px; font-weight: 600; font-size: 1rem; }
+    nav a { color: #444; text-decoration: none; }
+    nav a:hover, nav a.active { color: #00B5AD; }
+    .header-btn { background-color: #25D366; color: white; padding: 10px 20px; border-radius: 30px; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    
+    main { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    h1 { color: #015BAB; font-family: 'Poppins', sans-serif; text-align: center; margin-bottom: 30px; }
+    
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+    .service-card { background: white; border-radius: 12px; overflow: hidden; text-align: center; box-shadow: 0 4px 10px rgb(0 0 0 / 0.08); display: flex; flex-direction: column; }
+    .service-img-wrap { width: 100%; height: 160px; overflow: hidden; }
+    .service-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .service-content { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
+    .service-card h3 { color: #015BAB; font-family: 'Poppins', sans-serif; font-size: 1.15rem; margin-bottom: 10px; }
+    .service-card p { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
+    .service-link { display: inline-block; background-color: #015BAB; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .service-link:hover { background-color: #00B5AD; }
+    
+    footer { background-color: #f2f2f2; text-align: center; padding: 30px; color: #777; margin-top: 60px; }
+    @media(max-width:768px){ nav{display:none;} header{padding:0 20px;} }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo-link"><img src="recursos/iconos/logo.png" alt="Logo" /></a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="especialidades.html" class="active">Especialidades</a>
+      <a href="equipo.html">Equipo</a>
+    </nav>
+    <a href="https://wa.me/56984615838" target="_blank" class="header-btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384055.png" alt="WhatsApp" width="20" />
+      WhatsApp
+    </a>
+  </header>
+  
+  <main>
+    <h1>Nuestras Especialidades Odontológicas</h1>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-img-wrap"><img src="recursos/imagenes/Box1.jpg" alt="Ortodoncia" /></div>
+        <div class="service-content">
+          <div><h3>Ortodoncia</h3><p>Alinea tus dientes y mejora tu mordida con brackets metálicos, estéticos o invisibles.</p></div>
+          <a href="ortodoncia.html" class="service-link">Ver más detalles</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img-wrap"><img src="recursos/imagenes/Box2.jpg" alt="Implantología" /></div>
+        <div class="service-content">
+          <div><h3>Implantología</h3><p>Recupera tus piezas dentales perdidas de forma fija, segura y con aspecto natural.</p></div>
+          <a href="implantologia.html" class="service-link">Ver más detalles</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img-wrap"><img src="recursos/imagenes/Box3.jpg" alt="Endodoncia" /></div>
+        <div class="service-content">
+          <div><h3>Endodoncia</h3><p>Tratamientos de conducto indoloros orientados a eliminar el dolor y salvar tus dientes.</p></div>
+          <a href="endodoncia.html" class="service-link">Ver más detalles</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img-wrap"><img src="recursos/imagenes/Sala_de_espera.jpg" alt="Cirugía Maxilofacial" /></div>
+        <div class="service-content">
+          <div><h3>Cirugía Maxilofacial</h3><p>Extracción experta de muelas del juicio y resolución de patologías complejas.</p>
+          </div>
+          <a href="cirugia-maxilofacial.html" class="service-link">Ver más detalles</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img-wrap"><img src="recursos/imagenes/Exterior.jpg" alt="Periodoncia" /></div>
+        <div class="service-content">
+          <div><h3>Periodoncia</h3><p>Cuidado especializado de las encías para prevenir y tratar la gingivitis y periodontitis.</p></div>
+          <a href="periodoncia.html" class="service-link">Ver más detalles</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img-wrap"><img src="recursos/imagenes/Recepcion.jpg" alt="Odontopediatría" /></div>
+        <div class="service-content">
+          <div><h3>Odontopediatría</h3><p>Odontología infantil cercana, didáctica y completamente libre de temores.</p></div>
+          <a href="odontopediatria.html" class="service-link">Ver más detalles</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer><p>© 2026 Aegis Clínica Dental. Todos los derechos reservados.</p></footer>
+</body>
+</html>
